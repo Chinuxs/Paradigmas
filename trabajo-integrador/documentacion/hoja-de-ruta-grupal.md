@@ -1,6 +1,6 @@
 # Hoja de ruta grupal — Trabajo Integrador 2026
 
-Preparada el **02/10/2026**. Estado: organización inicial; integrantes, alcance asignado y fecha aplicable pendientes de confirmar. Las tareas y fechas internas de este documento son propuestas de organización.
+Preparada el **02/10/2026**. Actualizada el **03/10/2026**. Estado: organización inicial; grupo 17, sus tres integrantes, enunciado 1, tutor y fechas de las pautas confirmados. Las tareas y fechas internas de este documento son propuestas de organización.
 
 ## 1. Fuentes y requisitos de la cátedra
 
@@ -20,51 +20,67 @@ Preparada el **02/10/2026**. Estado: organización inicial; integrantes, alcance
 
 La presentación inicial indica **Dolphin (Smalltalk)**. Confirmar con la cátedra la imagen/versión y la forma de exportar la entrega.
 
-### Alcance que hay que aclarar antes de repartir código
+**Herramienta para UML:** al revisar el material disponible el 03/10/2026, el PDF de UML enseña diagramas de clases y secuencias sin recomendar una aplicación particular; las pautas, p. 2, exigen el diagrama de clases sin especificar herramienta ni formato. Ver [helper de UML](../../teoria/apuntes/04-uml-helper.md). La herramienta del equipo sigue pendiente de acuerdo; esta revisión no confirma indicaciones orales.
 
-El PDF de enunciados reúne **ocho sistemas llamados “Inciso 1” a “Inciso 8”**. Los archivos no explican si al grupo se le asigna uno, se elige o deben implementarse todos. La exigencia de que funcionen todos los incisos tampoco resuelve esa asignación. Registrar la respuesta docente y cubrir **todo el alcance confirmado**; no dar por hecha la elección de un solo sistema.
+### Alcance confirmado
 
-Ver [mapa de los ocho enunciados](mapa-de-enunciados.md) para preparar esa conversación y estimar el trabajo.
+El **grupo N.º 17** tiene asignado el **enunciado 1: aerolínea** (PDF de enunciados, p. 2). El tutor es **Gonzalo Baez**, contacto: **gbaez@frlp.utn.edu.ar**.
 
-## 2. Fechas encontradas
+Fuente de la confirmación: mensaje del tutor compartido por el usuario el 03/10/2026: «Perfecto, tienen asignado el grupo N°17. Tienen el enunciado 1 y como tutor a mí». Nombre y correo también aportados por el usuario.
+
+Cubrir todos los requisitos del enunciado 1. Ver su resumen en el [mapa de enunciados](mapa-de-enunciados.md#1-aerolínea--p-2) y leer la página completa del PDF antes de descomponerlos e implementarlos.
+
+## 2. Fechas de entrega confirmadas
 
 | Fuente | Texto / fecha | Estado |
 | --- | --- | --- |
-| Pautas 2026, p. 2 | **21/10/2026 - 23/10/2026** | Referencia específica 2026; no aclara si son dos comisiones o un intervalo |
-| Clase 0, diapositiva 8 | **Semana 12/10** | Referencia diferente; no especifica año en esa diapositiva |
+| Pautas 2026, p. 2 | **21/10/2026 - 23/10/2026** | Confirmadas por el usuario el 03/10/2026; distribución para el grupo pendiente de precisar |
+| Clase 0, diapositiva 8 | **Semana 12/10** | Referencia reemplazada por las fechas confirmadas de las pautas |
 | Pautas 2026, p. 2 | Coloquio cuando el trabajo esté en condiciones | Sin día ni horario publicados en este material |
 
-**Acción inmediata:** consultar cuál fecha aplica al grupo, horario límite, canal/formato de entrega y fecha del coloquio. No se encontró una hora límite. Tampoco hay hitos parciales fechados en los PDFs.
+**Confirmación del usuario (03/10/2026):** rigen las fechas del PDF de pautas, **21/10/2026 y 23/10/2026**. Queda por precisar cómo corresponden al grupo 17, el horario límite, canal/formato de entrega y fecha del coloquio. No se encontró una hora límite. Tampoco hay hitos parciales fechados en los PDFs.
 
-Por prudencia, el plan propone una primera versión completa para el **11/10**, antes de la semana mencionada en la presentación. El tramo posterior solo se usa si la cátedra confirma que corresponde entregar el 21 o 23 de octubre. La factibilidad de esa primera versión depende de resolver enseguida el alcance de los ocho incisos.
+El plan conserva una primera versión completa para el **11/10** como meta interna propuesta, con tiempo posterior para correcciones y preparación de la defensa. Se propone cerrar el paquete el **20/10**, antes de la primera fecha confirmada. Estas metas internas deben revisarse con los requisitos de aerolínea y la disponibilidad del equipo.
 
 ## 3. Acuerdos del equipo
 
-Completar en la primera reunión:
+Datos confirmados y pendientes para completar con el equipo:
 
 | Dato | Valor |
 | --- | --- |
-| Integrantes (3 o 4) | Pendiente |
+| Número de grupo | **17** |
+| Integrantes | **3: Gabriel Matias Piccin, César Augusto Romero y Jorge Murga** |
 | Comisión | Pendiente |
-| Ayudante asignado | Pendiente |
-| Inciso(s) / sistemas que corresponden | Pendiente de confirmación docente |
-| Fecha, hora y canal confirmados | Pendiente |
+| Tutor asignado | **Gonzalo Baez** — gbaez@frlp.utn.edu.ar |
+| Enunciado / sistema asignado | **1 — Aerolínea** |
+| Fechas de entrega confirmadas | **21/10/2026 y 23/10/2026**, según pautas; distribución para el grupo pendiente de precisar |
+| Hora y canal de entrega | Pendiente |
 | Entorno de Dolphin compartido | Pendiente |
 | Horario de reuniones y canal del grupo | Pendiente |
 
-### Reparto sugerido
+### Integrantes confirmados
 
-Cada tarea tiene una persona responsable y otra revisora. Los roles rotan; todos deben conocer el sistema completo para el coloquio.
+Datos aportados por el usuario el 03/10/2026:
 
-| Frente | Con 3 personas | Con 4 personas | Resultado |
-| --- | --- | --- | --- |
-| Modelo, herencia y cálculos por tipo | A; revisa B | A; revisa B | Clases y comportamiento polimórfico |
-| Colecciones, búsquedas y restricciones | B; revisa C | B; revisa C | Altas, cambios, bajas, consultas y estadísticas |
-| Menú e integración | C; revisa A | C; revisa D | Flujo completo ejecutable |
-| Casos de prueba y documentación | Se distribuyen por función; C coordina | D coordina; cada autor aporta pruebas | Matriz, diagrama y guía de ejecución |
-| Defensa | Todos | Todos | Cada integrante explica una parte y puede responder sobre las demás |
+| Nombre y apellido | Correo | Legajo |
+| --- | --- | --- |
+| Gabriel Matias Piccin | gabrielpiccin797@gmail.com | No informado |
+| César Augusto Romero | cromero@alu.frlp.utn.edu.ar | 18370 |
+| Jorge Murga | jmurga@alu.frlp.utn.edu.ar | No informado |
 
-Si corresponden varios sistemas, repetir este reparto por sistema y definir un orden de integración. Evitar que una persona quede únicamente con documentación y desconozca el código.
+### Reparto sugerido para tres integrantes
+
+Cada tarea tiene una persona responsable y otra revisora. Los roles rotan; todos deben conocer el sistema completo para el coloquio. A, B y C son lugares a asignar por acuerdo del equipo; no corresponden todavía a nombres concretos.
+
+| Frente | Responsable y revisión propuestos | Resultado |
+| --- | --- | --- |
+| Modelo, herencia y cálculos por tipo | A; revisa B | Clases y comportamiento polimórfico |
+| Colecciones, búsquedas y restricciones | B; revisa C | Altas, cambios, bajas, consultas y estadísticas |
+| Menú e integración | C; revisa A | Flujo completo ejecutable |
+| Casos de prueba y documentación | Se distribuyen por función; C coordina | Matriz, diagrama y guía de ejecución |
+| Defensa | Todos | Cada integrante explica una parte y puede responder sobre las demás |
+
+Aplicar este reparto al sistema de aerolínea. Evitar que una persona quede únicamente con documentación y desconozca el código.
 
 ### Cómo compartir cambios en Dolphin
 
@@ -79,15 +95,15 @@ Si corresponden varios sistemas, repetir este reparto por sistema y definir un o
 
 | Fechas internas 2026 | Trabajo | Depende de | Criterio para cerrar |
 | --- | --- | --- | --- |
-| **02–03/10** | Confirmar alcance/fechas; formar grupo; leer consignas; acordar entorno | Respuesta docente para fijar alcance | Nómina, alcance y dudas registradas; todos abren Dolphin |
+| **02–03/10** | Leer enunciado 1; acordar entorno y detalles de entrega | Alcance y tres integrantes confirmados | Nómina, alcance y dudas registradas; todos abren Dolphin |
 | **03–04/10** | Descomponer requisitos y diseñar clases | Alcance confirmado | Diagrama inicial y fila por requisito en la matriz |
 | **04–06/10** | Implementar clases, inicialización y comportamiento por subtipo | Modelo y selectores acordados | Instancias de ambos subtipos con cálculos/decisiones comprobados |
 | **06–08/10** | Implementar altas, búsqueda, modificación, baja y restricciones | Clases operativas | Casos válidos e inválidos cubiertos; invariantes preservadas |
 | **08–10/10** | Completar listados, promedios, extremos, bajas masivas y diccionarios; integrar menú | Colecciones disponibles | Cada requisito accesible y verificable desde el flujo previsto |
 | **11/10** | Preparar primera versión completa, diagrama y ensayo grupal | Todas las funciones integradas | Importación en otro equipo y recorrido total de la matriz |
-| **12–18/10**, si se confirma entrega posterior | Corregir, cubrir bordes y practicar defensa | Fecha docente confirmada | Todos ejecutan y explican; fallas detectadas corregidas |
-| **19–20/10**, si aplica | Cerrar paquete, verificar instrucciones y copia final | Revisión completa | Entregable reproducible, sin funciones pendientes |
-| **21/10 o 23/10**, según confirmación | Entregar y guardar constancia | Canal y fecha definidos | Constancia de recepción; coloquio coordinado |
+| **12–18/10** | Corregir, cubrir bordes y practicar defensa | Primera versión completa | Todos ejecutan y explican; fallas detectadas corregidas |
+| **19–20/10** | Cerrar paquete, verificar instrucciones y copia final | Revisión completa | Entregable reproducible, sin funciones pendientes |
+| **21/10 y 23/10**, según corresponda al grupo | Entregar y guardar constancia | Canal y distribución de fechas definidos | Constancia de recepción; coloquio coordinado |
 
 Si el alcance confirmado vuelve inviable este plan, repartir nuevamente los requisitos y consultar prioridades con el ayudante. No recortar por cuenta propia funciones obligatorias.
 
@@ -144,10 +160,9 @@ Estados sugeridos: pendiente, en desarrollo, en revisión, verificado. Los ejemp
 
 ## 8. Consultas pendientes para el taller
 
-1. ¿Qué inciso(s) corresponde(n) al grupo y cómo se asignan?
-2. ¿Aplica el 21/10, el 23/10 o la semana del 12/10? ¿Cuál es el horario y canal?
+1. Para aerolínea: ¿qué significa “disponibles” al calcular el promedio y qué vuelos participan del listado superior al promedio?
+2. ¿Cómo corresponden al grupo 17 las fechas confirmadas del 21/10 y 23/10? ¿Cuál es el horario y canal?
 3. ¿Qué archivos deben entregarse y en qué versión de Dolphin?
 4. ¿Cuándo será el coloquio y cómo se coordina?
-5. Según el sistema asignado: ¿qué significan “disponibles”, “activos” o “programados” donde no se definen? ¿Sobre qué conjunto se filtra después de calcular un promedio?
 
-Las pautas indican consultar en **Taller, luego de práctica**. Para una consulta puntual durante la semana, permiten escribir al **ayudante asignado con copia al profesor**. El grupo debe confirmar quién es su ayudante; no se enviaron mensajes desde este proyecto.
+Las pautas indican consultar en **Taller, luego de práctica**. Para una consulta puntual durante la semana, permiten escribir al **ayudante asignado con copia al profesor**. El tutor confirmado es **Gonzalo Baez**, **gbaez@frlp.utn.edu.ar**; queda pendiente identificar el correo del profesor para la copia. No se enviaron mensajes desde este proyecto.

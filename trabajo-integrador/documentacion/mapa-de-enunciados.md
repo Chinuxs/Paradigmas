@@ -2,7 +2,7 @@
 
 Fuente: [Trabajo Integrador - Enunciados 2026.pdf](../enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf), pp. 2–9. Este mapa ayuda a descomponer requisitos; el PDF conserva todos los atributos exigidos y es la referencia para implementarlos.
 
-**Alcance pendiente:** los documentos no explican la asignación de los ocho incisos. Confirmarla antes de elegir uno o repartir implementación. Ver [hoja de ruta](hoja-de-ruta-grupal.md).
+**Alcance confirmado para el grupo 17:** enunciado **1 — Aerolínea**, según el mensaje del tutor Gonzalo Baez compartido por el usuario el 03/10/2026. Los otros siete sistemas se conservan como referencia. Ver [hoja de ruta](hoja-de-ruta-grupal.md).
 
 ## 1. Aerolínea — p. 2
 
