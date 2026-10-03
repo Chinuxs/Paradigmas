@@ -2,6 +2,16 @@
 
 Material de la materia: teoría, práctica y trabajo integrador.
 
+## Trabajar en equipo con IA
+
+Las instrucciones comunes están en [AGENTS.md](AGENTS.md) y el estado del trabajo en [contexto-ia.md](contexto-ia.md). Se comparten junto al código mediante Git. Consultá la [guía para usar distintos asistentes](docs/uso-de-ia.md) al preparar tu copia local.
+
+### Prompt para empezar
+
+Copiá este mensaje en tu asistente con el repo abierto. Si usás un chat sin acceso a archivos locales, adjuntá `AGENTS.md` y `contexto-ia.md`.
+
+> Me sumo al equipo de este proyecto. Leé AGENTS.md y contexto-ia.md, seguí las pautas y resumime qué estamos construyendo, en qué estado está y qué queda pendiente. Consultá los archivos disponibles antes de pedirme información. Quiero trabajar en: [tu tarea, o «ayudame a elegir una tarea pendiente»].
+
 ## Estructura
 
 ```text

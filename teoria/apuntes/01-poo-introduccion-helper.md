@@ -52,3 +52,12 @@ Respondé sin mirar y después controlá:
 5. ¿Qué información descartarías al modelar un alumno para registrar notas? **La que no afecta ese objetivo, por ejemplo talle de calzado.**
 
 Terminaste el repaso cuando podés dibujar una jerarquía, diferenciarla de una asociación y seguir un mensaje desde el receptor hasta su método.
+
+### Bonus track — Para reforzar
+
+Retomá estas preguntas otro día, sin mirar las respuestas:
+
+1. ¿Elegir las notas de un alumno y descartar su talle es abstracción o herencia? ¿Por qué? **Abstracción: elegimos qué representar según el problema. La herencia relaciona una subclase con una superclase mediante «es un».**
+2. ¿Smalltalk es «no tipado» porque usa binding dinámico? **No: tiene tipado dinámico; sus objetos tienen clase y durante la ejecución se comprueba si entienden los mensajes recibidos. El binding dinámico selecciona el método según el receptor.**
+3. Si `x` referencia un libro, ¿qué devuelve `x class`? ¿Obliga a que `x` siempre referencie libros? **Devuelve la clase del objeto referenciado en ese momento. No impide que después `x` referencie un objeto de otra clase.**
+4. ¿Los atributos y métodos que una clase define para sus objetos se llaman «variables de clase» y «métodos de clase»? **No: las variables de instancia guardan el estado propio de cada objeto y los métodos de instancia responden a mensajes enviados a esos objetos. Las variables de clase son compartidas; los métodos de clase responden a mensajes enviados a la clase misma.**
