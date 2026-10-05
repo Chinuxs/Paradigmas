@@ -1,6 +1,6 @@
 # Contexto y punto de continuación
 
-Actualizado: **03/10/2026**. Este archivo guarda hechos y acuerdos para retomar el trabajo; no reemplaza las consignas ni las indicaciones actuales del usuario.
+Actualizado: **04/10/2026**. Este archivo guarda hechos y acuerdos para retomar el trabajo; no reemplaza las consignas ni las indicaciones actuales del usuario.
 
 ## Qué estamos haciendo
 
@@ -15,8 +15,8 @@ Actualizado: **03/10/2026**. Este archivo guarda hechos y acuerdos para retomar 
 ## Integrador: estado registrado
 
 - Fuentes disponibles: `trabajo-integrador/enunciado/Trabajo Integrador - Pautas 2026.pdf` y `Trabajo Integrador - Enunciados 2026.pdf` en la misma carpeta.
-- Ya existen `trabajo-integrador/documentacion/hoja-de-ruta-grupal.md` y `mapa-de-enunciados.md`. La hoja de ruta contiene organización, requisitos, fechas de pautas confirmadas y una matriz pendiente de completar; el mapa resume los ocho sistemas.
-- Asignación confirmada: **grupo 17**, **enunciado 1 — Aerolínea**, tutor **Gonzalo Baez**, **gbaez@frlp.utn.edu.ar**. Fuente: mensaje del tutor compartido por el usuario el 03/10/2026. La hoja de ruta y el mapa ya reflejan esta asignación; los otros siete sistemas quedan como referencia.
+- Ya existen `trabajo-integrador/documentacion/hoja-de-ruta-grupal.md` y `mapa-de-enunciados.md`. La hoja de ruta contiene organización, requisitos, fechas de pautas confirmadas y una matriz pendiente de completar; el mapa quedó enfocado en el enunciado asignado de aerolínea.
+- Asignación confirmada: **grupo 17**, **enunciado 1 — Aerolínea**, tutor **Gonzalo Baez**, **gbaez@frlp.utn.edu.ar**. Fuente: mensaje del tutor compartido por el usuario el 03/10/2026. La hoja de ruta y el mapa ya reflejan esta asignación; los otros siete sistemas quedan como referencia en el PDF de enunciados.
 - Según la hoja de ruta: grupo de 3–4, diagrama de clases, menú, iteradores y coloquio. Contrastar los detalles con los PDFs al trabajar sobre ellos.
 - Integrantes confirmados por el usuario: **Gabriel Matias Piccin, César Augusto Romero y Jorge Murga**. Correos y legajo informado de César (18370) registrados en la hoja de ruta. Reparto sugerido adaptado a tres personas, sin asignaciones nominales acordadas.
 - Pendientes registrados: comisión, versión del entorno, formato/canal/horario de entrega y distribución de las dos fechas para el grupo; correo del profesor para las consultas con copia.
