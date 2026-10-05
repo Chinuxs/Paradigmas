@@ -1,0 +1,79 @@
+agregar: unVue
+vuelos add: unVue. 
+
+eliminar: unVue
+vuelos remove:  unVue ifAbsent:[^nil]. !  
+
+esVacio
+^vuelos isEmpty. !
+
+existe: unVue
+^vuelos includes: unVue. ! 
+
+init: unNomAero anio: unAnio pais: unPaisOr cod: unCod cant: unCantVM
+nomAero := unNomAero.
+anioFundacion := unAnio.
+paisdeOrigen := unPaisOr.
+codigoId := unCod.
+cantVuelosMaxDia := unCantVM.
+vuelos := OrderedCollection new.! 
+^self 
+
+modnomAero:otroNomAero
+
+nomAero:=otroNomAero.!
+
+modanioFundacion:otroAnio
+
+anioFundacion:=otroAnio.!
+
+modpaisdeOrigen:otroPaisOr
+
+paisdeOrigen:=otroPaisOr.!
+
+modcodigoId:otroCod
+
+codigoId:=otroCod.!
+
+modcantVuelosMaxDia:otroCantVM
+
+cantVuelosMaxDia:=otroCantVM.!
+
+
+recuperar: i
+^vuelos at: i.!
+
+tamanio
+^vuelos size.!
+
+vernomAero
+^nomAero!
+
+veranioFundacion
+^anioFundacion!
+
+verpaisdeOrigen
+^paisdeOrigen!
+
+vercodigoId
+^codigoId!
+
+vercantVuelosMaxDia
+^cantVuelosMaxDia!
+
+verTodos
+^vuelos.! !
+   
+
+"faltan los metodos que deberia cumplir la aerolinea, como :
+-cargarsinosuperacantidadMax
+-buscarvueloporNumparamodificaroeliminar
+-listarprogramados
+-listarduracionmenora2(dos)horas
+-filtrarsegundestino
+-calcularpreciopromdevuelosdisponibles
+-mostrarvuelosconpreciosuperioralpromedio
+-conocervuelomayorduracion
+-calcularfacturaciontotal
+-eliminartodosloscancelados
+-guardarendiccionariovuelosporestado
