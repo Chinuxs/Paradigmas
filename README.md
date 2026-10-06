@@ -70,6 +70,8 @@ Los dos PDFs de teoría numerados 4 se conservan con sus nombres originales; tie
 - [Mapa de los ocho enunciados](trabajo-integrador/documentacion/mapa-de-enunciados.md): operaciones, reglas, casos límite y dudas por sistema.
 - [Pautas originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Pautas%202026.pdf).
 - [Enunciados originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf).
+- [Clase Aerolinea](trabajo-integrador/desarrollo/Aerolinea.cls): exportación de Dolphin Smalltalk 7, con implementación parcial.
+- [Métodos de Aerolinea](trabajo-integrador/desarrollo/aerolineaMetodos.txt): listado de métodos y funciones pendientes.
 
 **Confirmado por el usuario:** grupo **17**, enunciado **1 — Aerolínea**, tutor **Gonzalo Baez**; rigen las fechas de las pautas, **21/10/2026 y 23/10/2026**. Integrantes: Gabriel Matias Piccin, César Augusto Romero y Jorge Murga. Quedan pendientes la distribución de esas fechas para el grupo, el horario, canal/formato de entrega, versión de Dolphin y fecha del coloquio.
 
@@ -89,4 +91,4 @@ El **03/10/2026** se incorporaron otros **7 archivos** desde la misma carpeta, c
 - 2 presentaciones de práctica: `Clase 4.pptx` y `Clase 5  - Practica.pptx`.
 - Se agregó un helper por archivo, con referencias a páginas/diapositivas, recetas, controles, preguntas y correcciones. Hay **16 fuentes originales y 14 helpers** en total.
 
-Las presentaciones incluyen explicaciones y ejercicios; se conservaron completas. Los helpers son archivos Markdown que se pueden leer y editar desde el repositorio. `desarrollo/` y `entregables/` quedan preparados para el trabajo posterior del grupo.
+Las presentaciones incluyen explicaciones y ejercicios; se conservaron completas. Los helpers son archivos Markdown que se pueden leer y editar desde el repositorio. El código inicial del integrador está en `desarrollo/`; `entregables/` queda reservado para las versiones preparadas para entregar.
