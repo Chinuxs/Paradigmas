@@ -1,0 +1,46 @@
+
+Vuelo subclass: #VueloInternacional
+	instanceVariableNames: 'paisDestino tasaInter documentacion'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+VueloInternacional guid: (GUID fromString: '{8A12EC1E-5E79-4DEA-83FA-11C76AE31939}')!
+VueloInternacional comment: ''!
+!VueloInternacional categoriesForClass!Kernel-Objects! !
+!VueloInternacional methodsFor!
+
+init: unNum dura: unDura ori: unOri des: unDes fech: unFech preb: unPreBa est: unEst pais: unPaisDes tasa: untasaInt doc: unDocu
+    super init: unNum dura: unDura ori: unOri des: unDes fech: unFech preb: unPreBa est: unEst.
+    paisDestino := unPaisDes.
+    tasaInter := untasaInt .
+    documentacion := unDocu .
+    ^self!
+
+modDocumentacion: otroDocu
+documentacion:=otroDocu.!
+
+modpaisDestino: otroPaisDest
+paisDestino:= otroPaisDest.!
+
+modtasaInter: otrotasaInter
+tasaInter:=otrotasaInter.!
+
+precioFinalInter
+       ^precioBase+tasaInter!
+
+verDocumentacion
+^documentacion!
+
+verpaisDestino
+^paisDestino!
+
+vertasaInter
+^tasaInter! !
+!VueloInternacional categoriesFor: #init:dura:ori:des:fech:preb:est:pais:tasa:doc:!public! !
+!VueloInternacional categoriesFor: #modDocumentacion:!public! !
+!VueloInternacional categoriesFor: #modpaisDestino:!public! !
+!VueloInternacional categoriesFor: #modtasaInter:!public! !
+!VueloInternacional categoriesFor: #precioFinalInter!public! !
+!VueloInternacional categoriesFor: #verDocumentacion!public! !
+!VueloInternacional categoriesFor: #verpaisDestino!public! !
+!VueloInternacional categoriesFor: #vertasaInter!public! !
