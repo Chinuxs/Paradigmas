@@ -1,48 +1,43 @@
-# Mapa del enunciado asignado
+# Mapa de los ocho enunciados
 
 Fuente: [Trabajo Integrador - Enunciados 2026.pdf](../enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf), pp. 2–9. Este mapa ayuda a descomponer requisitos; el PDF conserva todos los atributos exigidos y es la referencia para implementarlos.
 
-**Alcance confirmado para el grupo 17:** enunciado **1 — Aerolínea**, según el mensaje del tutor Gonzalo Baez compartido por el usuario el 03/10/2026. Los otros siete sistemas quedan como referencia en el PDF. Ver [hoja de ruta](hoja-de-ruta-grupal.md).
+**Alcance confirmado para el grupo 17:** enunciado **1 — Aerolínea**, según el mensaje del tutor Gonzalo Baez compartido por el usuario el 03/10/2026. Los otros siete sistemas se conservan como referencia. Ver [hoja de ruta](hoja-de-ruta-grupal.md).
 
 ## 1. Aerolínea — p. 2
 
-### Modelo base
+- Modelo propuesto: 
+    * Aerolínea con vuelos; 
+    * Vuelo nacional e internacional.
+        **Cada vuelo  deberá  ser capaz  de  calcular  su  precio final según su tipo.**
 
-| Elemento | Responsabilidad |
-| --- | --- |
-| Aerolínea | Carga sus datos, administra la colección de vuelos y aplica el máximo diario. |
-| Vuelo | Define los datos comunes y responde el mensaje para calcular su precio final. |
-| Vuelo nacional | Calcula precio base más 10% cuando incluye equipaje. |
-| Vuelo internacional | Calcula precio base más la tasa internacional. |
+- Comportamiento por tipo: 
+    * Nacional = precio base más 10% si incluye equipaje; 
+    * Internacional = precio base más tasa internacional.
 
-### Operaciones básicas
+- Operaciones Basicas por clases: 
+    1. Aerolinea - Cargar aerolínea; 
+    2. Aerolinea - Agregar vuelos respetando máximo **diario**; 
+        **Validacion-Dura: El  sistema  debe  permitir  cargar  vuelos  siempre  que  no  se  supere  la  cantidad máxima  de  vuelos  diarios  definida  para  la  aerolínea.**
+    3. Vuelos - Buscar por número único, modificar y eliminar.
 
-| Clase | Operación | Nota |
-| --- | --- | --- |
-| Aerolínea | Cargar aerolínea | Inicializa datos propios y la colección de vuelos. |
-| Aerolínea | Agregar vuelo | **Validación dura:** no superar la cantidad máxima de vuelos diarios definida para la aerolínea. |
-| Aerolínea | Buscar por número único | Base para consultar, modificar y eliminar vuelos. |
+- Procesos/Consultas a Procesar: 
+    1. programados, 
+    2. duración menor a 2 horas, 
+    3. destino ingresado; 
+    4. precio final promedio de disponibles y vuelos superiores al promedio; 
+    5. vuelo de mayor duración; 
+    6. facturación potencial de programados usando precio final.
+    7. eliminar cancelados en conjunto; 
+    8. diccionario de cantidad por estado.
 
-### Consultas y reportes
-
-- Vuelos programados.
-- Vuelos con duración menor a 2 horas.
-- Vuelos con destino ingresado por el usuario.
-- Precio final promedio de disponibles y vuelos superiores a ese promedio.
-- Vuelo de mayor duración.
-- Facturación potencial de programados usando precio final.
-
-### Cierre y bordes
-
-- Eliminar cancelados en conjunto.
-- Armar un diccionario de cantidad por estado.
-- Duración de exactamente 2 horas no entra en el filtro de duración menor.
-- Dos días distintos deben manejar cupos independientes.
-- Probar vuelo nacional con y sin equipaje.
-
-### Consulta necesaria
-
-- Definir qué significa “disponibles” para el promedio y qué población entra en el listado de vuelos superiores al promedio.
+- Notas: 
+    -Bordes propuestos: 
+        - duración de exactamente 2 horas no entra; 
+        - dos días con cupos independientes; 
+        - nacional con/sin equipaje.
+        
+- Consulta necesaria: significado de “disponibles” para promedio y población del listado superior al promedio.
 
 ## Cómo convertir este mapa en trabajo repartible
 
