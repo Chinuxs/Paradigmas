@@ -10,7 +10,7 @@ Preparada el **02/10/2026**. Actualizada el **03/10/2026**. Estado: organizació
 
 | Exigencia encontrada | Evidencia que debe preparar el grupo |
 | --- | --- |
-| Grupo de **3 a 4 integrantes** | Nómina acordada |
+| Grupo de **3 integrantes** | Nómina acordada |
 | Diagrama de clases acompañando la entrega | Diagrama actualizado con el código final |
 | Uso de un menú | Acceso y recorrido de todas las funciones solicitadas |
 | Uso de iteradores de colección | Métodos que los apliquen y explicación durante la defensa |
