@@ -7,7 +7,16 @@ Object subclass: #AplicacionAerolinea
     classInstanceVariableNames: ''!
 
 AplicacionAerolinea guid: (GUID fromString: '{1C0A7CD0-8AF4-424B-9681-65F8D04CAA97}')!
-AplicacionAerolinea comment: 'Coordina el menu y conserva la misma aerolinea durante la ejecucion. Las operaciones del dominio pertenecen a Aerolinea y a los vuelos.'!
+AplicacionAerolinea comment: 'Coordina el menu y conserva la misma aerolinea durante la ejecucion.
+
+Para agregar una opcion:
+1. Agregar su etiqueta en mostrarMenu.
+2. Enlazar exactamente esa etiqueta en ejecutarOpcion: con self nombreDelMetodo.
+3. Crear nombreDelMetodo como metodo de instancia: pedir datos, delegar la operacion y mostrar el resultado.
+Si editan este .cls a mano, registrar tambien su categoria junto a los otros categoriesFor: de instancia.
+
+Las reglas del enunciado, como el cupo diario y el numero unico, pertenecen a Aerolinea y a los vuelos, no al menu. No todos esos metodos estan implementados todavia; acordar sus nombres al integrarlos.
+Usar la variable aerolinea existente: no crear otra ni repetir init al cambiar de opcion.'!
 
 !AplicacionAerolinea categoriesForClass!TrabajoIntegrador! !
 !AplicacionAerolinea methodsFor!
@@ -18,11 +27,14 @@ init
     ^self!
 
 iniciar
+    "Reabrir esta misma instancia conserva la aerolinea; no volver a enviar init."
     continuar := true.
     [continuar] whileTrue: [self ejecutarOpcion: self mostrarMenu].
     ^self!
 
 mostrarMenu
+    "Agregar las etiquetas nuevas a choices:, conservando la opcion de salida.
+    ChoicePrompter devuelve el texto elegido, no el numero de la opcion."
     ^ChoicePrompter
         choices: #(
             '1. Cargar aerolinea'
@@ -36,6 +48,10 @@ ejecutarOpcion: unaOpcion
     unaOpcion = '1. Cargar aerolinea' ifTrue: [^self cargarAerolinea].
     unaOpcion = '2. Ver datos de la aerolinea'
         ifTrue: [^self mostrarDatosAerolinea].
+    "Agregar cada enlace aqui, antes del aviso de opcion invalida.
+    Ejemplo, una vez implementado listarVuelosProgramados:
+    unaOpcion = '3. Listar vuelos programados'
+        ifTrue: [^self listarVuelosProgramados]."
     ^self informar: 'La opcion seleccionada no es valida.'!
 
 salir
@@ -70,6 +86,8 @@ cargarAerolinea
     ^self informar: 'Aerolinea cargada.'!
 
 mostrarDatosAerolinea
+    "Repetir esta comprobacion en las nuevas operaciones que necesiten una aerolinea.
+    Luego enviarle el mensaje de dominio correspondiente y mostrar su resultado con informar:."
     aerolinea isNil ifTrue: [
         ^self informar: 'Primero debe cargar una aerolinea.'].
     ^self informar: (String streamContents: [:salida |
@@ -84,6 +102,9 @@ mostrarDatosAerolinea
             nextPutAll: 'Vuelos cargados: '; nextPutAll: aerolinea tamanio printString])!
 
 pedirEntrada: unMensaje
+    "Para las nuevas opciones, reutilizar pedirTexto: o pedirEntero:minimo:.
+    Ambos devuelven nil al cancelar: comprobarlo y volver con ^self antes de modificar el modelo.
+    Cero y false son datos posibles, no indican cancelacion."
     ^Prompter prompt: unMensaje!
 
 pedirTexto: unMensaje
