@@ -127,6 +127,10 @@ Esta receta es una propuesta de implementación. Los detalles particulares de ca
 
 Copiar una fila por cada requisito del alcance confirmado; no agrupar varios resultados diferentes en una sola fila. “Revisado” exige que otra persona lo ejecute.
 
+**Avance local del 11/10/2026:** por solicitud del usuario se preparó un menú inicial en `AplicacionAerolinea.cls`, con arranque `iniciarAplicacionAerolinea.st`. Cubre cargar aerolínea, consultar sus datos y salir. Se verificaron importación y diez casos automatizados en una copia aislada de Dolphin Professional 7.0; falta recorrido manual de diálogos y revisión de otro integrante. Ver [guía de ejecución y alcance](menuDolphinHelper.md). Las funciones de vuelos siguen pendientes de integración; la clase de aplicación y formato de entrega aún requieren acuerdo y confirmación docente.
+
+El usuario decidió mantener provisionalmente la clase de aplicación y sus métodos, pero pidió reemplazar el inicializador automático por uno explícito y ajustarlo a la cursada. Se siguió el esquema de Libro (PDF, pp. 9-10): método de clase `crear` con `^(super new) init` e inicializador de instancia `init`; el arranque ahora es `AplicacionAerolinea crear iniciar.`. Se repitieron los diez casos en Dolphin con salida 0; se documentó retirar el `initialize` de la versión anterior al actualizar una imagen. La revisión de otras utilidades frente al material de la cátedra sigue pendiente; no implica un acuerdo grupal ni aprobación docente.
+
 | ID / página fuente | Requisito concreto | Responsable | Revisor | Método / opción del menú | Datos de prueba | Resultado esperado | Estado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Por completar | Por completar | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |

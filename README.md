@@ -72,6 +72,9 @@ Los dos PDFs de teoría numerados 4 se conservan con sus nombres originales; tie
 - [Enunciados originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf).
 - [Clase Aerolinea](trabajo-integrador/desarrollo/Aerolinea.cls): exportación de Dolphin Smalltalk 7, con implementación parcial.
 - [Métodos de Aerolinea](trabajo-integrador/desarrollo/aerolineaMetodos.txt): listado de métodos y funciones pendientes.
+- [AplicacionAerolinea](trabajo-integrador/desarrollo/AplicacionAerolinea.cls): menú inicial para cargar una aerolínea, consultar sus datos y salir.
+- [Arranque de la aplicación](trabajo-integrador/desarrollo/iniciarAplicacionAerolinea.st): expresión de una línea con creación, inicialización explícita y ejecución desde el Workspace.
+- [Guía del menú en Dolphin](trabajo-integrador/documentacion/menuDolphinHelper.md): orden de importación, manejo de referencias, pruebas y alcance pendiente.
 
 **Confirmado por el usuario:** grupo **17**, enunciado **1 — Aerolínea**, tutor **Gonzalo Baez**; rigen las fechas de las pautas, **21/10/2026 y 23/10/2026**. Integrantes: Gabriel Matias Piccin, César Augusto Romero y Jorge Murga. Quedan pendientes la distribución de esas fechas para el grupo, el horario, canal/formato de entrega, versión de Dolphin y fecha del coloquio.
 
