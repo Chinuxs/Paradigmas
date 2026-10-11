@@ -135,3 +135,10 @@ verTodos
 !Aerolinea categoriesFor: #verpaisdeOrigen!public! !
 !Aerolinea categoriesFor: #verTodos!public! !
 
+!Aerolinea class methodsFor!
+
+crear:unNom con: unAnio con: unPaisOr con: unCod con: unCant
+"Crea una instancia de la clase Aerolina"
+^self new init:unNom anio:unAnio pais:unPaisOr cod:unCod cant:unCant! !
+!Aerolinea class categoriesFor: #crear:con:con:con:con:!public! !
+
