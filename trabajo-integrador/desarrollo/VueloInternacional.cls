@@ -26,7 +26,7 @@ paisDestino:= otroPaisDest.!
 modtasaInter: otrotasaInter
 tasaInter:=otrotasaInter.!
 
-precioFinalInter
+precioFinal
        ^precioBase+tasaInter!
 
 verDocumentacion
@@ -41,7 +41,7 @@ vertasaInter
 !VueloInternacional categoriesFor: #modDocumentacion:!public! !
 !VueloInternacional categoriesFor: #modpaisDestino:!public! !
 !VueloInternacional categoriesFor: #modtasaInter:!public! !
-!VueloInternacional categoriesFor: #precioFinalInter!public! !
+!VueloInternacional categoriesFor: #precioFinal!public! !
 !VueloInternacional categoriesFor: #verDocumentacion!public! !
 !VueloInternacional categoriesFor: #verpaisDestino!public! !
 !VueloInternacional categoriesFor: #vertasaInter!public! !

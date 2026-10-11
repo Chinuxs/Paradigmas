@@ -41,6 +41,9 @@ origen:= otroOri.!
 modPrecioBase: otropreBa
 precioBase:=  otropreBa.!
 
+precioFinal
+    ^self subclassResponsibility!
+
 verDestino
 ^destino!
 
@@ -69,6 +72,7 @@ verPrecioBase
 !Vuelo categoriesFor: #modNumero:!public! !
 !Vuelo categoriesFor: #modOrigen:!public! !
 !Vuelo categoriesFor: #modPrecioBase:!public! !
+!Vuelo categoriesFor: #precioFinal!public! !
 !Vuelo categoriesFor: #verDestino!public! !
 !Vuelo categoriesFor: #verDuracion!public! !
 !Vuelo categoriesFor: #verEstado!public! !

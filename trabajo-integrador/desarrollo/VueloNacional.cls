@@ -22,7 +22,7 @@ llevaEquipaje:= otrollevaEquip.!
 modprovDestino: otroprovDes
 provDestino:= otroprovDes.!
 
-precioFinalNac
+precioFinal
       llevaEquipaje ifTrue: [^precioBase *1.10] 
                            ifFalse:[^precioBase ] 
          !
@@ -35,7 +35,7 @@ verprovDestino
 !VueloNacional categoriesFor: #init:dura:ori:des:fech:preb:est:provDes:llevaEquip:!public! !
 !VueloNacional categoriesFor: #modllevaEquipaje:!public! !
 !VueloNacional categoriesFor: #modprovDestino:!public! !
-!VueloNacional categoriesFor: #precioFinalNac!public! !
+!VueloNacional categoriesFor: #precioFinal!public! !
 !VueloNacional categoriesFor: #verllevaEquipaje!public! !
 !VueloNacional categoriesFor: #verprovDestino!public! !
 
