@@ -46,3 +46,12 @@ vertasaInter
 !VueloInternacional categoriesFor: #verpaisDestino!public! !
 !VueloInternacional categoriesFor: #vertasaInter!public! !
 
+!VueloInternacional class methodsFor!
+
+crear: unNum con: unDura con: unOri con: unDes con: unFech con: unPreBa con: unEst con: unPaisDes con: unaTasaInt con: unaDocu
+    ^self new
+        init: unNum dura: unDura ori: unOri des: unDes
+        fech: unFech preb: unPreBa est: unEst
+        pais: unPaisDes tasa: unaTasaInt doc: unaDocu! !
+!VueloInternacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:con:!public! !
+

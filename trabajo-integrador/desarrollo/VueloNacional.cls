@@ -39,3 +39,12 @@ verprovDestino
 !VueloNacional categoriesFor: #verllevaEquipaje!public! !
 !VueloNacional categoriesFor: #verprovDestino!public! !
 
+!VueloNacional class methodsFor!
+
+crear: unNum con: unDura con: unOri con: unDes con: unFech con: unPreBa con: unEst con: unProvDes con: unLlevaEquip
+    ^self new
+        init: unNum dura: unDura ori: unOri des: unDes
+        fech: unFech preb: unPreBa est: unEst
+        provDes: unProvDes llevaEquip: unLlevaEquip! !
+!VueloNacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:!public! !
+
