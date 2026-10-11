@@ -22,6 +22,6 @@ Este repositorio acompaña el estudio de Paradigmas de Programación de UTN: teo
 
 ## Archivos y validación
 
-- Seguir la estructura del README. Usar nombres nuevos en minúsculas, sin espacios ni tildes; conservar los nombres de los originales recibidos.
+- Seguir la estructura del README. Usar `camelCase` para nombres nuevos, sin espacios ni tildes; las clases Smalltalk y sus archivos `.cls` conservan inicial mayúscula (`AplicacionAerolinea.cls`). Mantener los nombres de los archivos existentes y originales recibidos.
 - Mantener código del integrador en `trabajo-integrador/desarrollo/`, decisiones y diagramas en `documentacion/` y versiones para entrega en `entregables/`.
 - Conservar referencias a fuentes y páginas al modificar helpers. No presentar código Smalltalk como probado en Dolphin si no se ejecutó allí.

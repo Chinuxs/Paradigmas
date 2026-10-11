@@ -31,9 +31,9 @@ trabajo-integrador/
 
 ## Cómo organizar los archivos
 
-- Usar nombres en minúsculas, sin espacios ni tildes: `unidad-01-introduccion.md`.
-- En práctica, usar el mismo nombre para la guía y su resolución: `enunciados/guia-01.pdf` y `resoluciones/guia-01/`.
-- Si hay varias entregas del integrador, crear `entregables/entrega-01/`, `entregables/entrega-02/`, etc.
+- Usar `camelCase` para nombres nuevos, sin espacios ni tildes: `unidad01Introduccion.md` o `iniciarAplicacionAerolinea.st`. Las clases Smalltalk y sus archivos `.cls` llevan inicial mayúscula: `AplicacionAerolinea.cls`. Conservar los nombres de los archivos existentes y originales recibidos.
+- En práctica, usar el mismo nombre para la guía y su resolución: `enunciados/guia01.pdf` y `resoluciones/guia01/`.
+- Si hay varias entregas del integrador, crear `entregables/entrega01/`, `entregables/entrega02/`, etc.
 - Mantener el trabajo en curso en `desarrollo/` y preparar en `entregables/` los archivos que pida cada entrega.
 - Agregar carpetas por unidad o paradigma a medida que se necesiten.
 
