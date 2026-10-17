@@ -1,14 +1,112 @@
+"Listado historico del diseño anterior de Aerolinea. No importar. La logica de negocio ahora se ejecuta desde AplicacionAerolinea.st."
+
 agregar: unVue
-vuelos add: unVue. 
+"Operacion basica sin validaciones. Para las altas usar cargar:."
+vuelos add: unVue.
+!
+
+cargar: unVue
+    "Carga validada en la coleccion de varias fechas.
+    La fecha de salida usa texto dd/mm/aaaa hh:mm."
+    | diaDeSalida cantidadDelDia |
+    (self buscarPorNumero: unVue verNumero) notNil ifTrue: [^false].
+    diaDeSalida := unVue verFecha copyFrom: 1 to: 10.
+    cantidadDelDia := (vuelos select: [:v |
+        (v verFecha copyFrom: 1 to: 10) = diaDeSalida]) size.
+    cantidadDelDia >= cantVuelosMaxDia ifTrue: [^false].
+    self agregar: unVue.
+    ^true!
+
+buscarPorNumero: unNum
+    "Devuelve el vuelo con ese numero, o nil si no existe."
+    ^vuelos detect: [:v | v verNumero = unNum] ifNone: [nil]!
+
+modificarFechaDeVuelo: unNumero a: otraFecha
+    "Valida el cupo del dia antes de cambiar la fecha dd/mm/aaaa hh:mm.
+    Excluye el propio vuelo y conserva su fecha si rechaza el cambio."
+    | vuelo diaDeSalida cantidadDelDia |
+    vuelo := self buscarPorNumero: unNumero.
+    vuelo isNil ifTrue: [^false].
+    diaDeSalida := otraFecha copyFrom: 1 to: 10.
+    cantidadDelDia := (vuelos select: [:v |
+        (v verNumero ~= unNumero) &
+            ((v verFecha copyFrom: 1 to: 10) = diaDeSalida)]) size.
+    cantidadDelDia >= cantVuelosMaxDia ifTrue: [^false].
+    vuelo modFecha: otraFecha.
+    ^true!
+
+listarProgramados
+    ^vuelos select: [:v | v verEstado = 'Programado']!
+
+listarDuracionMenorA2Horas
+    "La duracion se expresa en minutos."
+    ^vuelos select: [:v | v verDuracion < 120]!
+
+filtrarSegunDestino: unDestino
+    ^vuelos select: [:v | v verDestino = unDestino]!
+
+vuelosDisponibles
+    "Criterio provisional elegido por el usuario: Programado y Demorado.
+    Pendiente de confirmacion docente y acuerdo grupal."
+    ^vuelos select: [:v | #('Programado' 'Demorado') includes: v verEstado]!
+
+calcularPrecioPromedio
+    | disponibles total |
+    disponibles := self vuelosDisponibles.
+    disponibles isEmpty ifTrue: [^0].
+    total := 0.
+    disponibles do: [:v | total := total + v precioFinal].
+    ^total / disponibles size!
+
+mostrarVuelosConPrecioSuperiorAlPromedio
+    "Compara solo vuelosDisponibles; poblacion pendiente de confirmacion docente."
+    | promedio |
+    promedio := self calcularPrecioPromedio.
+    ^self vuelosDisponibles select: [:v | v precioFinal > promedio]!
+
+conocerVueloMayorDuracion
+    | mayor |
+    vuelos isEmpty ifTrue: [^nil].
+    mayor := vuelos first.
+    vuelos do: [:v | v verDuracion > mayor verDuracion ifTrue: [mayor := v]].
+    ^mayor!
+
+calcularFacturacionTotal
+    "Facturacion potencial: suma de precios finales de los programados."
+    | total |
+    total := 0.
+    self listarProgramados do: [:v | total := total + v precioFinal].
+    ^total!
+
+eliminarTodosLosCancelados
+    "Recorre la seleccion de cancelados, conservando la coleccion vuelos."
+    | cancelados |
+    cancelados := vuelos select: [:v | v verEstado = 'Cancelado'].
+    cancelados do: [:v | self eliminar: v].
+    ^self!
+
+guardarEnDiccionarioVuelosPorEstado
+    "Devuelve un Dictionary: estado -> cantidad de vuelos existentes."
+    | dic estados |
+    estados := vuelos collect: [:v | v verEstado].
+    dic := Dictionary new.
+    estados asSet do: [:unEstado |
+        dic at: unEstado put: (estados occurrencesOf: unEstado)].
+    ^dic!
 
 eliminar: unVue
-vuelos remove:  unVue ifAbsent:[^nil]. !  
+vuelos remove:  unVue ifAbsent:[^nil].
+
+!
 
 esVacio
-^vuelos isEmpty. !
+^vuelos isEmpty.
+
+!
 
 existe: unVue
-^vuelos includes: unVue. ! 
+^vuelos includes: unVue.
+!
 
 init: unNomAero anio: unAnio pais: unPaisOr cod: unCod cant: unCantVM
 nomAero := unNomAero.
@@ -16,64 +114,84 @@ anioFundacion := unAnio.
 paisdeOrigen := unPaisOr.
 codigoId := unCod.
 cantVuelosMaxDia := unCantVM.
-vuelos := OrderedCollection new.! 
-^self 
+vuelos := OrderedCollection new.
+^self
 
-modnomAero:otroNomAero
-
-nomAero:=otroNomAero.!
+!
 
 modanioFundacion:otroAnio
 
-anioFundacion:=otroAnio.!
+anioFundacion:=otroAnio.
 
-modpaisdeOrigen:otroPaisOr
-
-paisdeOrigen:=otroPaisOr.!
-
-modcodigoId:otroCod
-
-codigoId:=otroCod.!
+!
 
 modcantVuelosMaxDia:otroCantVM
 
-cantVuelosMaxDia:=otroCantVM.!
+cantVuelosMaxDia:=otroCantVM.
+!
 
+modcodigoId:otroCod
+
+codigoId:=otroCod.
+!
+
+modnomAero:otroNomAero
+
+nomAero:=otroNomAero.
+!
+
+modpaisdeOrigen:otroPaisOr
+
+paisdeOrigen:=otroPaisOr.
+
+!
 
 recuperar: i
-^vuelos at: i.!
+^vuelos at: i.
+
+!
 
 tamanio
-^vuelos size.!
+^vuelos size.
 
-vernomAero
-^nomAero!
+!
 
 veranioFundacion
-^anioFundacion!
+^anioFundacion
 
-verpaisdeOrigen
-^paisdeOrigen!
-
-vercodigoId
-^codigoId!
+!
 
 vercantVuelosMaxDia
-^cantVuelosMaxDia!
+^cantVuelosMaxDia
+
+!
+
+vercodigoId
+^codigoId
+
+!
+
+vernomAero
+^nomAero
+
+
+!
+
+verpaisdeOrigen
+^paisdeOrigen
+
+!
 
 verTodos
-^vuelos.! !
-   
+^vuelos.
+"La carga validada usa cargar:; agregar: es la operacion basica.
+Para editar fecha usar modificarFechaDeVuelo:a: y conservar fijo el numero.
+El menu ya usa esas operaciones. Pendiente de confirmacion docente:
+criterio provisional de disponibles y poblacion superior al promedio.
+Ver documentacion/consultasAerolineaHelper.md."! !
 
-"faltan los metodos que deberia cumplir la aerolinea, como :
--cargarsinosuperacantidadMax
--buscarvueloporNumparamodificaroeliminar
--listarprogramados
--listarduracionmenora2(dos)horas
--filtrarsegundestino
--calcularpreciopromdevuelosdisponibles
--mostrarvuelosconpreciosuperioralpromedio
--conocervuelomayorduracion
--calcularfacturaciontotal
--eliminartodosloscancelados
--guardarendiccionariovuelosporestado
+"Metodos de clase de Aerolinea."
+
+crear:unNom con: unAnio con: unPaisOr con: unCod con: unCant
+"Crea una instancia de la clase Aerolina"
+^self new init:unNom anio:unAnio pais:unPaisOr cod:unCod cant:unCant! !

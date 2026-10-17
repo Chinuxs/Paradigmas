@@ -23,8 +23,9 @@ modprovDestino: otroprovDes
 provDestino:= otroprovDes.!
 
 precioFinal
-      llevaEquipaje ifTrue: [^precioBase *1.10] 
-                           ifFalse:[^precioBase ] 
+    "Estamos calculando bien aca el precio base? no es Base + 10% del precio base si lleva equipaje?"
+    llevaEquipaje ifTrue: [^precioBase *1.10] 
+                    ifFalse:[^precioBase ] 
          !
 
 verllevaEquipaje

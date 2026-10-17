@@ -42,13 +42,13 @@ modPrecioBase: otropreBa
 precioBase:=  otropreBa.!
 
 precioFinal
-    ^self subclassResponsibility!
+  ^self subclassResponsibility!
 
 verDestino
-^destino!
+  ^destino!
 
 verDuracion
-^duracion!
+  ^duracion!
 
 verEstado
 ^estado!
@@ -64,6 +64,7 @@ verOrigen
 
 verPrecioBase
 ^precioBase! !
+
 !Vuelo categoriesFor: #init:dura:ori:des:fech:preb:est:!public! !
 !Vuelo categoriesFor: #modDestino:!public! !
 !Vuelo categoriesFor: #modDuracion:!public! !

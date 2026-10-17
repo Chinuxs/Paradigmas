@@ -1,0 +1,1071 @@
+[
+  {
+    "paso": 1,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "2. Ver datos de la aerolinea"
+  },
+  {
+    "paso": 2,
+    "evento": "resultado",
+    "texto": "\nPrimero debe cargar una aerolinea."
+  },
+  {
+    "paso": 3,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "1. Cargar aerolinea"
+  },
+  {
+    "paso": 4,
+    "evento": "entrada",
+    "pregunta": "Nombre de la aerolinea",
+    "valor": "UTN Dialogos"
+  },
+  {
+    "paso": 5,
+    "evento": "entrada",
+    "pregunta": "Anio de fundacion",
+    "valor": "2000"
+  },
+  {
+    "paso": 6,
+    "evento": "entrada",
+    "pregunta": "Pais de origen",
+    "valor": "Argentina"
+  },
+  {
+    "paso": 7,
+    "evento": "entrada",
+    "pregunta": "Codigo identificador",
+    "valor": "UTN"
+  },
+  {
+    "paso": 8,
+    "evento": "entrada",
+    "pregunta": "Cantidad maxima",
+    "valor": "2"
+  },
+  {
+    "paso": 9,
+    "evento": "resultado",
+    "texto": "\nAerolinea cargada."
+  },
+  {
+    "paso": 10,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "3. Cargar vuelo"
+  },
+  {
+    "paso": 11,
+    "evento": "seleccion",
+    "dialogo": "Tipo de vuelo",
+    "valor": "Nacional"
+  },
+  {
+    "paso": 12,
+    "evento": "entrada",
+    "pregunta": "Numero unico",
+    "valor": "1"
+  },
+  {
+    "paso": 13,
+    "evento": "entrada",
+    "pregunta": "Ciudad de origen",
+    "valor": "La Plata"
+  },
+  {
+    "paso": 14,
+    "evento": "entrada",
+    "pregunta": "Ciudad de destino",
+    "valor": "Cordoba"
+  },
+  {
+    "paso": 15,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "31/02/2026 10:00"
+  },
+  {
+    "paso": 16,
+    "evento": "resultado",
+    "texto": "\nIngrese una fecha y hora reales con formato dd/mm/aaaa hh:mm."
+  },
+  {
+    "paso": 17,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "21/10/2026 10:00"
+  },
+  {
+    "paso": 18,
+    "evento": "entrada",
+    "pregunta": "Duracion",
+    "valor": "90"
+  },
+  {
+    "paso": 19,
+    "evento": "entrada",
+    "pregunta": "Precio base",
+    "valor": "120.50"
+  },
+  {
+    "paso": 20,
+    "evento": "seleccion",
+    "dialogo": "Estado del vuelo",
+    "valor": "Programado"
+  },
+  {
+    "paso": 21,
+    "evento": "entrada",
+    "pregunta": "Provincia de destino",
+    "valor": "Cordoba"
+  },
+  {
+    "paso": 22,
+    "evento": "seleccion",
+    "dialogo": "Incluye equipaje despachado?",
+    "valor": "No"
+  },
+  {
+    "paso": 23,
+    "evento": "resultado",
+    "texto": "\nVuelo cargado."
+  },
+  {
+    "paso": 24,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "3. Cargar vuelo"
+  },
+  {
+    "paso": 25,
+    "evento": "seleccion",
+    "dialogo": "Tipo de vuelo",
+    "valor": "Internacional"
+  },
+  {
+    "paso": 26,
+    "evento": "entrada",
+    "pregunta": "Numero unico",
+    "valor": "2"
+  },
+  {
+    "paso": 27,
+    "evento": "entrada",
+    "pregunta": "Ciudad de origen",
+    "valor": "La Plata"
+  },
+  {
+    "paso": 28,
+    "evento": "entrada",
+    "pregunta": "Ciudad de destino",
+    "valor": "Montevideo"
+  },
+  {
+    "paso": 29,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "22/10/2026 10:00"
+  },
+  {
+    "paso": 30,
+    "evento": "entrada",
+    "pregunta": "Duracion",
+    "valor": "120"
+  },
+  {
+    "paso": 31,
+    "evento": "entrada",
+    "pregunta": "Precio base",
+    "valor": "100.25"
+  },
+  {
+    "paso": 32,
+    "evento": "seleccion",
+    "dialogo": "Estado del vuelo",
+    "valor": "Demorado"
+  },
+  {
+    "paso": 33,
+    "evento": "entrada",
+    "pregunta": "Pais de destino",
+    "valor": "Uruguay"
+  },
+  {
+    "paso": 34,
+    "evento": "entrada",
+    "pregunta": "Tasa internacional",
+    "valor": "10.50"
+  },
+  {
+    "paso": 35,
+    "evento": "seleccion",
+    "dialogo": "Requiere documentacion adicional?",
+    "valor": "Si"
+  },
+  {
+    "paso": 36,
+    "evento": "resultado",
+    "texto": "\nVuelo cargado."
+  },
+  {
+    "paso": 37,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "3. Cargar vuelo"
+  },
+  {
+    "paso": 38,
+    "evento": "seleccion",
+    "dialogo": "Tipo de vuelo",
+    "valor": "Nacional"
+  },
+  {
+    "paso": 39,
+    "evento": "entrada",
+    "pregunta": "Numero unico",
+    "valor": "3"
+  },
+  {
+    "paso": 40,
+    "evento": "entrada",
+    "pregunta": "Ciudad de origen",
+    "valor": "La Plata"
+  },
+  {
+    "paso": 41,
+    "evento": "entrada",
+    "pregunta": "Ciudad de destino",
+    "valor": "Cordoba"
+  },
+  {
+    "paso": 42,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "22/10/2026 12:00"
+  },
+  {
+    "paso": 43,
+    "evento": "entrada",
+    "pregunta": "Duracion",
+    "valor": "30"
+  },
+  {
+    "paso": 44,
+    "evento": "entrada",
+    "pregunta": "Precio base",
+    "valor": "200"
+  },
+  {
+    "paso": 45,
+    "evento": "seleccion",
+    "dialogo": "Estado del vuelo",
+    "valor": "Cancelado"
+  },
+  {
+    "paso": 46,
+    "evento": "entrada",
+    "pregunta": "Provincia de destino",
+    "valor": "Cordoba"
+  },
+  {
+    "paso": 47,
+    "evento": "seleccion",
+    "dialogo": "Incluye equipaje despachado?",
+    "valor": "Si"
+  },
+  {
+    "paso": 48,
+    "evento": "resultado",
+    "texto": "\nVuelo cargado."
+  },
+  {
+    "paso": 49,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "3. Cargar vuelo"
+  },
+  {
+    "paso": 50,
+    "evento": "seleccion",
+    "dialogo": "Tipo de vuelo",
+    "valor": "Nacional"
+  },
+  {
+    "paso": 51,
+    "evento": "entrada",
+    "pregunta": "Numero unico",
+    "valor": "1"
+  },
+  {
+    "paso": 52,
+    "evento": "resultado",
+    "texto": "\nYa existe un vuelo con ese numero."
+  },
+  {
+    "paso": 53,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "3. Cargar vuelo"
+  },
+  {
+    "paso": 54,
+    "evento": "seleccion",
+    "dialogo": "Tipo de vuelo",
+    "valor": "Nacional"
+  },
+  {
+    "paso": 55,
+    "evento": "entrada",
+    "pregunta": "Numero unico",
+    "valor": "4"
+  },
+  {
+    "paso": 56,
+    "evento": "entrada",
+    "pregunta": "Ciudad de origen",
+    "valor": "La Plata"
+  },
+  {
+    "paso": 57,
+    "evento": "entrada",
+    "pregunta": "Ciudad de destino",
+    "valor": "Cordoba"
+  },
+  {
+    "paso": 58,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "22/10/2026 14:00"
+  },
+  {
+    "paso": 59,
+    "evento": "entrada",
+    "pregunta": "Duracion",
+    "valor": "90"
+  },
+  {
+    "paso": 60,
+    "evento": "entrada",
+    "pregunta": "Precio base",
+    "valor": "100"
+  },
+  {
+    "paso": 61,
+    "evento": "seleccion",
+    "dialogo": "Estado del vuelo",
+    "valor": "Finalizado"
+  },
+  {
+    "paso": 62,
+    "evento": "entrada",
+    "pregunta": "Provincia de destino",
+    "valor": "Cordoba"
+  },
+  {
+    "paso": 63,
+    "evento": "seleccion",
+    "dialogo": "Incluye equipaje despachado?",
+    "valor": "No"
+  },
+  {
+    "paso": 64,
+    "evento": "resultado",
+    "texto": "\nNo se pudo cargar: numero repetido o cupo diario completo."
+  },
+  {
+    "paso": 65,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "3. Cargar vuelo"
+  },
+  {
+    "paso": 66,
+    "evento": "seleccion",
+    "dialogo": "Tipo de vuelo",
+    "valor": "Nacional"
+  },
+  {
+    "paso": 67,
+    "evento": "entrada",
+    "pregunta": "Numero unico",
+    "valor": "4"
+  },
+  {
+    "paso": 68,
+    "evento": "cancelacion",
+    "dialogo": "Ciudad de origen"
+  },
+  {
+    "paso": 69,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 70,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 71,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Fecha y hora"
+  },
+  {
+    "paso": 72,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "22/10/2026 15:00"
+  },
+  {
+    "paso": 73,
+    "evento": "resultado",
+    "texto": "\nNo se pudo modificar: el dia solicitado no tiene cupo."
+  },
+  {
+    "paso": 74,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "4. Buscar vuelo"
+  },
+  {
+    "paso": 75,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a buscar",
+    "valor": "1"
+  },
+  {
+    "paso": 76,
+    "evento": "resultado",
+    "texto": "\nVuelo 1 - Nacional\r\nOrigen: La Plata\r\nDestino: Cordoba\r\nSalida: 21/10/2026 10:00\r\nDuracion: 90 minutos\r\nEstado: Programado\r\nPrecio base: 120.5\r\nPrecio final: 120.5\r\nProvincia: Cordoba\r\nEquipaje: No"
+  },
+  {
+    "paso": 77,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 78,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 79,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Fecha y hora"
+  },
+  {
+    "paso": 80,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "21/10/2026 23:59"
+  },
+  {
+    "paso": 81,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 82,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 83,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 84,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Fecha y hora"
+  },
+  {
+    "paso": 85,
+    "evento": "entrada",
+    "pregunta": "Fecha y hora de salida",
+    "valor": "23/10/2026 23:59"
+  },
+  {
+    "paso": 86,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 87,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 88,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 89,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Precio base"
+  },
+  {
+    "paso": 90,
+    "evento": "entrada",
+    "pregunta": "Nuevo precio base",
+    "valor": "120.555"
+  },
+  {
+    "paso": 91,
+    "evento": "resultado",
+    "texto": "\nIngrese un importe no negativo, con hasta dos decimales y punto decimal."
+  },
+  {
+    "paso": 92,
+    "evento": "entrada",
+    "pregunta": "Nuevo precio base",
+    "valor": "99.99"
+  },
+  {
+    "paso": 93,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 94,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 95,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 96,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Origen"
+  },
+  {
+    "paso": 97,
+    "evento": "entrada",
+    "pregunta": "Nueva ciudad de origen",
+    "valor": "Rosario"
+  },
+  {
+    "paso": 98,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 99,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 100,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 101,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Destino"
+  },
+  {
+    "paso": 102,
+    "evento": "entrada",
+    "pregunta": "Nueva ciudad de destino",
+    "valor": "Mendoza"
+  },
+  {
+    "paso": 103,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 104,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 105,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 106,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Duracion"
+  },
+  {
+    "paso": 107,
+    "evento": "entrada",
+    "pregunta": "Nueva duracion",
+    "valor": "121"
+  },
+  {
+    "paso": 108,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 109,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 110,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 111,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Provincia de destino"
+  },
+  {
+    "paso": 112,
+    "evento": "entrada",
+    "pregunta": "Nueva provincia",
+    "valor": "Santa Fe"
+  },
+  {
+    "paso": 113,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 114,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 115,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "1"
+  },
+  {
+    "paso": 116,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Equipaje"
+  },
+  {
+    "paso": 117,
+    "evento": "seleccion",
+    "dialogo": "Incluye equipaje despachado?",
+    "valor": "No"
+  },
+  {
+    "paso": 118,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 119,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 120,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "2"
+  },
+  {
+    "paso": 121,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Pais de destino"
+  },
+  {
+    "paso": 122,
+    "evento": "entrada",
+    "pregunta": "Nuevo pais",
+    "valor": "Chile"
+  },
+  {
+    "paso": 123,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 124,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 125,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "2"
+  },
+  {
+    "paso": 126,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Tasa internacional"
+  },
+  {
+    "paso": 127,
+    "evento": "entrada",
+    "pregunta": "Nueva tasa",
+    "valor": "12.34"
+  },
+  {
+    "paso": 128,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 129,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 130,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "2"
+  },
+  {
+    "paso": 131,
+    "evento": "seleccion",
+    "dialogo": "Dato a modificar",
+    "valor": "Documentacion"
+  },
+  {
+    "paso": 132,
+    "evento": "seleccion",
+    "dialogo": "Requiere documentacion adicional?",
+    "valor": "No"
+  },
+  {
+    "paso": 133,
+    "evento": "resultado",
+    "texto": "\nVuelo modificado."
+  },
+  {
+    "paso": 134,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "5. Modificar vuelo"
+  },
+  {
+    "paso": 135,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a modificar",
+    "valor": "2"
+  },
+  {
+    "paso": 136,
+    "evento": "cancelacion",
+    "dialogo": "Dato a modificar"
+  },
+  {
+    "paso": 137,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 138,
+    "evento": "cancelacion",
+    "dialogo": "Consultas"
+  },
+  {
+    "paso": 139,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 140,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Destino"
+  },
+  {
+    "paso": 141,
+    "evento": "cancelacion",
+    "dialogo": "Ciudad de destino a buscar"
+  },
+  {
+    "paso": 142,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 143,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Todos los vuelos"
+  },
+  {
+    "paso": 144,
+    "evento": "resultado",
+    "texto": "\nTodos los vuelos\r\n\r\nVuelo 1 - Nacional - Programado\r\nRosario -> Mendoza | 23/10/2026 23:59\r\nDuracion: 121 min | Precio final: 99.99\r\n\r\nVuelo 2 - Internacional - Demorado\r\nLa Plata -> Montevideo | 22/10/2026 10:00\r\nDuracion: 120 min | Precio final: 112.59\r\n\r\nVuelo 3 - Nacional - Cancelado\r\nLa Plata -> Cordoba | 22/10/2026 12:00\r\nDuracion: 30 min | Precio final: 220.0"
+  },
+  {
+    "paso": 145,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 146,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Programados"
+  },
+  {
+    "paso": 147,
+    "evento": "resultado",
+    "texto": "\nVuelos programados\r\n\r\nVuelo 1 - Nacional - Programado\r\nRosario -> Mendoza | 23/10/2026 23:59\r\nDuracion: 121 min | Precio final: 99.99"
+  },
+  {
+    "paso": 148,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 149,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Duracion menor a dos horas"
+  },
+  {
+    "paso": 150,
+    "evento": "resultado",
+    "texto": "\nDuracion menor a dos horas\r\n\r\nVuelo 3 - Nacional - Cancelado\r\nLa Plata -> Cordoba | 22/10/2026 12:00\r\nDuracion: 30 min | Precio final: 220.0"
+  },
+  {
+    "paso": 151,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 152,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Destino"
+  },
+  {
+    "paso": 153,
+    "evento": "entrada",
+    "pregunta": "Ciudad de destino a buscar",
+    "valor": "Cordoba"
+  },
+  {
+    "paso": 154,
+    "evento": "resultado",
+    "texto": "\nVuelos a Cordoba\r\n\r\nVuelo 3 - Nacional - Cancelado\r\nLa Plata -> Cordoba | 22/10/2026 12:00\r\nDuracion: 30 min | Precio final: 220.0"
+  },
+  {
+    "paso": 155,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 156,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Precio final promedio"
+  },
+  {
+    "paso": 157,
+    "evento": "resultado",
+    "texto": "\nPrecio final promedio (Programado y Demorado): 106.29"
+  },
+  {
+    "paso": 158,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 159,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Precios superiores al promedio"
+  },
+  {
+    "paso": 160,
+    "evento": "resultado",
+    "texto": "\nDisponibles con precio superior al promedio\r\n\r\nVuelo 2 - Internacional - Demorado\r\nLa Plata -> Montevideo | 22/10/2026 10:00\r\nDuracion: 120 min | Precio final: 112.59"
+  },
+  {
+    "paso": 161,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 162,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Mayor duracion"
+  },
+  {
+    "paso": 163,
+    "evento": "resultado",
+    "texto": "\nVuelo de mayor duracion\r\nVuelo 1 - Nacional\r\nOrigen: Rosario\r\nDestino: Mendoza\r\nSalida: 23/10/2026 23:59\r\nDuracion: 121 minutos\r\nEstado: Programado\r\nPrecio base: 99.99\r\nPrecio final: 99.99\r\nProvincia: Santa Fe\r\nEquipaje: No"
+  },
+  {
+    "paso": 164,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 165,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Facturacion potencial"
+  },
+  {
+    "paso": 166,
+    "evento": "resultado",
+    "texto": "\nFacturacion potencial de Programados: 99.99"
+  },
+  {
+    "paso": 167,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "7. Consultas"
+  },
+  {
+    "paso": 168,
+    "evento": "seleccion",
+    "dialogo": "Consultas",
+    "valor": "Cantidad por estado"
+  },
+  {
+    "paso": 169,
+    "evento": "resultado",
+    "texto": "\nCantidad de vuelos por estado\r\nProgramado: 1\r\nCancelado: 1\r\nDemorado: 1"
+  },
+  {
+    "paso": 170,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "4. Buscar vuelo"
+  },
+  {
+    "paso": 171,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a buscar",
+    "valor": "1"
+  },
+  {
+    "paso": 172,
+    "evento": "resultado",
+    "texto": "\nVuelo 1 - Nacional\r\nOrigen: Rosario\r\nDestino: Mendoza\r\nSalida: 23/10/2026 23:59\r\nDuracion: 121 minutos\r\nEstado: Programado\r\nPrecio base: 99.99\r\nPrecio final: 99.99\r\nProvincia: Santa Fe\r\nEquipaje: No"
+  },
+  {
+    "paso": 173,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "4. Buscar vuelo"
+  },
+  {
+    "paso": 174,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a buscar",
+    "valor": "99"
+  },
+  {
+    "paso": 175,
+    "evento": "resultado",
+    "texto": "\nNo existe un vuelo con ese numero."
+  },
+  {
+    "paso": 176,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "6. Eliminar vuelo"
+  },
+  {
+    "paso": 177,
+    "evento": "entrada",
+    "pregunta": "Numero del vuelo a eliminar",
+    "valor": "2"
+  },
+  {
+    "paso": 178,
+    "evento": "resultado",
+    "texto": "\nVuelo eliminado."
+  },
+  {
+    "paso": 179,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "8. Eliminar todos los cancelados"
+  },
+  {
+    "paso": 180,
+    "evento": "resultado",
+    "texto": "\nVuelos cancelados eliminados: 1"
+  },
+  {
+    "paso": 181,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "0. Salir"
+  },
+  {
+    "paso": 182,
+    "evento": "seleccion",
+    "dialogo": "Gestion de aerolinea",
+    "valor": "2. Ver datos de la aerolinea"
+  },
+  {
+    "paso": 183,
+    "evento": "resultado",
+    "texto": "\nNombre: UTN Dialogos\r\nAnio de fundacion: 2000\r\nPais de origen: Argentina\r\nCodigo: UTN\r\nMaximo de vuelos diarios: 2\r\nVuelos cargados: 1"
+  },
+  {
+    "paso": 184,
+    "evento": "cancelacion",
+    "dialogo": "Gestion de aerolinea"
+  },
+  {
+    "paso": 185,
+    "evento": "final",
+    "salida": 0,
+    "resultado": "OK: recorrido real, bajas, decimales, fecha, false y referencias conservados al reabrir.\nVuelos: 1\nPrecio: 99.99\nFecha: 23/10/2026 23:59\n"
+  }
+]

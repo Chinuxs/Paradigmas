@@ -27,7 +27,8 @@ modtasaInter: otrotasaInter
 tasaInter:=otrotasaInter.!
 
 precioFinal
-       ^precioBase+tasaInter!
+    "Estamos sobre escribiendo el metodo precioFinal de la clase padre, para que nos devuelva el precio base + la tasa internacional"
+    ^precioBase+tasaInter!
 
 verDocumentacion
 ^documentacion!

@@ -31,7 +31,7 @@ trabajo-integrador/
 
 ## Cómo organizar los archivos
 
-- Usar `camelCase` para nombres nuevos, sin espacios ni tildes: `unidad01Introduccion.md` o `iniciarAplicacionAerolinea.st`. Las clases Smalltalk y sus archivos `.cls` llevan inicial mayúscula: `AplicacionAerolinea.cls`. Conservar los nombres de los archivos existentes y originales recibidos.
+- Usar `camelCase` para nombres nuevos, sin espacios ni tildes: `unidad01Introduccion.md` o `aplicacionAerolinea.st`. Las clases Smalltalk y sus archivos `.cls` llevan inicial mayúscula. Conservar los nombres de los archivos existentes y originales recibidos.
 - En práctica, usar el mismo nombre para la guía y su resolución: `enunciados/guia01.pdf` y `resoluciones/guia01/`.
 - Si hay varias entregas del integrador, crear `entregables/entrega01/`, `entregables/entrega02/`, etc.
 - Mantener el trabajo en curso en `desarrollo/` y preparar en `entregables/` los archivos que pida cada entrega.
@@ -70,11 +70,17 @@ Los dos PDFs de teoría numerados 4 se conservan con sus nombres originales; tie
 - [Mapa de los ocho enunciados](trabajo-integrador/documentacion/mapa-de-enunciados.md): operaciones, reglas, casos límite y dudas por sistema.
 - [Pautas originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Pautas%202026.pdf).
 - [Enunciados originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf).
-- [Clase Aerolinea](trabajo-integrador/desarrollo/Aerolinea.cls): exportación de Dolphin Smalltalk 7, con implementación parcial.
-- [Métodos de Aerolinea](trabajo-integrador/desarrollo/aerolineaMetodos.txt): listado de métodos y funciones pendientes.
-- [AplicacionAerolinea](trabajo-integrador/desarrollo/AplicacionAerolinea.cls): menú inicial para cargar una aerolínea, consultar sus datos y salir.
-- [Arranque de la aplicación](trabajo-integrador/desarrollo/iniciarAplicacionAerolinea.st): expresión de una línea con creación, inicialización explícita y ejecución desde el Workspace.
-- [Guía del menú en Dolphin](trabajo-integrador/documentacion/menuDolphinHelper.md): orden de importación, manejo de referencias, pruebas y alcance pendiente.
+- [Clase Aerolinea](trabajo-integrador/desarrollo/Aerolinea.cls): objeto de datos en Dolphin Smalltalk 7; expone sus atributos y la colección de vuelos.
+- [Listado histórico de métodos de Aerolinea](trabajo-integrador/desarrollo/aerolineaMetodos.txt): referencia del diseño anterior; no importar.
+- [Workspace AplicacionAerolinea](trabajo-integrador/desarrollo/AplicacionAerolinea.st): interfaz y lógica de negocio ejecutadas directamente en Dolphin, sin una clase de aplicación.
+- `AplicacionAerolinea.cls` queda como archivo legado y no se importa ni se usa para ejecutar el sistema.
+- [Guía del menú en Dolphin](trabajo-integrador/documentacion/menuDolphinHelper.md): importación, opciones, validaciones, fuentes de cátedra y 46 casos/escenarios verificados.
+- [Validación con diálogos reales](trabajo-integrador/documentacion/validacionMenuDolphin.md): recorrido completo, resultados y capturas de edición, detalle y contadores.
+- [Diagrama de clases](trabajo-integrador/documentacion/diagramaClases.md): atributos, operaciones principales, asociaciones y herencia de la versión integrada.
+- `desarrollo/pruebas/AplicacionAerolinea*Prueba.cls` conserva pruebas de la arquitectura anterior con clase de aplicación; no valida el nuevo Workspace.
+- [Carga, consultas y bajas de Aerolinea](trabajo-integrador/documentacion/consultasAerolineaHelper.md): carga para varias fechas, recursos de la cátedra, pruebas y criterio provisional de disponibles (Programado y Demorado).
+- [Revisión del aporte de AplicacionAerolinea](trabajo-integrador/documentacion/revisionAplicacionAerolinea.md): compatibilidad del archivo recibido, pruebas aisladas y ajustes pendientes antes de incorporarlo.
+- [Revisión conjunta con Aerolinea_corregida](trabajo-integrador/documentacion/revisionAerolinea.md): compatibilidad de ambos aportes, alcance de la colección y control del cupo diario, rutas sin validaciones y recursos pendientes de adaptar.
 
 **Confirmado por el usuario:** grupo **17**, enunciado **1 — Aerolínea**, tutor **Gonzalo Baez**; rigen las fechas de las pautas, **21/10/2026 y 23/10/2026**. Integrantes: Gabriel Matias Piccin, César Augusto Romero y Jorge Murga. Quedan pendientes la distribución de esas fechas para el grupo, el horario, canal/formato de entrega, versión de Dolphin y fecha del coloquio.
 

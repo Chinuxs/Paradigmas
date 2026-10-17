@@ -1,72 +1,107 @@
-# Menu inicial en Dolphin
+# Menu de aerolinea en Dolphin
 
-Fuentes: [pautas 2026, p. 2](../enunciado/Trabajo%20Integrador%20-%20Pautas%202026.pdf), [enunciado de aerolinea, p. 2](../enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf), [clase Libro, pp. 4 y 9-10](../../teoria/material/3-%20POO-ClaseLibro.pdf) para la creacion e inicializacion explicita, y referencia local `E:\UTN\Paradigmas\TPIntegrador_Ejemplo\actualizado6.st`, lineas 82-98. La referencia local esta fuera del repo.
-
-Esta primera version implementa cargar aerolinea, consultar sus datos y salir. Todavia no es el integrador completo: faltan integrar las operaciones de vuelos y las consultas del enunciado. La organizacion en una clase de aplicacion fue solicitada por el usuario; su aceptacion docente y acuerdo grupal siguen pendientes.
-
-## Archivos y responsabilidades
-
-| Archivo | Responsabilidad |
-| --- | --- |
-| [Aerolinea.cls](../desarrollo/Aerolinea.cls) | Datos de la aerolinea y coleccion de vuelos |
-| [AplicacionAerolinea.cls](../desarrollo/AplicacionAerolinea.cls) | Dialogos, ciclo del menu y referencia a la aerolinea |
-| [iniciarAplicacionAerolinea.st](../desarrollo/iniciarAplicacionAerolinea.st) | Una instruccion de arranque |
-
-Los nombres nuevos usan `camelCase`; las clases y sus archivos `.cls` llevan inicial mayuscula, como `AplicacionAerolinea.cls`. Este cambio no modifica las clases del dominio ni `PruebaWS.st`.
+Actualizado el **17/10/2026**. La aplicacion integra carga, busqueda, edicion, bajas y todas las consultas del [enunciado 1, p. 2](../enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf). El menu y las reglas de negocio se ejecutan en el Workspace; `Aerolinea` solo conserva los datos. `ChoicePrompter` requiere confirmacion docente.
 
 ## Importar y arrancar
 
-1. Abrir la imagen de Dolphin Smalltalk 7 que utiliza el equipo.
-2. Importar `Aerolinea.cls` con la herramienta de carga de clases de Dolphin.
-3. Importar `AplicacionAerolinea.cls` con la misma herramienta. Si `Aerolinea` ya esta cargada con cambios propios, comprobar su version antes de volver a importarla.
-4. Abrir `iniciarAplicacionAerolinea.st` en un Workspace.
-5. Seleccionar su unica expresion y ejecutar **Evaluate it / Ctrl + E**:
+Conservar primero cualquier cambio propio sin exportar. Importar con **File In** en este orden:
 
-```smalltalk
-AplicacionAerolinea crear iniciar.
-```
+1. [Vuelo.cls](../desarrollo/Vuelo.cls).
+2. [VueloNacional.cls](../desarrollo/VueloNacional.cls) y [VueloInternacional.cls](../desarrollo/VueloInternacional.cls).
+3. [Aerolinea.cls](../desarrollo/Aerolinea.cls).
 
-Los `.cls` contienen definiciones para importar; el `.st` de arranque contiene una expresion para evaluar. Guardar el Workspace conserva su texto.
+No importar `AplicacionAerolinea.cls`: es un archivo legado y la clase ya no participa de la aplicacion. El menu identifica los subtipos mediante `isKindOf:`, siguiendo Mensajes y control, p. 21, y el ejemplo local de Biblioteca. Por eleccion del usuario se retiro `verTipo` de las tres clases y sus listados. Si ese metodo ya estaba cargado en la imagen, eliminarlo desde el Browser en el lado de instancia de `Vuelo`, `VueloNacional` y `VueloInternacional`: reimportar no elimina metodos que desaparecieron del archivo. Los archivos `*Metodos.txt` son listados de consulta: importar los `.cls`.
 
-Si ya se importo la version anterior de `AplicacionAerolinea`, eliminar su metodo de instancia `initialize` en el Browser antes de importar esta version. El archivo actualizado define `init`; no conserva un inicializador automatico propio. No eliminar la clase `Aerolinea` ni sus objetos.
+Abrir [AplicacionAerolinea.st](../desarrollo/AplicacionAerolinea.st) en un Workspace, seleccionar todo su contenido y evaluarlo con **Evaluate it / Ctrl + E**. El archivo no declara clases: crea los bloques de trabajo, muestra el menu y lo ejecuta. No hace falta importar ni evaluar un script de arranque separado. Si se reevalua el Workspace, comienza una sesion nueva de la aplicacion; los datos no se persisten en disco.
 
-## Recorrido y referencias
+En una imagen antigua, conviene hacer el File In de las clases de dominio en una imagen limpia o una copia de respaldo. La aplicacion activa no envía mensajes a `AplicacionAerolinea`.
 
-El menu ofrece **Cargar aerolinea**, **Ver datos de la aerolinea** y **Salir**. Cancelar o cerrar el selector de opciones tambien termina el menu.
+## Opciones
 
-La carga solicita nombre, anio de fundacion, pais de origen, codigo y maximo diario. Recorta espacios externos, rechaza texto vacio y solicita nuevamente entradas numericas invalidas. El anio debe ser un entero mayor o igual a 1 y el maximo un entero mayor o igual a 0; estas son validaciones de esta primera version, no limites adicionales confirmados por la catedra. Un maximo cero expresa que no admite vuelos.
+| Opcion principal | Comportamiento |
+| --- | --- |
+| 1. Cargar aerolinea | Pide los cinco datos; publica el objeto al completar la entrada y conserva uno ya cargado |
+| 2. Ver datos de la aerolinea | Muestra datos y cantidad total de vuelos |
+| 3. Cargar vuelo | Elige Nacional o Internacional, solicita datos comunes y particulares y valida número único y cupo diario desde el Workspace |
+| 4. Buscar vuelo | Busca por numero y muestra todos sus datos, incluidos subtipo y precio final |
+| 5. Modificar vuelo | Busca por numero y ofrece los campos comunes y los correspondientes a su subtipo |
+| 6. Eliminar vuelo | Busca por numero y retira ese objeto |
+| 7. Consultas | Abre las nueve consultas de la tabla siguiente |
+| 8. Eliminar todos los cancelados | Ejecuta la baja conjunta e informa cuantos retiro |
+| 0. Salir | Termina el ciclo; cancelar el selector principal tambien sale |
 
-Cancelar cualquier dato vuelve al menu sin crear una aerolinea parcial. La aerolinea se publica solo cuando la carga termina. Una vez cargada, elegir otra vez la carga informa que ya existe y conserva el objeto y sus vuelos.
+| Consulta | Operacion ejecutada desde el Workspace |
+| --- | --- |
+| Todos los vuelos | `verTodos` |
+| Programados | Filtro de la colección por estado |
+| Duracion menor a dos horas | Filtro por duración menor a 120 minutos |
+| Destino | Pide ciudad y filtra la colección |
+| Precio final promedio | Promedio de vuelos Programados y Demorados |
+| Precios superiores al promedio | Filtra los disponibles y compara `precioFinal` |
+| Mayor duracion | Recorre los vuelos y conserva el de mayor duración |
+| Facturacion potencial | Suma `precioFinal` de los Programados |
+| Cantidad por estado | Cuenta vuelos en un diccionario y presenta sus contadores |
 
-El metodo de clase `crear` usa `^(super new) init`, siguiendo el esquema de `crearLibroIsbn:...` de la p. 9: crea una instancia y le envia explicitamente el inicializador de instancia. `init` prepara su estado y devuelve `self`; `iniciar` ejecuta el ciclo sin reinicializar la aerolinea. No se redefine `new` ni se utiliza un `initialize` propio. `cargarAerolinea` crea el objeto y `mostrarDatosAerolinea` consulta sus mensajes existentes. Las reglas de vuelos deben implementarse en las clases del dominio al integrar las proximas opciones.
+Los resultados se muestran con `MessageBox notify:`. Los listados vacios y la ausencia de vuelo de mayor duracion se informan; promedio y facturacion vacios valen cero. El diccionario muestra solo estados presentes.
 
-Para inspeccionar o reabrir la misma aplicacion durante una sesion, usar una variable de Workspace sin declararla entre barras:
+## Entradas y edicion
 
-```smalltalk
-aplicacion := AplicacionAerolinea crear.
-aplicacion iniciar.
-```
+- Texto: se recortan espacios externos y se vuelve a pedir si queda vacio. Se usan recorrido, comparaciones y `copyFrom:to:` en lugar de `trimBlanks`.
+- Enteros: numero de vuelo y duracion desde 1; anio de fundacion desde 1; maximo diario desde 0. Se recorren los caracteres con `do:` e `includes:`, en lugar de `allSatisfy:` o `isDigit`.
+- Importes: precio base y tasa internacional desde cero, con punto y hasta dos cifras decimales. Se aceptan `120`, `120.5`, `120.50` y `0`; se rechazan negativos, comas, letras, mas de dos decimales y puntos sin cifras a ambos lados. La conversion es `asNumber`. El limite de dos decimales se aplica a la entrada; `precioFinal` conserva la formula del subtipo.
+- Fecha: texto `dd/mm/aaaa hh:mm`, con dia real del mes, anio 0001-9999, hora 00-23 y minuto 00-59. Se comprueban bisiestos: divisible por 400, o por 4 salvo los divisibles por 100. Se implementa con restas y repeticion, sin agregar utilidades numericas ajenas al material. Se aceptan fechas pasadas y futuras; el proyecto no impone una restriccion temporal adicional.
+- Estado: Programado, Demorado, Cancelado o Finalizado. Los booleanos se eligen con Si/No; `false` es un dato valido y `nil` representa cancelacion.
 
-Despues de salir, evaluar solamente `aplicacion iniciar` conserva su aerolinea. No repetir `aplicacion init`: ese mensaje restablece el estado y descarta la referencia a la aerolinea cargada. Volver a evaluar la asignacion con `crear`, o el archivo de arranque completo, crea otra aplicacion. No se implemento persistencia entre sesiones.
+La edicion conserva el **numero unico** y el objeto vuelo. Ofrece origen, destino, fecha/hora, duracion, precio base y estado; en nacionales, provincia y equipaje; en internacionales, pais, tasa y documentacion. `precioFinal` se calcula a partir de esos datos y el tipo de objeto se conserva.
+
+Cancelar cualquier campo o selector vuelve sin publicar una carga parcial ni cambiar el atributo elegido. Un numero inexistente informa el caso. El menu no ofrece modificar el numero.
+
+## Cupo y coleccion
+
+La coleccion conserva **varias fechas y todos los estados**, segun las decisiones del usuario. Cancelar un vuelo mediante su estado mantiene el objeto hasta una baja explicita. Los filtros de cada consulta se aplican sobre esa coleccion.
+
+Las altas validan desde el Workspace el numero unico entre todas las fechas y el cupo de la fecha de salida completa, ignorando la hora. El bloque de edicion de fecha cuenta los otros vuelos del dia solicitado antes de mutar. Un rechazo conserva la fecha original; cambiar solo la hora mantiene la plaza. Se cuentan todos los estados. El total almacenado puede superar el maximo diario.
+
+Los vuelos conservan sus operaciones previas y `Aerolinea` queda como contenedor de datos. El flujo del menu mantiene fijo el numero y ejecuta las reglas de alta y cambio de fecha en sus bloques. El dominio presupone fechas con el formato del proyecto; la validacion de calendario se realiza en la entrada del menu.
+
+## Recursos de la catedra
+
+| Recurso utilizado | Fuente original |
+| --- | --- |
+| Constructor de clase e inicializacion explicita | [Clase Libro, pp. 9-10](../../teoria/material/3-%20POO-ClaseLibro.pdf) |
+| Iteradores `do:`, `select:`, `detect:ifNone:`; `size`, `includes:`, `isEmpty` | [Colecciones, pp. 12-14](../../teoria/material/5-POO-Colecciones.pdf) |
+| `at:`, `copyFrom:to:`, caracteres y arreglos literales | Colecciones, p. 7; [Practica 2, diap. 18](../../practica/enunciados/Clase%202%20-%20Practica.pptx) |
+| Comparaciones, `between:and:`, `ifTrue:`, `ifFalse:`, `whileTrue:`, `to:do:` | [Mensajes y control, pp. 6-7 y 13-15](../../teoria/material/2-POO-Mensajes-EstControl.pdf) |
+| `Prompter prompt:`, `MessageBox notify:`, concatenacion y `displayString` | Mensajes y control, p. 22 |
+| `asNumber` para enteros y reales; entrada y modificacion de precios | Mensajes y control, p. 22; [Practica 5, diap. 5 y 8](../../practica/enunciados/Clase%205%20%20-%20Practica.pptx) |
+| `keysDo:`, `at:` y `displayString` para presentar contadores | Practica 5, diap. 12 |
+| `isKindOf:` para identificar el subtipo y ofrecer sus datos particulares | [Mensajes y control, p. 21](../../teoria/material/2-POO-Mensajes-EstControl.pdf), tabla de mensajes de Object; ejemplo local de Biblioteca, lineas 193, 210 y 377 |
+
+La tabla original de la p. 21 escribe `isKindOff:` con una errata. El selector utilizado en el ejemplo de Biblioteca y verificado en Dolphin es **`isKindOf:`**, con una sola `f` final. Por ejemplo, `unVuelo isKindOf: VueloNacional` reconoce instancias de esa clase y de sus subclases. Esta comprobacion se aplica a campos y presentacion; `precioFinal` conserva su calculo polimorfico.
+
+La presentacion usa concatenacion de cadenas y `displayString`, sustituyendo `String streamContents:` y `printString`. `ChoicePrompter choices:caption:` conserva la referencia local compartida por el usuario, `E:\UTN\Paradigmas\TPIntegrador_Ejemplo\actualizado6.st`, lineas 82-98. Su aceptacion docente sigue pendiente; el usuario autorizo mantenerlo provisionalmente. La confirmacion del significado de disponibles tambien sigue pendiente: la implementacion conserva **Programado + Demorado** para promedio y superiores.
 
 ## Verificacion
 
-El 11/10/2026 se importaron `Aerolinea.cls`, `AplicacionAerolinea.cls` y la clase de pruebas en una copia aislada de la imagen local de **Dolphin Professional 7.0**. Las pruebas terminaron con codigo de salida 0 y diez casos completados. La imagen y la sesion abierta del usuario no se modificaron. Esta verificacion local no confirma la version que debe usar todo el grupo.
+El **17/10/2026** se ejecuto el Workspace actual en una copia temporal de **Dolphin Smalltalk Professional 7.0.5**. Tras corregir los delimitadores detectados por el compilador, se completo el recorrido real de carga, edicion, consultas y bajas con datos y en vacio. Tambien se confirmo dentro de la imagen que no existian `AplicacionAerolinea` ni `MenuAerolinea`. Ver [el registro actualizado](validacionMenuDolphin.md).
 
-Se repitieron los diez casos con el metodo de clase `crear` y la inicializacion explicita `init`, nuevamente con salida 0. Tambien se comprobo que importar esta version sobre la anterior conserva el metodo viejo `initialize`; en la copia aislada se elimino antes de las pruebas, como indica el paso de actualizacion.
+Como antecedente de la arquitectura anterior con clase de aplicacion, ese mismo dia habian pasado **46 escenarios/casos automatizados** en una copia aislada de **Dolphin Professional 7.0**, salida 0. Esas clases de prueba no ejecutan el Workspace actual:
 
-Las pruebas ejecutan el ciclo del menu con entradas programadas; no abren ni comprueban visualmente los dialogos. El recorrido manual sigue pendiente.
+| Clase de prueba | Resultado |
+| --- | --- |
+| `AerolineaPrueba ejecutar` | 14 escenarios de dominio |
+| `AplicacionAerolineaPrueba ejecutar` | 10 casos anteriores del menu |
+| `PrecioFinalPrueba ejecutar` | 9 casos de precios |
+| `AplicacionAerolineaIntegracionPrueba ejecutar` | 13 escenarios nuevos de integracion |
 
-Esta adaptacion cambia solamente la inicializacion. La revision de `trimBlanks`, `allSatisfy:`, `String streamContents:` y `printString` frente a los recursos de la catedra sigue pendiente; no se afirma que toda la clase use exclusivamente mensajes de las fuentes originales.
+Los nuevos escenarios recorren carga de ambos subtipos, duplicados, cupo diario y cero, cancelacion en cada campo, edicion de todos los atributos ofrecidos, booleanos false, numero fijo, fecha con y sin cupo, reapertura, busquedas, bajas y las nueve consultas, con datos y en vacio. Las validaciones incluyen importes decimales, fechas imposibles y siglos bisiestos. Las selecciones programadas se comprueban contra las opciones realmente ofrecidas.
 
-Para ejecutar los casos programados, importar [AplicacionAerolineaPrueba.cls](../desarrollo/pruebas/AplicacionAerolineaPrueba.cls) despues de las dos clases anteriores y evaluar:
+La prueba inicial de actualizacion sobre las clases anteriores de Git conservo aplicacion, aerolinea, coleccion y vuelo. Tras elegir `isKindOf:`, se repitio la actualizacion desde la version que tenia `verTipo`, se retiraron esos tres metodos en la imagen aislada y se comprobaron busqueda y edicion sobre los objetos existentes. Pasaron nuevamente los 46 casos/escenarios, salida 0.
 
-```smalltalk
-AplicacionAerolineaPrueba ejecutar.
-```
+Para repetirlos, importar primero `pruebas/AerolineaPrueba.cls`, `pruebas/AplicacionAerolineaPrueba.cls`, `pruebas/PrecioFinalPrueba.cls` y finalmente [AplicacionAerolineaIntegracionPrueba.cls](../desarrollo/pruebas/AplicacionAerolineaIntegracionPrueba.cls). Evaluar los cuatro mensajes de la tabla. Las clases de prueba sustituyen entradas y avisos; no son necesarias para ejecutar la aplicacion.
 
-La clase de pruebas ejercita `crear` e `init`, verifica que `init` devuelve la misma instancia, reemplaza los dialogos por entradas programadas y comprueba cancelacion en los cinco campos, validacion, consulta antes de cargar, opcion invalida, maximo cero y conservacion de las referencias al reabrir el menu. Devuelve `10` si termina sin errores. No es necesaria para usar el menu.
+La comprobacion historica posterior completo el recorrido controlado de la clase de aplicacion sobre dialogos reales: **184 acciones/comprobaciones y una verificacion final**. Sus capturas se conservan como antecedente, pero no sustituyen el recorrido nuevo del Workspace. La revision por otro integrante sigue pendiente; no se modificaron ni guardaron las imagenes de trabajo.
 
-Recorrido manual pendiente: consultar antes de cargar, cancelar a mitad de una carga, completar una carga, consultar sus datos, intentar cargar otra aerolinea y salir tanto por la opcion como por Cancelar.
+Para la revision del equipo, repetir el recorrido registrado: cargar ambos tipos con importes decimales; reintentar una fecha imposible; cancelar una carga y una edicion; mover a un dia completo y cambiar solo la hora; consultar resultados y contadores; eliminar un vuelo y luego cancelados; salir y reabrir la misma instancia.
 
-Referencia de API: [ChoicePrompter de Dolphin 7.2](https://github.com/dolphinsmalltalk/Dolphin/blob/release/7.2/Core/Object%20Arts/Dolphin/MVP/Presenters/Prompters/ChoicePrompter.cls). `choices:caption:` devuelve la opcion elegida o `nil` al cancelar.
+El [diagrama de clases](diagramaClases.md) refleja los atributos, relaciones y operaciones principales de esta version.

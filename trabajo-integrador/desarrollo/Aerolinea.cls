@@ -6,128 +6,62 @@ Object subclass: #Aerolinea
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 Aerolinea guid: (GUID fromString: '{D316AFB3-E84F-499C-BC1F-D766E0E1A38C}')!
-Aerolinea comment: ''!
+Aerolinea comment: 'Objeto de datos de la aerolinea. La logica de vuelos y la interfaz estan en el Workspace AplicacionAerolinea.st.'!
 !Aerolinea categoriesForClass!Kernel-Objects! !
 !Aerolinea methodsFor!
 
-agregar: unVue
-vuelos add: unVue. 
-!
-
-eliminar: unVue
-vuelos remove:  unVue ifAbsent:[^nil].  
-
-!
-
-esVacio
-^vuelos isEmpty. 
-
-!
-
-existe: unVue
-^vuelos includes: unVue.
-!
-
 init: unNomAero anio: unAnio pais: unPaisOr cod: unCod cant: unCantVM
-nomAero := unNomAero.
-anioFundacion := unAnio.
-paisdeOrigen := unPaisOr.
-codigoId := unCod.
-cantVuelosMaxDia := unCantVM.
-vuelos := OrderedCollection new.
-^self 
+    nomAero := unNomAero.
+    anioFundacion := unAnio.
+    paisdeOrigen := unPaisOr.
+    codigoId := unCod.
+    cantVuelosMaxDia := unCantVM.
+    vuelos := OrderedCollection new.
+    ^self!
 
-!
+modanioFundacion: otroAnio
+    anioFundacion := otroAnio!
 
-modanioFundacion:otroAnio
+modcantVuelosMaxDia: otroCantVM
+    cantVuelosMaxDia := otroCantVM!
 
-anioFundacion:=otroAnio.
+modcodigoId: otroCod
+    codigoId := otroCod!
 
-!
+modnomAero: otroNomAero
+    nomAero := otroNomAero!
 
-modcantVuelosMaxDia:otroCantVM
+modpaisdeOrigen: otroPaisOr
+    paisdeOrigen := otroPaisOr!
 
-cantVuelosMaxDia:=otroCantVM.
-!
-
-modcodigoId:otroCod
-
-codigoId:=otroCod.
-!
-
-modnomAero:otroNomAero
-
-nomAero:=otroNomAero.
-!
-
-modpaisdeOrigen:otroPaisOr
-
-paisdeOrigen:=otroPaisOr.
-
-!
-
-recuperar: i
-^vuelos at: i.
-
-!
-
-tamanio
-^vuelos size.
-
-!
+modVuelos: unosVuelos
+    vuelos := unosVuelos!
 
 veranioFundacion
-^anioFundacion
-
-!
+    ^anioFundacion!
 
 vercantVuelosMaxDia
-^cantVuelosMaxDia
-
-!
+    ^cantVuelosMaxDia!
 
 vercodigoId
-^codigoId
-
-!
+    ^codigoId!
 
 vernomAero
-^nomAero
-
-
-!
+    ^nomAero!
 
 verpaisdeOrigen
-^paisdeOrigen
-
-!
+    ^paisdeOrigen!
 
 verTodos
-^vuelos. 
-"faltan los metodos que deberia cumplir la aerolinea, como :
--cargarsinosuperacantidadMax
--buscarvueloporNumparamodificaroeliminar
--listarprogramados
--listarduracionmenora2(dos)horas
--filtrarsegundestino
--calcularpreciopromdevuelosdisponibles
--mostrarvuelosconpreciosuperioralpromedio
--conocervuelomayorduracion
--calcularfacturaciontotal
--eliminartodosloscancelados
--guardarendiccionariovuelosporestado"! !
-!Aerolinea categoriesFor: #agregar:!public! !
-!Aerolinea categoriesFor: #eliminar:!public! !
-!Aerolinea categoriesFor: #esVacio!public! !
-!Aerolinea categoriesFor: #existe:!public! !
+    ^vuelos! !
+
 !Aerolinea categoriesFor: #init:anio:pais:cod:cant:!public! !
 !Aerolinea categoriesFor: #modanioFundacion:!public! !
 !Aerolinea categoriesFor: #modcantVuelosMaxDia:!public! !
 !Aerolinea categoriesFor: #modcodigoId:!public! !
 !Aerolinea categoriesFor: #modnomAero:!public! !
 !Aerolinea categoriesFor: #modpaisdeOrigen:!public! !
-!Aerolinea categoriesFor: #recuperar:!public! !
-!Aerolinea categoriesFor: #tamanio!public! !
+!Aerolinea categoriesFor: #modVuelos:!public! !
 !Aerolinea categoriesFor: #veranioFundacion!public! !
 !Aerolinea categoriesFor: #vercantVuelosMaxDia!public! !
 !Aerolinea categoriesFor: #vercodigoId!public! !
@@ -137,8 +71,7 @@ verTodos
 
 !Aerolinea class methodsFor!
 
-crear:unNom con: unAnio con: unPaisOr con: unCod con: unCant
-"Crea una instancia de la clase Aerolina"
-^self new init:unNom anio:unAnio pais:unPaisOr cod:unCod cant:unCant! !
+crear: unNom con: unAnio con: unPaisOr con: unCod con: unCant
+    ^self new
+        init: unNom anio: unAnio pais: unPaisOr cod: unCod cant: unCant! !
 !Aerolinea class categoriesFor: #crear:con:con:con:con:!public! !
-
