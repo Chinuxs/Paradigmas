@@ -28,7 +28,7 @@ tasaInter:=otrotasaInter.!
 
 precioFinal
     "Estamos sobre escribiendo el metodo precioFinal de la clase padre, para que nos devuelva el precio base + la tasa internacional"
-    ^precioBase+tasaInter!
+    ^precioBase * (1 + (tasaInter / 100)) !
 
 verDocumentacion
 ^documentacion!
