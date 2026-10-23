@@ -3,8 +3,9 @@ No declara clases: el menu y la logica viven en bloques del Workspace.
 Antes, importar Vuelo, VueloNacional, VueloInternacional y Aerolinea."
 
 | aerolinea continuar opciones pedirOpcion informar salto recortar pedirTexto esEntero pedirEntero esPrecio pedirPrecio pedirEstado pedirBooleano esBisiesto esFecha pedirFecha buscarVuelo cargarVuelo modificarFecha textoBooleano textoVuelo mostrarVuelos calcularPromedio vuelosSuperiores mayorDuracion facturacion diccionarioEstado
-vuelo1 vuelo2 vuelo3 vuelo4 vuelo5 vuelo6 vuelo7 vuelo8 vuelo9 vuelo10  vuelo11 vuelo12 vuelo13 vuelo14 vuelo15 |
+ precargarVuelos vuelo1 vuelo2 vuelo3 vuelo4 vuelo5 vuelo6 vuelo7 vuelo8 vuelo9 vuelo10  vuelo11 vuelo12 vuelo13 vuelo14 vuelo15 |
 
+precargarVuelos := [
 "Bueno los vuelos van a ser del orineri al 4 de dic "
 vuelo1 := VueloNacional crear: 101 con: 2 con: 'Buenos Aires' con: 'Cordoba' con: '01/12/2026 08:30' con: 520000 con: 'Programado' con: 'Cordoba' con: true.
 vuelo2 := VueloNacional crear: 102 con: 3 con: 'Buenos Aires' con: 'Mendoza' con: '01/12/2026 14:00' con: 680000 con: 'Programado' con: 'Mendoza' con: false.
@@ -22,6 +23,7 @@ vuelo13 := VueloInternacional crear: 205 con: 13 con: 'Buenos Aires' con: 'Londr
 vuelo14 := VueloNacional crear: 109 con: 2 con: 'Salta' con: 'Buenos Aires' con: '04/12/2026 17:10' con: 570000 con: 'Finalizado' con: 'Buenos Aires' con: false.
 vuelo15 := VueloInternacional crear: 206 con: 8 con: 'Buenos Aires' con: 'Montevideo' con: '04/12/2026 20:30' con: 2600000 con: 'Programado' con: 'Uruguay' con: 10 con: false.
 
+
 "Agregar vuelos a la aerolinea"
 aerolinea agregar: vuelo1.
 aerolinea agregar: vuelo2.
@@ -38,7 +40,7 @@ aerolinea agregar: vuelo12.
 aerolinea agregar: vuelo13.
 aerolinea agregar: vuelo14.
 aerolinea agregar: vuelo15.
-
+].
 aerolinea := nil.
 continuar := true.
 opciones := #(
@@ -338,6 +340,7 @@ diccionarioEstado := [
                 (nombre notNil and: [anio notNil and: [pais notNil and: [codigo notNil and: [maximo notNil]]]])
                     ifTrue: [
                         aerolinea := Aerolinea crear: nombre con: anio con: pais con: codigo con: maximo.
+                        precargarVuelos value.
                         informar value: 'Aerolinea cargada.']]].
 
     opcion = '2. Ver datos de la aerolinea' ifTrue: [
