@@ -17,8 +17,8 @@ Los metodos son de instancia de [Aerolinea](../desarrollo/Aerolinea.cls). Se con
 | `listarDuracionMenorA2Horas` | Coleccion con duracion estrictamente menor a 120 |
 | `filtrarSegunDestino:` | Coleccion con coincidencia exacta de ciudad de destino |
 | `vuelosDisponibles` | Programados y Demorados, segun el criterio provisional elegido por el usuario el 16/10/2026 |
-| `calcularPrecioPromedio` | Promedio de `precioFinal` de `vuelosDisponibles` mediante division directa; puede devolver una fraccion y devuelve 0 si no hay elementos |
-| `mostrarVuelosConPrecioSuperiorAlPromedio` | Vuelos de esa misma poblacion con precio final estrictamente superior al promedio |
+| `calcularPrecioPromedio` | Promedio de `precioFinal` de todos los vuelos mediante division directa; puede devolver una fraccion y devuelve 0 si no hay elementos |
+| `mostrarVuelosConPrecioSuperiorAlPromedio` | Todos los vuelos con precio final estrictamente superior al promedio |
 | `conocerVueloMayorDuracion` | El vuelo de mayor duracion; `nil` en vacio y primero encontrado en caso de empate |
 | `calcularFacturacionTotal` | Suma de precios finales de vuelos programados |
 | `eliminarTodosLosCancelados` | Retira todos los cancelados y devuelve `self`, conservando la coleccion original |
@@ -83,7 +83,7 @@ La revision corresponde a los once metodos de consultas, a `cargar:` y a `modifi
 
 ## Criterio provisional y consultas pendientes
 
-El PDF enumera los estados **Programado, Demorado, Cancelado y Finalizado**; no define que significa "vuelos disponibles" para el promedio. El **16/10/2026 el usuario eligio provisionalmente Programado y Demorado**. `vuelosDisponibles` ahora selecciona esos dos estados; quedan excluidos Cancelado y Finalizado. Esta eleccion reemplaza el filtro recibido por el estado no especificado `'Disponible'` y sigue pendiente de confirmacion docente y acuerdo grupal.
+El PDF enumera los estados **Programado, Demorado, Cancelado y Finalizado**. La catedra confirmo el **22/10/2026** que Programado y Demorado son los vuelos disponibles, pero tambien indico que el promedio y el listado superior deben analizar **todos los vuelos**, incluyendo todos los estados y subclases. Por eso `vuelosDisponibles` conserva el filtro de disponibilidad, mientras que los dos calculos recorren la coleccion completa.
 
 El promedio y el listado superior al promedio usan ese mismo conjunto. Sin Programados ni Demorados, el promedio devuelve 0 y el listado queda vacio. La facturacion mantiene su requisito independiente: solo Programados. La interpretacion docente de disponibles y la poblacion del listado superior siguen pendientes de confirmacion; al recibir la respuesta, revisar ambos metodos y sus pruebas. La verificacion local acredita el criterio provisional implementado.
 
@@ -104,7 +104,7 @@ Devuelve **14** si pasan los diez escenarios anteriores y los cuatro de edicion 
 
 El **16/10/2026** se verificaron importacion y ocho escenarios en una copia aislada de **Dolphin Professional 7.0**, con salida 0. Tambien pasaron los diez casos existentes de `AplicacionAerolineaPrueba` y los nueve de `PrecioFinalPrueba`. Una prueba adicional cargo la clase anterior, creo una aerolinea con un vuelo y reimporto la version nueva: conservo datos, referencia a la coleccion y vuelo, y el objeto existente respondio a los metodos nuevos. No se modifico la imagen del usuario.
 
-La version con el criterio elegido por el usuario y los recursos de catedra revisados repitio esa verificacion, nuevamente con salida 0. El escenario de promedio usa precios finales 110, 130 y 150: espera promedio 130 y solo el vuelo de 150 como superior. Un cancelado de 1000 y un finalizado de 10500 quedan excluidos de ambos calculos. Tambien se prueban cambios de estado, ausencia de disponibles y precios enteros 100 y 101 cuyo promedio es `201 / 2`.
+La proxima ronda debe actualizar el escenario de promedio para incluir Cancelados y Finalizados, y comprobar que el listado superior tambien los considera. La tasa internacional se trata como importe fijo y se suma al precio base, segun el enunciado y la implementacion actual.
 
 El **17/10/2026** se verificaron los diez escenarios con `cargar:` en otra copia aislada de Dolphin Professional 7.0, salida 0, junto con diez casos del menu actual y nueve de precios. Las pruebas nuevas cubren maximo exacto y rechazo del exceso en dos dias, distintas horas del mismo dia, mismo numero de dia en otro mes o anio, conservacion de referencias, reutilizacion de cupo tras una baja, numero repetido entre fechas distintas, mismo objeto repetido y maximo cero. Una instancia creada antes de reimportar conservo sus datos y respondio al nuevo `cargar:`.
 

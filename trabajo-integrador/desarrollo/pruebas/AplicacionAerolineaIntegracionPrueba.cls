@@ -311,10 +311,10 @@ probarConsultas
             self comprobar: (self contiene: 'Vuelo 1 -' en: mensaje) mensaje: 'Debe filtrar destino.'.
             self comprobar: (self contiene: 'Vuelo 3 -' en: mensaje) not mensaje: 'Debe excluir destinos distintos.'].
         consulta = 'Precio final promedio' ifTrue: [
-            self comprobar: (self contiene: '130' en: mensaje) mensaje: 'El promedio debe usar 110 y 150.'].
+            self comprobar: (self contiene: '815' en: mensaje) mensaje: 'El promedio debe usar todos los estados.'].
         consulta = 'Precios superiores al promedio' ifTrue: [
-            self comprobar: (self contiene: 'Vuelo 2 -' en: mensaje) mensaje: 'Debe mostrar el disponible superior al promedio.'.
-            self comprobar: (self contiene: 'Vuelo 3 -' en: mensaje) not mensaje: 'Debe excluir cancelados caros del listado superior.'].
+            self comprobar: (self contiene: 'Vuelo 4 -' en: mensaje) mensaje: 'Debe mostrar el vuelo superior aunque este finalizado.'.
+            self comprobar: (self contiene: 'Vuelo 3 -' en: mensaje) not mensaje: 'El vuelo cancelado no supera el promedio.'].
         consulta = 'Mayor duracion' ifTrue: [
             self comprobar: (self contiene: 'Vuelo 3 - Nacional' en: mensaje) mensaje: 'Debe mostrar el mayor incluso cancelado.'].
         consulta = 'Facturacion potencial' ifTrue: [

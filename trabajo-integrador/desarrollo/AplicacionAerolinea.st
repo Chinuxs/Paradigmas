@@ -3,43 +3,33 @@ No declara clases: el menu y la logica viven en bloques del Workspace.
 Antes, importar Vuelo, VueloNacional, VueloInternacional y Aerolinea."
 
 | aerolinea continuar opciones pedirOpcion informar salto recortar pedirTexto esEntero pedirEntero esPrecio pedirPrecio pedirEstado pedirBooleano esBisiesto esFecha pedirFecha buscarVuelo cargarVuelo modificarFecha textoBooleano textoVuelo mostrarVuelos calcularPromedio vuelosSuperiores mayorDuracion facturacion diccionarioEstado
- precargarVuelos vuelo1 vuelo2 vuelo3 vuelo4 vuelo5 vuelo6 vuelo7 vuelo8 vuelo9 vuelo10  vuelo11 vuelo12 vuelo13 vuelo14 vuelo15 |
+ precargarVuelos vuelo1 vuelo2 vuelo3 vuelo4 vuelo5 vuelo6 vuelo7 vuelo8 vuelo9 vuelo10 |
 
 precargarVuelos := [
-"Bueno los vuelos van a ser del orineri al 4 de dic "
+"Precarga de diez vuelos, uno por dia, para la muestra."
 vuelo1 := VueloNacional crear: 101 con: 2 con: 'Buenos Aires' con: 'Cordoba' con: '01/12/2026 08:30' con: 520000 con: 'Programado' con: 'Cordoba' con: true.
-vuelo2 := VueloNacional crear: 102 con: 3 con: 'Buenos Aires' con: 'Mendoza' con: '01/12/2026 14:00' con: 680000 con: 'Programado' con: 'Mendoza' con: false.
-vuelo3 := VueloInternacional crear: 201 con: 10 con: 'Buenos Aires' con: 'Madrid' con: '01/12/2026 21:45' con: 3200000 con: 'Programado' con: 'España' con: 15 con: true.
-vuelo4 := VueloNacional crear: 103 con: 2 con: 'Buenos Aires' con: 'Bariloche' con: '02/12/2026 07:15' con: 750000 con: 'Programado' con: 'Rio Negro' con: true.
-vuelo5 := VueloInternacional crear: 202 con: 12 con: 'Buenos Aires' con: 'Roma' con: '02/12/2026 16:30' con: 3500000 con: 'Programado' con: 'Italia' con: 10 con: false.
-vuelo6 := VueloNacional crear: 104 con: 1 con: 'Cordoba' con: 'Salta' con: '02/12/2026 19:00' con: 510000 con: 'Demorado' con: 'Salta' con: false.
-vuelo7 := VueloNacional crear: 105 con: 2 con: 'Buenos Aires' con: 'Tucuman' con: '03/12/2026 06:45' con: 590000 con: 'Programado' con: 'Tucuman' con: true.
-vuelo8 := VueloInternacional crear: 203 con: 9 con: 'Cordoba' con: 'Santiago de Chile' con: '03/12/2026 09:20' con: 2700000 con: 'Demorado' con: 'Chile' con: 12 con: true.
-vuelo9 := VueloNacional crear: 106 con: 2 con: 'Buenos Aires' con: 'Ushuaia' con: '03/12/2026 11:30' con: 890000 con: 'Programado' con: 'Tierra del Fuego' con: false.
-vuelo10 := VueloInternacional crear: 204 con: 11 con: 'Buenos Aires' con: 'Paris' con: '03/12/2026 18:15' con: 3800000 con: 'Programado' con: 'Francia' con: 15 con: true.
-vuelo11 := VueloNacional crear: 107 con: 1 con: 'Mendoza' con: 'Cordoba' con: '03/12/2026 22:00' con: 500000 con: 'Cancelado' con: 'Cordoba' con: false.
-vuelo12 := VueloNacional crear: 108 con: 2 con: 'Buenos Aires' con: 'Neuquen' con: '04/12/2026 08:00' con: 630000 con: 'Programado' con: 'Neuquen' con: true.
-vuelo13 := VueloInternacional crear: 205 con: 13 con: 'Buenos Aires' con: 'Londres' con: '04/12/2026 12:40' con: 4200000 con: 'Programado' con: 'Reino Unido' con: 20 con: true.
-vuelo14 := VueloNacional crear: 109 con: 2 con: 'Salta' con: 'Buenos Aires' con: '04/12/2026 17:10' con: 570000 con: 'Finalizado' con: 'Buenos Aires' con: false.
-vuelo15 := VueloInternacional crear: 206 con: 8 con: 'Buenos Aires' con: 'Montevideo' con: '04/12/2026 20:30' con: 2600000 con: 'Programado' con: 'Uruguay' con: 10 con: false.
+vuelo2 := VueloInternacional crear: 201 con: 10 con: 'Buenos Aires' con: 'Madrid' con: '02/12/2026 21:45' con: 3200000 con: 'Programado' con: 'Espana' con: 15 con: true.
+vuelo3 := VueloNacional crear: 102 con: 3 con: 'Buenos Aires' con: 'Mendoza' con: '03/12/2026 14:00' con: 680000 con: 'Demorado' con: 'Mendoza' con: false.
+vuelo4 := VueloInternacional crear: 202 con: 12 con: 'Buenos Aires' con: 'Roma' con: '04/12/2026 16:30' con: 3500000 con: 'Demorado' con: 'Italia' con: 10 con: false.
+vuelo5 := VueloNacional crear: 103 con: 2 con: 'Buenos Aires' con: 'Bariloche' con: '05/12/2026 07:15' con: 750000 con: 'Cancelado' con: 'Rio Negro' con: true.
+vuelo6 := VueloInternacional crear: 203 con: 9 con: 'Cordoba' con: 'Santiago de Chile' con: '06/12/2026 09:20' con: 2700000 con: 'Cancelado' con: 'Chile' con: 12 con: true.
+vuelo7 := VueloNacional crear: 104 con: 1 con: 'Cordoba' con: 'Salta' con: '07/12/2026 19:00' con: 510000 con: 'Finalizado' con: 'Salta' con: false.
+vuelo8 := VueloInternacional crear: 204 con: 11 con: 'Buenos Aires' con: 'Paris' con: '08/12/2026 18:15' con: 3800000 con: 'Finalizado' con: 'Francia' con: 15 con: true.
+vuelo9 := VueloNacional crear: 105 con: 2 con: 'Buenos Aires' con: 'Tucuman' con: '09/12/2026 06:45' con: 590000 con: 'Programado' con: 'Tucuman' con: true.
+vuelo10 := VueloInternacional crear: 205 con: 13 con: 'Buenos Aires' con: 'Londres' con: '10/12/2026 12:40' con: 4200000 con: 'Programado' con: 'Reino Unido' con: 20 con: true.
 
 
-"Agregar vuelos a la aerolinea"
-aerolinea agregar: vuelo1.
-aerolinea agregar: vuelo2.
-aerolinea agregar: vuelo3.
-aerolinea agregar: vuelo4.
-aerolinea agregar: vuelo5.
-aerolinea agregar: vuelo6.
-aerolinea agregar: vuelo7.
-aerolinea agregar: vuelo8.
-aerolinea agregar: vuelo9.
-aerolinea agregar: vuelo10.
-aerolinea agregar: vuelo11.
-aerolinea agregar: vuelo12.
-aerolinea agregar: vuelo13.
-aerolinea agregar: vuelo14.
-aerolinea agregar: vuelo15.
+"Usar cargar: para conservar las validaciones de numero y cupo diario."
+aerolinea cargar: vuelo1.
+aerolinea cargar: vuelo2.
+aerolinea cargar: vuelo3.
+aerolinea cargar: vuelo4.
+aerolinea cargar: vuelo5.
+aerolinea cargar: vuelo6.
+aerolinea cargar: vuelo7.
+aerolinea cargar: vuelo8.
+aerolinea cargar: vuelo9.
+aerolinea cargar: vuelo10.
 ].
 aerolinea := nil.
 continuar := true.
@@ -283,19 +273,17 @@ mostrarVuelos := [:unosVuelos :unTitulo |
             informar value: texto]].
 
 calcularPromedio := [
-    | disponibles total |
-    disponibles := aerolinea verTodos select: [:vuelo |
-        #('Programado' 'Demorado') includes: vuelo verEstado].
+    | vuelos total |
+    vuelos := aerolinea verTodos.
     total := 0.
-    disponibles do: [:vuelo | total := total + vuelo precioFinal].
-    disponibles isEmpty ifTrue: [0] ifFalse: [total / disponibles size]].
+    vuelos do: [:vuelo | total := total + vuelo precioFinal].
+    vuelos isEmpty ifTrue: [0] ifFalse: [total / vuelos size]].
 
 vuelosSuperiores := [
-    | disponibles promedio |
+    | vuelos promedio |
     promedio := calcularPromedio value.
-    disponibles := aerolinea verTodos select: [:vuelo |
-        #('Programado' 'Demorado') includes: vuelo verEstado].
-    disponibles select: [:vuelo | vuelo precioFinal > promedio]].
+    vuelos := aerolinea verTodos.
+    vuelos select: [:vuelo | vuelo precioFinal > promedio]].
 
 mayorDuracion := [
     | mayor |
@@ -493,11 +481,11 @@ diccionarioEstado := [
                         mostrarVuelos value: (aerolinea verTodos select: [:vuelo | vuelo verDestino = destino])
                             value: 'Vuelos a ', destino]].
                 consulta = 'Precio final promedio' ifTrue: [
-                    informar value: 'Precio final promedio (Programado y Demorado): ',
+                    informar value: 'Precio final promedio (todos los vuelos): ',
                         (calcularPromedio value) displayString].
                 consulta = 'Precios superiores al promedio' ifTrue: [
                     mostrarVuelos value: (vuelosSuperiores value)
-                        value: 'Disponibles con precio superior al promedio'].
+                        value: 'Vuelos con precio superior al promedio'].
                 consulta = 'Mayor duracion' ifTrue: [
                     mayor := mayorDuracion value.
                     mayor isNil

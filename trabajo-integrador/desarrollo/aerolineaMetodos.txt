@@ -46,23 +46,22 @@ filtrarSegunDestino: unDestino
     ^vuelos select: [:v | v verDestino = unDestino]!
 
 vuelosDisponibles
-    "Criterio provisional elegido por el usuario: Programado y Demorado.
-    Pendiente de confirmacion docente y acuerdo grupal."
+    "Programado y Demorado se consideran disponibles. Esta consulta es
+    independiente del promedio, que usa todos los vuelos."
     ^vuelos select: [:v | #('Programado' 'Demorado') includes: v verEstado]!
 
 calcularPrecioPromedio
-    | disponibles total |
-    disponibles := self vuelosDisponibles.
-    disponibles isEmpty ifTrue: [^0].
+    | total |
+    vuelos isEmpty ifTrue: [^0].
     total := 0.
-    disponibles do: [:v | total := total + v precioFinal].
-    ^total / disponibles size!
+    vuelos do: [:v | total := total + v precioFinal].
+    ^total / vuelos size!
 
 mostrarVuelosConPrecioSuperiorAlPromedio
-    "Compara solo vuelosDisponibles; poblacion pendiente de confirmacion docente."
+    "Compara todos los vuelos, incluyendo todos los estados y subclases."
     | promedio |
     promedio := self calcularPrecioPromedio.
-    ^self vuelosDisponibles select: [:v | v precioFinal > promedio]!
+    ^vuelos select: [:v | v precioFinal > promedio]!
 
 conocerVueloMayorDuracion
     | mayor |

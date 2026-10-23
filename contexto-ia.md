@@ -33,6 +33,19 @@ El **17/10/2026** el usuario autorizo completar los pendientes sin mas consultas
 ## Decisiones confirmadas por el usuario
 
 - La misma coleccion guarda **varias fechas y todos los estados**. Cancelados permanecen hasta baja explicita. Cada operacion filtra o recorre lo que requiere. El cupo cuenta todos los vuelos almacenados del dia, sin excepcion por estado.
+
+## Respuesta de la catedra recibida el 22/10/2026
+
+- Para el ejercicio alcanza con manejar **una sola aerolinea**.
+- Para las fechas se pueden usar `Date` y `Time` por separado; recomiendan esa alternativa antes que `DateTime`. La implementacion actual usa texto y debe evaluarse su migracion.
+- El maximo diario debe validarse nuevamente al modificar la fecha de un vuelo.
+- Es correcta la interpretacion de vuelos disponibles como Programados y Demorados.
+- Para el promedio y el listado de precios superiores deben utilizarse **todos los vuelos**, incluyendo todos los estados y subclases. Esto contradice el filtro provisional actual de Programados + Demorados y requiere corregir codigo y pruebas.
+- Al modificar pueden cambiarse todos los atributos excepto los identificadores: numero y tipo Nacional/Internacional. El tipo se considera identificador y debe permanecer fijo.
+- La precarga de vuelos es obligatoria para la muestra; el grupo propuso precargar diez vuelos en dias distintos.
+- La baja individual usa `eliminar:`. Cancelar un vuelo solo cambia su estado; la baja conjunta de cancelados debe usar el metodo de clase compuesta solicitado por el enunciado.
+- El usuario decidio el 22/10/2026 volver a interpretar la tasa internacional como importe fijo: `precioBase + tasaInter`. Se actualizo `VueloInternacional.cls` y las expectativas de las pruebas.
+- El usuario decidio aplicar la respuesta docente al promedio y al listado superior: ambos recorren todos los vuelos, sin filtrar estados; `vuelosDisponibles` queda como consulta independiente para Programados y Demorados.
 - Maximo **diario**, no total. Al editar fecha se excluye el propio vuelo del conteo; cambiar solo la hora conserva su plaza. La fecha anterior se conserva si el destino esta completo.
 - Edicion de todos los datos comunes y particulares, excepto el **numero unico**. Se conserva el tipo Nacional/Internacional; `precioFinal` sigue calculado.
 - Precio base y tasa admiten entrada no negativa con **hasta dos decimales**, usando punto. Ya implementado con validacion de caracteres y `asNumber`; se aceptan enteros, una o dos cifras decimales y cero.

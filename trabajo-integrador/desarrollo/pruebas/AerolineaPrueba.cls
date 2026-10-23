@@ -81,15 +81,15 @@ probarListados
     self comprobar: (aerolinea verTodos == coleccion and: [aerolinea tamanio = 5]) mensaje: 'Las consultas no deben alterar la coleccion original.'!
 
 probarDisponiblesYPromedio
-    "Verifica Programado y Demorado como criterio provisional del usuario."
+    "Verifica disponibles y el promedio sobre todos los vuelos."
     | aerolinea bajo igual alto cancelado finalizado seleccion fraccionaria |
     aerolinea := self crearAerolinea.
     cancelado := self crearNacional: 4 duracion: 90 destino: 'Cordoba' precio: 1000 estado: 'Cancelado' equipaje: false.
     finalizado := self crearInternacional: 5 duracion: 120 precio: 10000 tasa: 500 estado: 'Finalizado'.
     aerolinea agregar: cancelado; agregar: finalizado.
     self comprobar: aerolinea vuelosDisponibles isEmpty mensaje: 'Cancelado y Finalizado no deben ser disponibles.'.
-    self comprobar: aerolinea calcularPrecioPromedio = 0 mensaje: 'Sin programados ni demorados el promedio debe ser cero.'.
-    self comprobar: aerolinea mostrarVuelosConPrecioSuperiorAlPromedio isEmpty mensaje: 'Sin disponibles no debe haber superiores, aunque existan otros vuelos caros.'.
+    self comprobar: (aerolinea calcularPrecioPromedio - 5750) abs < 0.000001 mensaje: 'El promedio debe incluir todos los estados.'.
+    self comprobar: (aerolinea mostrarVuelosConPrecioSuperiorAlPromedio size = 1 and: [aerolinea mostrarVuelosConPrecioSuperiorAlPromedio first == finalizado]) mensaje: 'El listado superior debe incluir todos los estados.'.
     bajo := self crearNacional: 1 duracion: 90 destino: 'Cordoba' precio: 100 estado: 'Programado' equipaje: true.
     igual := self crearNacional: 2 duracion: 90 destino: 'Rosario' precio: 130 estado: 'Demorado' equipaje: false.
     alto := self crearInternacional: 3 duracion: 120 precio: 100 tasa: 50 estado: 'Demorado'.
@@ -100,18 +100,18 @@ probarDisponiblesYPromedio
     self comprobar: (seleccion includes: alto) mensaje: 'Debe incluir tambien al internacional demorado.'.
     self comprobar: ((seleccion includes: cancelado) not and: [(seleccion includes: finalizado) not]) mensaje: 'Cancelados y finalizados deben quedar fuera de la seleccion.'.
     self comprobar: aerolinea listarProgramados size = 1 mensaje: 'Listar programados debe conservar su filtro propio.'.
-    self comprobar: (aerolinea calcularPrecioPromedio - 130) abs < 0.000001 mensaje: 'El promedio debe usar precioFinal de ambos tipos.'.
+    self comprobar: (aerolinea calcularPrecioPromedio - 2378) abs < 0.000001 mensaje: 'El promedio debe usar todos los estados y precioFinal.'.
     seleccion := aerolinea mostrarVuelosConPrecioSuperiorAlPromedio.
     self comprobar: seleccion size = 1 mensaje: 'La comparacion debe ser estrictamente superior al promedio.'.
-    self comprobar: seleccion first == alto mensaje: 'Debe devolver el mismo vuelo de precio 150.'.
+    self comprobar: seleccion first == finalizado mensaje: 'Debe devolver el vuelo de mayor precio, aunque este finalizado.'.
     alto modEstado: 'Finalizado'.
     self comprobar: aerolinea vuelosDisponibles size = 2 mensaje: 'El cambio a Finalizado debe quitar el vuelo de los disponibles.'.
-    self comprobar: (aerolinea calcularPrecioPromedio - 120) abs < 0.000001 mensaje: 'El promedio debe recalcularse tras cambiar un estado.'.
+    self comprobar: (aerolinea calcularPrecioPromedio - 2378) abs < 0.000001 mensaje: 'El promedio debe conservar todos los estados.'.
     self comprobar: aerolinea mostrarVuelosConPrecioSuperiorAlPromedio first == igual mensaje: 'El listado superior debe actualizarse al cambiar un estado.'.
     alto modEstado: 'Programado'.
-    self comprobar: (aerolinea calcularPrecioPromedio - 130) abs < 0.000001 mensaje: 'Cambiar a Programado debe reincorporar el vuelo al promedio.'.
+    self comprobar: (aerolinea calcularPrecioPromedio - 2378) abs < 0.000001 mensaje: 'Cambiar a Programado no debe alterar la poblacion del promedio.'.
     alto modtasaInter: 20.
-    self comprobar: (aerolinea calcularPrecioPromedio - 120) abs < 0.000001 mensaje: 'El promedio debe recalcularse tras modificar un vuelo.'.
+    self comprobar: (aerolinea calcularPrecioPromedio - 2372) abs < 0.000001 mensaje: 'El promedio debe recalcularse tras modificar un vuelo.'.
     fraccionaria := self crearAerolinea.
     fraccionaria agregar: (self crearNacional: 6 duracion: 90 destino: 'Cordoba' precio: 100 estado: 'Programado' equipaje: false).
     fraccionaria agregar: (self crearNacional: 7 duracion: 90 destino: 'Rosario' precio: 101 estado: 'Demorado' equipaje: false).
