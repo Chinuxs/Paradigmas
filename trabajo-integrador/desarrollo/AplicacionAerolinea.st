@@ -2,7 +2,7 @@
 No declara clases: el menu y la logica viven en bloques del Workspace.
 Antes, importar Vuelo, VueloNacional, VueloInternacional y Aerolinea."
 
-| aerolinea continuar opciones pedirOpcion informar salto recortar pedirTexto esEntero pedirEntero esPrecio pedirPrecio pedirEstado pedirBooleano esBisiesto esFecha pedirFecha buscarVuelo cargarVuelo modificarFecha textoBooleano textoVuelo mostrarVuelos calcularPromedio vuelosSuperiores mayorDuracion facturacion diccionarioEstado
+| aerolinea continuar opciones pedirOpcion informar salto recortar pedirTexto esEntero pedirEntero esPrecio pedirPrecio pedirEstado pedirBooleano esBisiesto esFecha pedirFecha buscarVuelo cargarVuelo modificarFecha textoBooleano textoVuelo mostrarVuelos calcularPromedio vuelosSuperiores mayorDuracion facturacionPotencial diccionarioEstado
  precargarVuelos vuelo1 vuelo2 vuelo3 vuelo4 vuelo5 vuelo6 vuelo7 vuelo8 vuelo9 vuelo10 |
 
 precargarVuelos := [
@@ -293,12 +293,12 @@ mayorDuracion := [
             ifTrue: [mayor := vuelo]].
     mayor].
 
-facturacion := [
-    | total |
+facturacionPotencial := [
+    | programados total |
+    programados := aerolinea verTodos select: [:vuelo | vuelo verEstado = 'Programado'].
     total := 0.
-    (aerolinea verTodos select: [:vuelo | vuelo verEstado = 'Programado'])
-        do: [:vuelo | total := total + vuelo precioFinal].
-    total].
+    programados do: [:vuelo | total := total + vuelo precioFinal].
+    programados isEmpty ifTrue: [0] ifFalse: [total / programados size]].
 
 diccionarioEstado := [
     | estados diccionario |
@@ -492,7 +492,7 @@ diccionarioEstado := [
                         ifTrue: [informar value: 'No hay vuelos cargados.']
                         ifFalse: [informar value: 'Vuelo de mayor duracion', salto, (textoVuelo value: mayor)]].
                 consulta = 'Facturacion potencial' ifTrue: [
-                    informar value: 'Facturacion potencial de Programados: ', (facturacion value) displayString].
+                    informar value: 'Facturacion potencial de Programados: ', (facturacionPotencial value) displayString].
                 consulta = 'Cantidad por estado' ifTrue: [
                     dic := diccionarioEstado value.
                     dic isEmpty
