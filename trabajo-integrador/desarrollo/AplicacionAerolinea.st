@@ -76,62 +76,40 @@ pedirTexto := [:unMensaje |
     texto].
 
 esEntero := [:unTexto |
-    | valido |
-    valido := unTexto isEmpty not.
-    unTexto do: [:caracter |
-        ('0123456789' includes: caracter) ifFalse: [valido := false]].
-    valido].
+    (unTexto isEmpty) ifTrue: [^false].
+    1 to: unTexto size do: [:i |
+        ((unTexto at: i) isDigit) ifFalse: [^false]].
+    ^true].
 
 pedirEntero := [:unMensaje :unMinimo |
-    | texto numero terminado resultado |
-    terminado := false.
-    resultado := nil.
-    [terminado not] whileTrue: [
-        texto := pedirTexto value: unMensaje.
-        texto isNil
-            ifTrue: [terminado := true]
-            ifFalse: [
-                (esEntero value: texto)
-                    ifTrue: [
-                        numero := texto asNumber.
-                        numero >= unMinimo
-                            ifTrue: [resultado := numero. terminado := true]
-                            ifFalse: [informar value: 'Ingrese un numero entero mayor o igual a ', unMinimo displayString, '.']]
-                    ifFalse: [informar value: 'Ingrese un numero entero mayor o igual a ', unMinimo displayString, '.']]].
-    resultado].
+    | texto numero |
+    [true] whileTrue: [
+        texto := self pedirTexto: unMensaje.
+        (texto isNil) ifTrue: [^nil].
+        (self esEntero: texto) ifTrue: [
+            numero := texto asNumber.
+            (numero >= unMinimo) ifTrue: [^numero]].
+        self informar: 'Ingrese un numero entero mayor o igual a ', unMinimo printString, '.']].
 
 esPrecio := [:unTexto |
-    | punto cantidadDecimales valido |
-    valido := unTexto isEmpty not.
-    punto := 0.
+    | c puntos |
+    (unTexto isEmpty) ifTrue: [^false].
+    puntos := 0.
     1 to: unTexto size do: [:i |
-        (unTexto at: i) = $.
-            ifTrue: [
-                punto > 0 ifTrue: [valido := false].
-                punto := i]
-            ifFalse: [
-                ('0123456789' includes: (unTexto at: i))
-                    ifFalse: [valido := false]]].
-    punto = 1 ifTrue: [valido := false].
-    punto > 0
-        ifTrue: [
-            cantidadDecimales := unTexto size - punto.
-            (cantidadDecimales between: 1 and: 2) ifFalse: [valido := false]].
-    valido].
+        c := unTexto at: i.
+        (c = $.)
+            ifTrue: [puntos := puntos + 1]
+            ifFalse: [(c isDigit) ifFalse: [^false]]].
+            "Verificar para cambios"
+    ^(puntos <= 1) & ((unTexto at: 1) ~= $.) & ((unTexto at: unTexto size) ~= $.)].
 
 pedirPrecio := [:unMensaje |
-    | texto terminado resultado |
-    terminado := false.
-    resultado := nil.
-    [terminado not] whileTrue: [
-        texto := pedirTexto value: unMensaje, ' (hasta 2 decimales, con punto)'.
-        texto isNil
-            ifTrue: [terminado := true]
-            ifFalse: [
-                (esPrecio value: texto)
-                    ifTrue: [resultado := texto asNumber. terminado := true]
-                    ifFalse: [informar value: 'Ingrese un importe no negativo, con hasta dos decimales y punto decimal.']]].
-    resultado].
+    | texto |
+    [true] whileTrue: [
+        texto := self pedirTexto: unMensaje.
+        (texto isNil) ifTrue: [^nil].
+        (self esPrecio: texto) ifTrue: [^texto asNumber].
+        self informar: 'Ingrese un precio valido. Use punto para los decimales, por ejemplo 1500.50']].
 
 pedirEstado := [
     pedirOpcion value: #('Programado' 'Demorado' 'Cancelado' 'Finalizado') value: 'Estado del vuelo'].
