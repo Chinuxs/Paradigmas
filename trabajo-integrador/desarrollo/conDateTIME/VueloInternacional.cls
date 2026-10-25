@@ -1,0 +1,66 @@
+"Filed out from Dolphin Smalltalk 7"!
+
+Vuelo subclass: #VueloInternacional
+	instanceVariableNames: 'paisDestino tasaInter documentacion'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+VueloInternacional guid: (GUID fromString: '{8A12EC1E-5E79-4DEA-83FA-11C76AE31939}')!
+VueloInternacional comment: ''!
+!VueloInternacional categoriesForClass!Kernel-Objects! !
+!VueloInternacional methodsFor!
+
+init: unNum dura: unDura ori: unOri des: unDes fech: unFech hor:unHor preb: unPreBa est: unEst pais: unPaisDes tasa: untasaInt doc: unDocu
+    super init: unNum dura: unDura ori: unOri des: unDes fech: unFech hor: unHor preb: unPreBa est: unEst.
+    paisDestino := unPaisDes.
+    tasaInter := untasaInt .
+    documentacion := unDocu .
+    ^self!
+
+modDocumentacion: otroDocu
+documentacion:=otroDocu.!
+
+modpaisDestino: otroPaisDest
+paisDestino:= otroPaisDest.!
+
+modtasaInter: otrotasaInter
+tasaInter:=otrotasaInter.!
+
+precioFinal
+    "Estamos sobre escribiendo el metodo precioFinal de la clase padre, para que nos devuelva el precio base + la tasa internacional"
+    ^precioBase + tasaInter!
+
+verDocumentacion
+^documentacion!
+
+verpaisDestino
+^paisDestino!
+
+vertasaInter
+^tasaInter! !
+!VueloInternacional categoriesFor: #init:dura:ori:des:fech:hor:preb:est:pais:tasa:doc:!public! !
+!VueloInternacional categoriesFor: #modDocumentacion:!public! !
+!VueloInternacional categoriesFor: #modpaisDestino:!public! !
+!VueloInternacional categoriesFor: #modtasaInter:!public! !
+!VueloInternacional categoriesFor: #precioFinal!public! !
+!VueloInternacional categoriesFor: #verDocumentacion!public! !
+!VueloInternacional categoriesFor: #verpaisDestino!public! !
+!VueloInternacional categoriesFor: #vertasaInter!public! !
+
+!VueloInternacional class methodsFor!
+
+crear: unNum con: unDura con: unOri con: unDes con: unFech con: unHor con: unPreBa con: unEst con: unPaisDes con: unaTasaInt con: unaDocu
+	^self new
+		init: unNum
+		dura: unDura
+		ori: unOri
+		des: unDes
+		fech: unFech
+		hor: unHor
+		preb: unPreBa
+		est: unEst
+		pais: unPaisDes
+		tasa: unaTasaInt
+		doc: unaDocu! !
+!VueloInternacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:con:con:!public! !
+
