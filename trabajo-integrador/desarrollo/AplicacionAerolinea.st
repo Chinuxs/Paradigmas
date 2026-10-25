@@ -155,7 +155,8 @@ esFecha := [:unTexto |
         ((unTexto at: 14) = $:) ifFalse: [valido := false]].
     valido ifTrue: [
         #(1 2 4 5 7 8 9 10 12 13 15 16) do: [:i |
-            ('0123456789' includes: (unTexto at: i)) ifFalse: [valido := false]]].
+            ('0123456789' includes: (unTexto at: i))
+                ifFalse: [valido := false]]].
     valido ifTrue: [
         dia := (unTexto copyFrom: 1 to: 2) asNumber.
         mes := (unTexto copyFrom: 4 to: 5) asNumber.
@@ -168,12 +169,14 @@ esFecha := [:unTexto |
         (minuto between: 0 and: 59) ifFalse: [valido := false]].
     valido ifTrue: [
         maximoDia := #(31 28 31 30 31 30 31 31 30 31 30 31) at: mes.
-        (mes = 2 and: [esBisiesto value: anio]) ifTrue: [maximoDia := 29].
+        (mes = 2 and: [esBisiesto value: anio])
+            ifTrue: [maximoDia := 29].
         valido := dia between: 1 and: maximoDia].
-    valido].
+    valido
+].
 
 pedirFecha := [
-    | texto terminado resultado |
+    | texto terminado resultado dia mes anio hora minuto fecha time |
     terminado := false.
     resultado := nil.
     [terminado not] whileTrue: [
@@ -182,9 +185,24 @@ pedirFecha := [
             ifTrue: [terminado := true]
             ifFalse: [
                 (esFecha value: texto)
-                    ifTrue: [resultado := texto. terminado := true]
-                    ifFalse: [informar value: 'Ingrese una fecha y hora reales con formato dd/mm/aaaa hh:mm.']]].
-    resultado].
+                    ifTrue: [
+                        dia := (texto copyFrom: 1 to: 2) asNumber.
+                        mes := (texto copyFrom: 4 to: 5) asNumber.
+                        anio := (texto copyFrom: 7 to: 10) asNumber.
+                        hora := (texto copyFrom: 12 to 13) asNumber.
+                        minuto := (texto copyFrom: 15 to: 16) asNumber.
+                        fecha := Date newDay: dia monthIndex: mes year: anio.
+                        time := Time fromHours: hora minutes: minuto seconds: 0.
+                        resultado := Array with: fecha with: time.
+                        terminado := true
+                    ]
+                    ifFalse: [
+                        informar value: 'Ingrese una fecha y hora reales con formato dd/mm/aaaa hh:mm.'
+                    ]
+            ]
+    ].
+    resultado
+].
 
 buscarVuelo := [:unNumero |
     aerolinea verTodos detect: [:vuelo | vuelo verNumero = unNumero] ifNone: [nil]].
@@ -332,7 +350,7 @@ diccionarioEstado := [
                     'Vuelos cargados: ', aerolinea verTodos size displayString]].
 
     opcion = '3. Cargar vuelo' ifTrue: [
-        | tipo numero origen destino fecha duracion precio estado provincia equipaje pais tasa documentacion vuelo |
+        | tipo numero origen destino fecha hora duracion precio estado provincia equipaje pais tasa documentacion vuelo |
         aerolinea isNil
             ifTrue: [informar value: 'Primero debe cargar una aerolinea.']
             ifFalse: [
@@ -344,7 +362,14 @@ diccionarioEstado := [
                         ifFalse: [
                             origen := pedirTexto value: 'Ciudad de origen'.
                             origen notNil ifTrue: [destino := pedirTexto value: 'Ciudad de destino'].
-                            (origen notNil and: [destino notNil]) ifTrue: [fecha := pedirFecha value].
+                           
+                           (origen notNil and: [destino notNil]) ifTrue:[| fechaHora |
+                               fechaHora := pedirFecha value.
+                               fechaHora notNil ifTrue: [
+                               fecha := fechaHora at: 1.
+                               hora := fechaHora at: 2
+                               ]
+                             ].
                             (origen notNil and: [destino notNil and: [fecha notNil]])
                                 ifTrue: [duracion := pedirEntero value: 'Duracion en minutos' value: 1].
                             (origen notNil and: [destino notNil and: [fecha notNil and: [duracion notNil]]])
