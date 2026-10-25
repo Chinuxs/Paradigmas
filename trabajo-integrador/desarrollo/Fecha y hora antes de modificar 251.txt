@@ -1,0 +1,87 @@
+Fecha y hora antes de modificar 25/10
+
+líneas 148 a 186
+
+esFecha := [:unTexto |
+    | dia mes anio hora minuto maximoDia valido |
+    valido := unTexto size = 16.
+    valido ifTrue: [
+        ((unTexto at: 3) = $/) ifFalse: [valido := false].
+        ((unTexto at: 6) = $/) ifFalse: [valido := false].
+        ((unTexto at: 11) = $ ) ifFalse: [valido := false].
+        ((unTexto at: 14) = $:) ifFalse: [valido := false]].
+    valido ifTrue: [
+        #(1 2 4 5 7 8 9 10 12 13 15 16) do: [:i |
+            ('0123456789' includes: (unTexto at: i)) ifFalse: [valido := false]]].
+    valido ifTrue: [
+        dia := (unTexto copyFrom: 1 to: 2) asNumber.
+        mes := (unTexto copyFrom: 4 to: 5) asNumber.
+        anio := (unTexto copyFrom: 7 to: 10) asNumber.
+        hora := (unTexto copyFrom: 12 to: 13) asNumber.
+        minuto := (unTexto copyFrom: 15 to: 16) asNumber.
+        (mes between: 1 and: 12) ifFalse: [valido := false].
+        anio < 1 ifTrue: [valido := false].
+        (hora between: 0 and: 23) ifFalse: [valido := false].
+        (minuto between: 0 and: 59) ifFalse: [valido := false]].
+    valido ifTrue: [
+        maximoDia := #(31 28 31 30 31 30 31 31 30 31 30 31) at: mes.
+        (mes = 2 and: [esBisiesto value: anio]) ifTrue: [maximoDia := 29].
+        valido := dia between: 1 and: maximoDia].
+    valido].
+
+pedirFecha := [
+    | texto terminado resultado |
+    terminado := false.
+    resultado := nil.
+    [terminado not] whileTrue: [
+        texto := pedirTexto value: 'Fecha y hora de salida (dd/mm/aaaa hh:mm)'.
+        texto isNil
+            ifTrue: [terminado := true]
+            ifFalse: [
+                (esFecha value: texto)
+                    ifTrue: [resultado := texto. terminado := true]
+                    ifFalse: [informar value: 'Ingrese una fecha y hora reales con formato dd/mm/aaaa hh:mm.']]].
+
+
+opción 3 líneas 334 a 373
+
+    opcion = '3. Cargar vuelo' ifTrue: [
+        | tipo numero origen destino fecha duracion precio estado provincia equipaje pais tasa documentacion vuelo |
+        aerolinea isNil
+            ifTrue: [informar value: 'Primero debe cargar una aerolinea.']
+            ifFalse: [
+                tipo := pedirOpcion value: #('Nacional' 'Internacional') value: 'Tipo de vuelo'.
+                tipo notNil ifTrue: [numero := pedirEntero value: 'Numero unico del vuelo' value: 1].
+                (tipo notNil and: [numero notNil]) ifTrue: [
+                    (buscarVuelo value: numero) notNil
+                        ifTrue: [informar value: 'Ya existe un vuelo con ese numero.']
+                        ifFalse: [
+                            origen := pedirTexto value: 'Ciudad de origen'.
+                            origen notNil ifTrue: [destino := pedirTexto value: 'Ciudad de destino'].
+                            (origen notNil and: [destino notNil]) ifTrue: [fecha := pedirFecha value].
+                            (origen notNil and: [destino notNil and: [fecha notNil]])
+                                ifTrue: [duracion := pedirEntero value: 'Duracion en minutos' value: 1].
+                            (origen notNil and: [destino notNil and: [fecha notNil and: [duracion notNil]]])
+                                ifTrue: [precio := pedirPrecio value: 'Precio base'].
+                            (origen notNil and: [destino notNil and: [fecha notNil and: [duracion notNil and: [precio notNil]]]])
+                                ifTrue: [estado := pedirEstado value].
+                            (origen notNil and: [destino notNil and: [fecha notNil and: [duracion notNil and: [precio notNil and: [estado notNil]]]]])
+                                ifTrue: [
+                                    tipo = 'Nacional'
+                                        ifTrue: [
+                                            provincia := pedirTexto value: 'Provincia de destino'.
+                                            provincia notNil ifTrue: [equipaje := pedirBooleano value: 'Incluye equipaje despachado?'].
+                                            (provincia notNil and: [equipaje notNil]) ifTrue: [
+                                                vuelo := VueloNacional crear: numero con: duracion con: origen con: destino
+                                                    con: fecha con: precio con: estado con: provincia con: equipaje]]
+                                        ifFalse: [
+                                            pais := pedirTexto value: 'Pais de destino'.
+                                            pais notNil ifTrue: [tasa := pedirPrecio value: 'Tasa internacional'].
+                                            (pais notNil and: [tasa notNil]) ifTrue: [documentacion := pedirBooleano value: 'Requiere documentacion adicional?'].
+                                            (pais notNil and: [tasa notNil and: [documentacion notNil]]) ifTrue: [
+                                                vuelo := VueloInternacional crear: numero con: duracion con: origen con: destino
+                                                    con: fecha con: precio con: estado con: pais con: tasa con: documentacion]]].
+                            vuelo notNil ifTrue: [
+                                (cargarVuelo value: vuelo)
+                                    ifTrue: [informar value: 'Vuelo cargado.']
+                                    ifFalse: [informar value: 'No se pudo cargar: numero repetido o cupo diario completo.']]]]]].
