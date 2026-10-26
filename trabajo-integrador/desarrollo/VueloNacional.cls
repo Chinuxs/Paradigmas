@@ -10,8 +10,8 @@ VueloNacional comment: ''!
 !VueloNacional categoriesForClass!Kernel-Objects! !
 !VueloNacional methodsFor!
 
-init: unNum dura: unDura ori: unOri des: unDes fech: unFech preb: unPreBa est: unEst provDes: unprovDes llevaEquip: unllevaEquip
-    super init: unNum dura: unDura ori: unOri des: unDes fech: unFech preb: unPreBa est: unEst.
+init: unNum dura: unDura ori: unOri des: unDes fech: unFech hor:unHor preb: unPreBa est: unEst provDes: unprovDes llevaEquip: unllevaEquip
+    super init: unNum dura: unDura ori: unOri des: unDes fech: unFech hor:unHor preb: unPreBa est: unEst.
      provDestino:= unprovDes.
      llevaEquipaje:= unllevaEquip.  
     ^self!
@@ -33,7 +33,7 @@ verllevaEquipaje
 
 verprovDestino
 ^provDestino! !
-!VueloNacional categoriesFor: #init:dura:ori:des:fech:preb:est:provDes:llevaEquip:!public! !
+!VueloNacional categoriesFor: #init:dura:ori:des:fech:hor:preb:est:provDes:llevaEquip:!public! !
 !VueloNacional categoriesFor: #modllevaEquipaje:!public! !
 !VueloNacional categoriesFor: #modprovDestino:!public! !
 !VueloNacional categoriesFor: #precioFinal!public! !
@@ -42,10 +42,17 @@ verprovDestino
 
 !VueloNacional class methodsFor!
 
-crear: unNum con: unDura con: unOri con: unDes con: unFech con: unPreBa con: unEst con: unProvDes con: unLlevaEquip
-    ^self new
-        init: unNum dura: unDura ori: unOri des: unDes
-        fech: unFech preb: unPreBa est: unEst
-        provDes: unProvDes llevaEquip: unLlevaEquip! !
-!VueloNacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:!public! !
+crear: unNum con: unDura con: unOri con: unDes con: unFech con: unHor con: unPreBa con: unEst con: unProvDes con: unLlevaEquip
+	^self new
+		init: unNum
+		dura: unDura
+		ori: unOri
+		des: unDes
+		fech: unFech
+		hor: unHor
+		preb: unPreBa
+		est: unEst
+		provDes: unProvDes
+		llevaEquip: unLlevaEquip! !
+!VueloNacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:con:!public! !
 

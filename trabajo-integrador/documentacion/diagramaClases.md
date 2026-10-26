@@ -23,12 +23,15 @@ classDiagram
         -origen
         -destino
         -fecha
+        -hora
         -precioBase
         -estado
         +precioFinal()*
         +verNumero()
         +verFecha()
+        +verHora()
         +modFecha(otraFecha)
+        +modHora(otraHora)
         +modOrigen(otroOrigen)
         +modDestino(otroDestino)
         +modDuracion(otraDuracion)

@@ -1,5 +1,7 @@
 # Menu de aerolinea en Dolphin
 
+**Version vigente, 26/10/2026:** `desarrollo/` ya usa `Date` y `Time` separados. `Aerolinea` conserva datos y accesores; la lógica está en el Workspace. Se conservaron los validadores del Workspace principal y se verificaron 24 entradas de validacion y 35 recorridos automatizados del Workspace en Dolphin. Ver [pruebas y alcance](pruebasDateTime.md). La entrada sigue siendo `dd/mm/aaaa hh:mm`, pero se convierte a objetos separados. Los precios conservan la precision admitida por ambos scripts actuales, sin limite de dos decimales. La precarga avisa si el cupo impide cargar los diez vuelos. Las secciones fechadas en 17/10 son antecedentes y sus baterias estan en `desarrollo/legado/pruebas/`.
+
 Actualizado el **17/10/2026**. La aplicacion integra carga, busqueda, edicion, bajas y todas las consultas del [enunciado 1, p. 2](../enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf). El menu y las reglas de negocio se ejecutan en el Workspace; `Aerolinea` solo conserva los datos. `ChoicePrompter` requiere confirmacion docente.
 
 ## Importar y arrancar
@@ -10,7 +12,7 @@ Conservar primero cualquier cambio propio sin exportar. Importar con **File In**
 2. [VueloNacional.cls](../desarrollo/VueloNacional.cls) y [VueloInternacional.cls](../desarrollo/VueloInternacional.cls).
 3. [Aerolinea.cls](../desarrollo/Aerolinea.cls).
 
-No importar `AplicacionAerolinea.cls`: es un archivo legado y la clase ya no participa de la aplicacion. El menu identifica los subtipos mediante `isKindOf:`, siguiendo Mensajes y control, p. 21, y el ejemplo local de Biblioteca. Por eleccion del usuario se retiro `verTipo` de las tres clases y sus listados. Si ese metodo ya estaba cargado en la imagen, eliminarlo desde el Browser en el lado de instancia de `Vuelo`, `VueloNacional` y `VueloInternacional`: reimportar no elimina metodos que desaparecieron del archivo. Los archivos `*Metodos.txt` son listados de consulta: importar los `.cls`.
+No importar archivos de ninguna carpeta `legado/`: allí quedan las clases de la arquitectura anterior. El menú identifica los subtipos mediante `isKindOf:`, siguiendo Mensajes y control, p. 21, y el ejemplo local de Biblioteca. Por elección del usuario se retiró `verTipo` de las tres clases y sus listados. Si ese método ya estaba cargado en la imagen, eliminarlo desde el Browser en el lado de instancia de `Vuelo`, `VueloNacional` y `VueloInternacional`: reimportar no elimina métodos que desaparecieron del archivo. Los archivos `*Metodos.txt` son listados de consulta: importar los `.cls`.
 
 Abrir [AplicacionAerolinea.st](../desarrollo/AplicacionAerolinea.st) en un Workspace, seleccionar todo su contenido y evaluarlo con **Evaluate it / Ctrl + E**. El archivo no declara clases: crea los bloques de trabajo, muestra el menu y lo ejecuta. No hace falta importar ni evaluar un script de arranque separado. Si se reevalua el Workspace, comienza una sesion nueva de la aplicacion; los datos no se persisten en disco.
 

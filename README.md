@@ -66,6 +66,8 @@ Los dos PDFs de teoría numerados 4 se conservan con sus nombres originales; tie
 
 ## Trabajo integrador grupal
 
+Version vigente (26/10/2026): usar los cuatro `.cls` directamente en `trabajo-integrador/desarrollo/` y su `AplicacionAerolinea.st`. Ya usan `Date` y `Time` separados. `Aerolinea` conserva solamente datos y accesores; la lógica de gestion está en el Workspace y `precioFinal` conserva el polimorfismo de los vuelos. La carpeta duplicada `conDateTIME/` fue eliminada. Pruebas actuales y resultados: [pruebasDateTime.md](trabajo-integrador/documentacion/pruebasDateTime.md).
+
 - [Hoja de ruta grupal](trabajo-integrador/documentacion/hoja-de-ruta-grupal.md): grupo 17, sus tres integrantes, tutor, fechas, reparto propuesto, matriz de seguimiento y preparación del coloquio.
 - [Mapa de los ocho enunciados](trabajo-integrador/documentacion/mapa-de-enunciados.md): operaciones, reglas, casos límite y dudas por sistema.
 - [Pautas originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Pautas%202026.pdf).
@@ -73,11 +75,11 @@ Los dos PDFs de teoría numerados 4 se conservan con sus nombres originales; tie
 - [Clase Aerolinea](trabajo-integrador/desarrollo/Aerolinea.cls): objeto de datos en Dolphin Smalltalk 7; expone sus atributos y la colección de vuelos.
 - [Listado histórico de métodos de Aerolinea](trabajo-integrador/desarrollo/aerolineaMetodos.txt): referencia del diseño anterior; no importar.
 - [Workspace AplicacionAerolinea](trabajo-integrador/desarrollo/AplicacionAerolinea.st): interfaz y lógica de negocio ejecutadas directamente en Dolphin, sin una clase de aplicación.
-- `AplicacionAerolinea.cls` queda como archivo legado y no se importa ni se usa para ejecutar el sistema.
+- `desarrollo/legado/AplicacionAerolinea.cls` queda como archivo legado y no se importa ni se usa para ejecutar el sistema.
 - [Guía del menú en Dolphin](trabajo-integrador/documentacion/menuDolphinHelper.md): importación, opciones, validaciones, fuentes de cátedra y 46 casos/escenarios verificados.
 - [Validación con diálogos reales](trabajo-integrador/documentacion/validacionMenuDolphin.md): recorrido completo, resultados y capturas de edición, detalle y contadores.
 - [Diagrama de clases](trabajo-integrador/documentacion/diagramaClases.md): atributos, operaciones principales, asociaciones y herencia de la versión integrada.
-- `desarrollo/pruebas/AplicacionAerolinea*Prueba.cls` conserva pruebas de la arquitectura anterior con clase de aplicación; no valida el nuevo Workspace.
+- `desarrollo/pruebas/` contiene la prueba actual `WorkspaceDateTimePrueba.cls`. Las baterias de dominio que dependen de la arquitectura anterior se conservan en `desarrollo/legado/pruebas/`; no importarlas para validar la version vigente.
 - [Carga, consultas y bajas de Aerolinea](trabajo-integrador/documentacion/consultasAerolineaHelper.md): carga para varias fechas, recursos de la cátedra, pruebas y criterio provisional de disponibles (Programado y Demorado).
 - [Revisión del aporte de AplicacionAerolinea](trabajo-integrador/documentacion/revisionAplicacionAerolinea.md): compatibilidad del archivo recibido, pruebas aisladas y ajustes pendientes antes de incorporarlo.
 - [Revisión conjunta con Aerolinea_corregida](trabajo-integrador/documentacion/revisionAerolinea.md): compatibilidad de ambos aportes, alcance de la colección y control del cupo diario, rutas sin validaciones y recursos pendientes de adaptar.

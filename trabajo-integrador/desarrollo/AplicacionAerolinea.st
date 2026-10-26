@@ -6,30 +6,41 @@ Antes, importar Vuelo, VueloNacional, VueloInternacional y Aerolinea."
  precargarVuelos vuelo1 vuelo2 vuelo3 vuelo4 vuelo5 vuelo6 vuelo7 vuelo8 vuelo9 vuelo10 |
 
 precargarVuelos := [
-"Precarga de diez vuelos, uno por dia, para la muestra."
-vuelo1 := VueloNacional crear: 101 con: 2 con: 'Buenos Aires' con: 'Cordoba' con: '01/12/2026 08:30' con: 520000 con: 'Programado' con: 'Cordoba' con: true.
-vuelo2 := VueloInternacional crear: 201 con: 10 con: 'Buenos Aires' con: 'Madrid' con: '02/12/2026 21:45' con: 3200000 con: 'Programado' con: 'Espana' con: 15 con: true.
-vuelo3 := VueloNacional crear: 102 con: 3 con: 'Buenos Aires' con: 'Mendoza' con: '03/12/2026 14:00' con: 680000 con: 'Demorado' con: 'Mendoza' con: false.
-vuelo4 := VueloInternacional crear: 202 con: 12 con: 'Buenos Aires' con: 'Roma' con: '04/12/2026 16:30' con: 3500000 con: 'Demorado' con: 'Italia' con: 10 con: false.
-vuelo5 := VueloNacional crear: 103 con: 2 con: 'Buenos Aires' con: 'Bariloche' con: '05/12/2026 07:15' con: 750000 con: 'Cancelado' con: 'Rio Negro' con: true.
-vuelo6 := VueloInternacional crear: 203 con: 9 con: 'Cordoba' con: 'Santiago de Chile' con: '06/12/2026 09:20' con: 2700000 con: 'Cancelado' con: 'Chile' con: 12 con: true.
-vuelo7 := VueloNacional crear: 104 con: 1 con: 'Cordoba' con: 'Salta' con: '07/12/2026 19:00' con: 510000 con: 'Finalizado' con: 'Salta' con: false.
-vuelo8 := VueloInternacional crear: 204 con: 11 con: 'Buenos Aires' con: 'Paris' con: '08/12/2026 18:15' con: 3800000 con: 'Finalizado' con: 'Francia' con: 15 con: true.
-vuelo9 := VueloNacional crear: 105 con: 2 con: 'Buenos Aires' con: 'Tucuman' con: '09/12/2026 06:45' con: 590000 con: 'Programado' con: 'Tucuman' con: true.
-vuelo10 := VueloInternacional crear: 205 con: 13 con: 'Buenos Aires' con: 'Londres' con: '10/12/2026 12:40' con: 4200000 con: 'Programado' con: 'Reino Unido' con: 20 con: true.
+"Precarga de diez vuelos para la muestra; algunas fechas se repiten."
+vuelo1 := VueloNacional crear: 101 con: 60 con: 'Buenos Aires' con: 'Cordoba' con: (Date newDay: 1 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((8 * 60 + 30) * 60000)) con: 520000 con: 'Programado' con: 'Cordoba' con: true.
 
+vuelo2 := VueloInternacional crear: 201 con: 640 con: 'Buenos Aires' con: 'Madrid' con: (Date newDay: 2 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((21 * 60 + 45) * 60000)) con: 3200000 con: 'Programado' con: 'Espana' con: 15 con: true.
+
+vuelo3 := VueloNacional crear: 102 con: 95 con: 'Buenos Aires' con: 'Mendoza' con: (Date newDay: 3 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((14 * 60 + 0) * 60000)) con: 680000 con: 'Demorado' con: 'Mendoza' con: false.
+
+vuelo4 := VueloInternacional crear: 202 con: 685 con: 'Buenos Aires' con: 'Roma' con: (Date newDay: 4 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((16 * 60 + 30) * 60000)) con: 3500000 con: 'Demorado' con: 'Italia' con: 10 con: false.
+
+vuelo5 := VueloNacional crear: 103 con: 115 con: 'Buenos Aires' con: 'Bariloche' con: (Date newDay: 10 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((7 * 60 + 15) * 60000)) con: 750000 con: 'Cancelado' con: 'Rio Negro' con: true.
+
+vuelo6 := VueloInternacional crear: 203 con: 118 con: 'Cordoba' con: 'Santiago de Chile' con: (Date newDay: 10 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((9 * 60 + 20) * 60000)) con: 2700000 con: 'Cancelado' con: 'Chile' con: 12 con: true.
+
+vuelo7 := VueloNacional crear: 104 con: 90 con: 'Cordoba' con: 'Salta' con: (Date newDay: 10 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((19 * 60 + 0) * 60000)) con: 510000 con: 'Finalizado' con: 'Salta' con: false.
+
+vuelo8 := VueloInternacional crear: 204 con: 670 con: 'Buenos Aires' con: 'Paris' con: (Date newDay: 11 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((18 * 60 + 15) * 60000)) con: 3800000 con: 'Finalizado' con: 'Francia' con: 15 con: true.
+
+vuelo9 := VueloNacional crear: 105 con: 125 con: 'Buenos Aires' con: 'Tucuman' con: (Date newDay: 12 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((6 * 60 + 45) * 60000)) con: 590000 con: 'Programado' con: 'Tucuman' con: true.
+
+vuelo10 := VueloInternacional crear: 205 con: 705 con: 'Buenos Aires' con: 'Londres' con: (Date newDay: 13 monthIndex: 12 year: 2026) con: (Time fromMilliseconds: ((12 * 60 + 40) * 60000)) con: 4200000 con: 'Programado' con: 'Reino Unido' con: 20 con: true.
 
 "Usar cargar: para conservar las validaciones de numero y cupo diario."
-aerolinea cargar: vuelo1.
-aerolinea cargar: vuelo2.
-aerolinea cargar: vuelo3.
-aerolinea cargar: vuelo4.
-aerolinea cargar: vuelo5.
-aerolinea cargar: vuelo6.
-aerolinea cargar: vuelo7.
-aerolinea cargar: vuelo8.
-aerolinea cargar: vuelo9.
-aerolinea cargar: vuelo10.
+cargarVuelo value: vuelo1.
+cargarVuelo value: vuelo2.
+cargarVuelo value: vuelo3.
+cargarVuelo value: vuelo4.
+cargarVuelo value: vuelo5.
+cargarVuelo value: vuelo6.
+cargarVuelo value: vuelo7.
+cargarVuelo value: vuelo8.
+cargarVuelo value: vuelo9.
+cargarVuelo value: vuelo10.
+aerolinea verTodos size < 10 ifTrue: [
+    informar value: 'Precarga parcial: ', aerolinea verTodos size displayString,
+        ' de 10 vuelos. Se respeto el cupo diario indicado.'].
 ].
 aerolinea := nil.
 continuar := true.
@@ -134,16 +145,9 @@ pedirBooleano := [:unMensaje |
     resultado].
 
 esBisiesto := [:unAnio |
-    | resto resultado |
-    resto := unAnio.
-    [resto >= 400] whileTrue: [resto := resto - 400].
-    resultado := resto = 0.
-    (resultado not and: [#(100 200 300) includes: resto])
-        ifFalse: [
-            (resultado not) ifTrue: [
-                [resto >= 4] whileTrue: [resto := resto - 4].
-                resultado := resto = 0]].
-    resultado].
+    "Date calcula los dias del anio aplicando las reglas del calendario.
+    Si tiene 366 dias, es bisiesto y febrero admite 29 dias."
+    (Date daysInYear: unAnio) = 366].
 
 esFecha := [:unTexto |
     | dia mes anio hora minuto maximoDia valido |
@@ -155,7 +159,8 @@ esFecha := [:unTexto |
         ((unTexto at: 14) = $:) ifFalse: [valido := false]].
     valido ifTrue: [
         #(1 2 4 5 7 8 9 10 12 13 15 16) do: [:i |
-            ('0123456789' includes: (unTexto at: i)) ifFalse: [valido := false]]].
+            ('0123456789' includes: (unTexto at: i))
+                ifFalse: [valido := false]]].
     valido ifTrue: [
         dia := (unTexto copyFrom: 1 to: 2) asNumber.
         mes := (unTexto copyFrom: 4 to: 5) asNumber.
@@ -168,12 +173,14 @@ esFecha := [:unTexto |
         (minuto between: 0 and: 59) ifFalse: [valido := false]].
     valido ifTrue: [
         maximoDia := #(31 28 31 30 31 30 31 31 30 31 30 31) at: mes.
-        (mes = 2 and: [esBisiesto value: anio]) ifTrue: [maximoDia := 29].
+        (mes = 2 and: [esBisiesto value: anio])
+            ifTrue: [maximoDia := 29].
         valido := dia between: 1 and: maximoDia].
-    valido].
+    valido
+].
 
 pedirFecha := [
-    | texto terminado resultado |
+    | texto terminado resultado dia mes anio hora minuto fecha time |
     terminado := false.
     resultado := nil.
     [terminado not] whileTrue: [
@@ -182,8 +189,23 @@ pedirFecha := [
             ifTrue: [terminado := true]
             ifFalse: [
                 (esFecha value: texto)
-                    ifTrue: [resultado := texto. terminado := true]
-                    ifFalse: [informar value: 'Ingrese una fecha y hora reales con formato dd/mm/aaaa hh:mm.']]].
+                    ifTrue: [
+                        dia := (texto copyFrom: 1 to: 2) asNumber.
+                        mes := (texto copyFrom: 4 to: 5) asNumber.
+                        anio := (texto copyFrom: 7 to: 10) asNumber.
+                        hora := texto copyFrom: 12 to: 13.
+                        hora := hora asNumber.
+                        minuto := (texto copyFrom: 15 to: 16) asNumber.
+                        fecha := Date newDay: dia monthIndex: mes year: anio.
+                        time := Time fromMilliseconds: ((hora * 60 + minuto) * 60000).
+                        resultado := Array with: fecha with: time.
+                        terminado := true
+                    ]
+                    ifFalse: [
+                        informar value: 'Ingrese una fecha y hora reales con formato dd/mm/aaaa hh:mm.'
+                    ]
+            ]
+    ].
     resultado
 ].
 
@@ -196,9 +218,9 @@ cargarVuelo := [:unVuelo |
     cargado := false.
     duplicado
         ifFalse: [
-            dia := unVuelo verFecha copyFrom: 1 to: 10.
+            dia := unVuelo verFecha.
             cantidad := (aerolinea verTodos select: [:vuelo |
-                (vuelo verFecha copyFrom: 1 to: 10) = dia]) size.
+                vuelo verFecha = dia]) size.
             (cantidad < aerolinea vercantVuelosMaxDia) ifTrue: [
                 aerolinea verTodos add: unVuelo.
                 cargado := true]].
@@ -209,12 +231,14 @@ modificarFecha := [:unNumero :otraFecha |
     vuelo := buscarVuelo value: unNumero.
     valido := vuelo notNil.
     valido ifTrue: [
-        dia := otraFecha copyFrom: 1 to: 10.
+        dia := otraFecha at: 1.
         cantidad := (aerolinea verTodos select: [:otroVuelo |
             (otroVuelo verNumero ~= unNumero) and:
-                [(otroVuelo verFecha copyFrom: 1 to: 10) = dia]]) size.
+                [otroVuelo verFecha = dia]]) size.
         (cantidad < aerolinea vercantVuelosMaxDia)
-            ifTrue: [vuelo modFecha: otraFecha]
+            ifTrue: [
+                vuelo modFecha: dia.
+                vuelo modHora: (otraFecha at: 2)]
             ifFalse: [valido := false]].
     valido].
 
@@ -229,7 +253,8 @@ textoVuelo := [:unVuelo |
     texto := 'Vuelo ', unVuelo verNumero displayString, ' - ', tipo,
         salto, 'Origen: ', unVuelo verOrigen,
         salto, 'Destino: ', unVuelo verDestino,
-        salto, 'Salida: ', unVuelo verFecha,
+        salto, 'Salida: ', unVuelo verFecha displayString,
+        ' ', unVuelo verHora displayString,
         salto, 'Duracion: ', unVuelo verDuracion displayString, ' minutos',
         salto, 'Estado: ', unVuelo verEstado,
         salto, 'Precio base: ', unVuelo verPrecioBase displayString,
@@ -257,7 +282,7 @@ mostrarVuelos := [:unosVuelos :unTitulo |
                 texto := texto, salto, salto,
                     'Vuelo ', vuelo verNumero displayString, ' - ', tipo, ' - ', vuelo verEstado,
                     salto, vuelo verOrigen, ' -> ', vuelo verDestino,
-                    ' | ', vuelo verFecha, salto,
+                    ' | ', vuelo verFecha displayString, ' ', vuelo verHora displayString, salto,
                     'Duracion: ', vuelo verDuracion displayString, ' min | Precio final: ',
                     vuelo precioFinal displayString].
             informar value: texto]].
@@ -332,8 +357,8 @@ diccionarioEstado := [
                     'Maximo de vuelos diarios: ', aerolinea vercantVuelosMaxDia displayString, salto,
                     'Vuelos cargados: ', aerolinea verTodos size displayString]].
 
- opcion = '3. Cargar vuelo' ifTrue: [
-        | tipo numero origen destino fecha duracion precio estado provincia equipaje pais tasa documentacion vuelo |
+    opcion = '3. Cargar vuelo' ifTrue: [
+        | tipo numero origen destino fecha hora duracion precio estado provincia equipaje pais tasa documentacion vuelo |
         aerolinea isNil
             ifTrue: [informar value: 'Primero debe cargar una aerolinea.']
             ifFalse: [
@@ -345,14 +370,21 @@ diccionarioEstado := [
                         ifFalse: [
                             origen := pedirTexto value: 'Ciudad de origen'.
                             origen notNil ifTrue: [destino := pedirTexto value: 'Ciudad de destino'].
-                            (origen notNil and: [destino notNil]) ifTrue: [fecha := pedirFecha value].
-                            (origen notNil and: [destino notNil and: [fecha notNil]])
+
+                           (origen notNil and: [destino notNil]) ifTrue:[| fechaHora |
+                               fechaHora := pedirFecha value.
+                               fechaHora notNil ifTrue: [
+                               fecha := fechaHora at: 1.
+                               hora := fechaHora at: 2.
+                               ]
+                             ].
+                            (origen notNil and: [destino notNil and: [fecha notNil and: [hora notNil]]])
                                 ifTrue: [duracion := pedirEntero value: 'Duracion en minutos' value: 1].
-                            (origen notNil and: [destino notNil and: [fecha notNil and: [duracion notNil]]])
+                            (origen notNil and: [destino notNil and: [fecha notNil and: [hora notNil and: [duracion notNil]]]])
                                 ifTrue: [precio := pedirPrecio value: 'Precio base'].
-                            (origen notNil and: [destino notNil and: [fecha notNil and: [duracion notNil and: [precio notNil]]]])
+                            (origen notNil and: [destino notNil and: [fecha notNil and: [hora notNil and: [duracion notNil and: [precio notNil]]]]])
                                 ifTrue: [estado := pedirEstado value].
-                            (origen notNil and: [destino notNil and: [fecha notNil and: [duracion notNil and: [precio notNil and: [estado notNil]]]]])
+                            (origen notNil and: [destino notNil and: [fecha notNil and: [hora notNil and: [duracion notNil and: [precio notNil and: [estado notNil]]]]]])
                                 ifTrue: [
                                     tipo = 'Nacional'
                                         ifTrue: [
@@ -360,19 +392,18 @@ diccionarioEstado := [
                                             provincia notNil ifTrue: [equipaje := pedirBooleano value: 'Incluye equipaje despachado?'].
                                             (provincia notNil and: [equipaje notNil]) ifTrue: [
                                                 vuelo := VueloNacional crear: numero con: duracion con: origen con: destino
-                                                    con: fecha con: precio con: estado con: provincia con: equipaje]]
+                                                    con: fecha con: hora con: precio con: estado con: provincia con: equipaje]]
                                         ifFalse: [
                                             pais := pedirTexto value: 'Pais de destino'.
                                             pais notNil ifTrue: [tasa := pedirPrecio value: 'Tasa internacional'].
                                             (pais notNil and: [tasa notNil]) ifTrue: [documentacion := pedirBooleano value: 'Requiere documentacion adicional?'].
                                             (pais notNil and: [tasa notNil and: [documentacion notNil]]) ifTrue: [
                                                 vuelo := VueloInternacional crear: numero con: duracion con: origen con: destino
-                                                    con: fecha con: precio con: estado con: pais con: tasa con: documentacion]]].
+                                                    con: fecha con: hora con: precio con: estado con: pais con: tasa con: documentacion]]].
                             vuelo notNil ifTrue: [
                                 (cargarVuelo value: vuelo)
                                     ifTrue: [informar value: 'Vuelo cargado.']
                                     ifFalse: [informar value: 'No se pudo cargar: numero repetido o cupo diario completo.']]]]]].
-
 
     opcion = '4. Buscar vuelo' ifTrue: [
         | numero vuelo |

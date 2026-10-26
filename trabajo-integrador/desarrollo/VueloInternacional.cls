@@ -10,8 +10,8 @@ VueloInternacional comment: ''!
 !VueloInternacional categoriesForClass!Kernel-Objects! !
 !VueloInternacional methodsFor!
 
-init: unNum dura: unDura ori: unOri des: unDes fech: unFech preb: unPreBa est: unEst pais: unPaisDes tasa: untasaInt doc: unDocu
-    super init: unNum dura: unDura ori: unOri des: unDes fech: unFech preb: unPreBa est: unEst.
+init: unNum dura: unDura ori: unOri des: unDes fech: unFech hor:unHor preb: unPreBa est: unEst pais: unPaisDes tasa: untasaInt doc: unDocu
+    super init: unNum dura: unDura ori: unOri des: unDes fech: unFech hor: unHor preb: unPreBa est: unEst.
     paisDestino := unPaisDes.
     tasaInter := untasaInt .
     documentacion := unDocu .
@@ -38,7 +38,7 @@ verpaisDestino
 
 vertasaInter
 ^tasaInter! !
-!VueloInternacional categoriesFor: #init:dura:ori:des:fech:preb:est:pais:tasa:doc:!public! !
+!VueloInternacional categoriesFor: #init:dura:ori:des:fech:hor:preb:est:pais:tasa:doc:!public! !
 !VueloInternacional categoriesFor: #modDocumentacion:!public! !
 !VueloInternacional categoriesFor: #modpaisDestino:!public! !
 !VueloInternacional categoriesFor: #modtasaInter:!public! !
@@ -49,10 +49,18 @@ vertasaInter
 
 !VueloInternacional class methodsFor!
 
-crear: unNum con: unDura con: unOri con: unDes con: unFech con: unPreBa con: unEst con: unPaisDes con: unaTasaInt con: unaDocu
-    ^self new
-        init: unNum dura: unDura ori: unOri des: unDes
-        fech: unFech preb: unPreBa est: unEst
-        pais: unPaisDes tasa: unaTasaInt doc: unaDocu! !
-!VueloInternacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:con:!public! !
+crear: unNum con: unDura con: unOri con: unDes con: unFech con: unHor con: unPreBa con: unEst con: unPaisDes con: unaTasaInt con: unaDocu
+	^self new
+		init: unNum
+		dura: unDura
+		ori: unOri
+		des: unDes
+		fech: unFech
+		hor: unHor
+		preb: unPreBa
+		est: unEst
+		pais: unPaisDes
+		tasa: unaTasaInt
+		doc: unaDocu! !
+!VueloInternacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:con:con:!public! !
 
