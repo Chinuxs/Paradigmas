@@ -131,15 +131,21 @@ pedirEntero := [:unMensaje :unMinimo |
     numero].
 
 esPrecio := [:unTexto |
-    | c puntos valido |
+    | c puntos posPunto valido |
     valido := unTexto isEmpty not.
     puntos := 0.
+    posPunto := 0.
     1 to: unTexto size do: [:i |
         c := unTexto at: i.
         (c = $.)
-            ifTrue: [puntos := puntos + 1]
+            ifTrue: [puntos := puntos + 1. posPunto := i]
             ifFalse: [(c isDigit) ifFalse: [valido := false]]].
-    valido and: [(puntos <= 1) and: [((unTexto at: 1) ~= $.) and: [(unTexto at: unTexto size) ~= $.]]]].
+    valido ifTrue: [
+        (puntos > 1) ifTrue: [valido := false].
+        ((unTexto at: 1) = $.) ifTrue: [valido := false].
+        ((unTexto at: unTexto size) = $.) ifTrue: [valido := false].
+        ((puntos = 1) & ((unTexto size - posPunto) > 2)) ifTrue: [valido := false]].
+    valido].
 
 pedirPrecio := [:unMensaje |
     | texto precio terminado |
@@ -152,7 +158,7 @@ pedirPrecio := [:unMensaje |
             ifFalse: [
                 (esPrecio value: texto)
                     ifTrue: [precio := texto asNumber. terminado := true]
-                    ifFalse: [informar value: 'Ingrese un precio valido. Use punto para los decimales, por ejemplo 1500.50']]].
+                    ifFalse: [informar value: 'Ingrese un precio valido. Use punto y hasta 2 decimales, por ejemplo 1500.50']]].
     precio].
 
 pedirEstado := [
@@ -310,11 +316,16 @@ mostrarVuelos := [:unosVuelos :unTitulo |
             informar value: texto]].
 
 calcularPromedio := [
-    | vuelos total |
-    vuelos := aerolinea verTodos.
+    | disponibles total |
+    disponibles := aerolinea verTodos select: [:vuelo |
+        (vuelo verEstado = 'Programado')
+            or: [vuelo verEstado = 'Demorado']].
     total := 0.
-    vuelos do: [:vuelo | total := total + vuelo precioFinal].
-    vuelos isEmpty ifTrue: [0] ifFalse: [total / vuelos size]].
+    disponibles do: [:vuelo |
+        total := total + vuelo precioFinal].
+    disponibles isEmpty
+        ifTrue: [0]
+        ifFalse: [total / disponibles size]].
 
 vuelosSuperiores := [
     | vuelos promedio |
@@ -522,10 +533,11 @@ diccionarioEstado := [
                     | destino |
                     destino := pedirLetras value: 'Ciudad de destino a buscar'.
                     destino notNil ifTrue: [
-                        mostrarVuelos value: (aerolinea verTodos select: [:vuelo | vuelo verDestino = destino])
-                            value: 'Vuelos a ', destino]].
+                        mostrarVuelos value: (aerolinea verTodos select: [:vuelo |
+                            vuelo verDestino asLowercase = destino asLowercase])
+                            value: 'Vuelos a ', destino]]]
                 consulta = 'Precio final promedio' ifTrue: [
-                    informar value: 'Precio final promedio (todos los vuelos): ',
+                    informar value: 'Precio final promedio (vuelos disponibles): ',
                         (calcularPromedio value) displayString].
                 consulta = 'Precios superiores al promedio' ifTrue: [
                     mostrarVuelos value: (vuelosSuperiores value)
