@@ -23,7 +23,7 @@ modprovDestino: otroprovDes
 provDestino:= otroprovDes.!
 
 precioFinal
-    "Estamos calculando bien aca el precio base? no es Base + 10% del precio base si lleva equipaje?"
+    "Redefine precioFinal: suma un 10% al precio base cuando el vuelo incluye equipaje."
     llevaEquipaje ifTrue: [^precioBase *1.10] 
                     ifFalse:[^precioBase ] 
          !
@@ -55,4 +55,3 @@ crear: unNum con: unDura con: unOri con: unDes con: unFech con: unHor con: unPre
 		provDes: unProvDes
 		llevaEquip: unLlevaEquip! !
 !VueloNacional class categoriesFor: #crear:con:con:con:con:con:con:con:con:con:!public! !
-

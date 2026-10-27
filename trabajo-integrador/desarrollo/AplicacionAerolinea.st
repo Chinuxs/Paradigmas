@@ -55,10 +55,15 @@ opciones := #(
     '8. Eliminar todos los cancelados'
     '0. Salir').
 
+"Es un template Generico para armar opciones de menu y consultas. Se puede usar para cualquier menu de opciones.
+no duplicamos el codigo de pedirOpcion y informar, para que sea mas facil de mantener."
 pedirOpcion := [:unasOpciones :unTitulo |
     ChoicePrompter choices: unasOpciones caption: unTitulo].
 
+"Idem para informar, usamos un MessageBox Generico para mostrar mensajes al usuario."
 informar := [:unMensaje | MessageBox notify: unMensaje].
+
+"Basicamente concatena 2 strings: \n y \r, para que se vea bien en el MessageBox."
 salto := String with: Character cr with: Character lf.
 
 recortar := [:unTexto |
