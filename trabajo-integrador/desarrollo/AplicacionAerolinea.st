@@ -535,7 +535,7 @@ diccionarioEstado := [
                     destino notNil ifTrue: [
                         mostrarVuelos value: (aerolinea verTodos select: [:vuelo |
                             vuelo verDestino asLowercase = destino asLowercase])
-                            value: 'Vuelos a ', destino]]]
+                            value: 'Vuelos a ', destino]].
                 consulta = 'Precio final promedio' ifTrue: [
                     informar value: 'Precio final promedio (vuelos disponibles): ',
                         (calcularPromedio value) displayString].
