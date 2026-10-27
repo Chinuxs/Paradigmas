@@ -2,7 +2,7 @@
 No declara clases: el menu y la logica viven en bloques del Workspace.
 Antes, importar Vuelo, VueloNacional, VueloInternacional y Aerolinea."
 
-| aerolinea continuar opciones pedirOpcion informar salto recortar pedirTexto esEntero pedirEntero esPrecio pedirPrecio pedirEstado pedirBooleano esBisiesto esFecha pedirFecha buscarVuelo cargarVuelo modificarFecha textoBooleano textoVuelo mostrarVuelos calcularPromedio vuelosSuperiores mayorDuracion facturacionPotencial diccionarioEstado
+| aerolinea continuar opciones pedirOpcion informar salto recortar pedirTexto esSoloLetras pedirLetras esEntero pedirEntero esPrecio pedirPrecio pedirEstado pedirBooleano esBisiesto esFecha pedirFecha buscarVuelo cargarVuelo modificarFecha textoBooleano textoVuelo mostrarVuelos calcularPromedio vuelosSuperiores mayorDuracion facturacionPotencial diccionarioEstado
  precargarVuelos vuelo1 vuelo2 vuelo3 vuelo4 vuelo5 vuelo6 vuelo7 vuelo8 vuelo9 vuelo10 |
 
 precargarVuelos := [
@@ -86,6 +86,28 @@ pedirTexto := [:unMensaje |
                     ifFalse: [terminado := true]]].
     texto].
 
+esSoloLetras := [:unTexto |
+    | valido c |
+    valido := unTexto isEmpty not.
+    1 to: unTexto size do: [:i |
+        c := unTexto at: i.
+        (((c isLetter) not) & ((c isSeparator) not)) ifTrue: [valido := false]].
+    valido].
+
+pedirLetras := [:unMensaje |
+    | texto resultado terminado |
+    resultado := nil.
+    terminado := false.
+    [terminado not] whileTrue: [
+        texto := pedirTexto value: unMensaje.
+        texto isNil
+            ifTrue: [terminado := true]
+            ifFalse: [
+                (esSoloLetras value: texto)
+                    ifTrue: [resultado := texto. terminado := true]
+                    ifFalse: [informar value: 'Ingrese solo letras, sin numeros.']]].
+    resultado].
+
 esEntero := [:unTexto |
     | valido |
     valido := unTexto isEmpty not.
@@ -105,7 +127,7 @@ pedirEntero := [:unMensaje :unMinimo |
             ifFalse: [
                 ((esEntero value: texto) and: [texto asNumber >= unMinimo])
                     ifTrue: [numero := texto asNumber. terminado := true]
-                    ifFalse: [informar value: 'Ingrese un numero entero mayor o igual a ', unMinimo printString, '.']]].
+                    ifFalse: [informar value: 'Ingrese un numero entero mayor o igual a ', unMinimo displayString, '.']]].
     numero].
 
 esPrecio := [:unTexto |
@@ -334,12 +356,12 @@ diccionarioEstado := [
         aerolinea notNil
             ifTrue: [informar value: 'La aerolinea ya esta cargada. Se conservan sus datos y vuelos.']
             ifFalse: [
-                nombre := pedirTexto value: 'Nombre de la aerolinea'.
+                nombre := pedirLetras value: 'Nombre de la aerolinea'.
                 nombre notNil ifTrue: [anio := pedirEntero value: 'Anio de fundacion' value: 1].
-                (nombre notNil and: [anio notNil]) ifTrue: [pais := pedirTexto value: 'Pais de origen'].
+                (nombre notNil and: [anio notNil]) ifTrue: [pais := pedirLetras  value: 'Pais de origen'].
                 (nombre notNil and: [anio notNil and: [pais notNil]]) ifTrue: [codigo := pedirTexto value: 'Codigo identificador'].
                 (nombre notNil and: [anio notNil and: [pais notNil and: [codigo notNil]]])
-                    ifTrue: [maximo := pedirEntero value: 'Cantidad maxima de vuelos diarios' value: 0].
+                    ifTrue: [maximo := pedirEntero value: 'Cantidad maxima de vuelos diarios' value: 1].
                 (nombre notNil and: [anio notNil and: [pais notNil and: [codigo notNil and: [maximo notNil]]]])
                     ifTrue: [
                         aerolinea := Aerolinea crear: nombre con: anio con: pais con: codigo con: maximo.
@@ -368,8 +390,8 @@ diccionarioEstado := [
                     (buscarVuelo value: numero) notNil
                         ifTrue: [informar value: 'Ya existe un vuelo con ese numero.']
                         ifFalse: [
-                            origen := pedirTexto value: 'Ciudad de origen'.
-                            origen notNil ifTrue: [destino := pedirTexto value: 'Ciudad de destino'].
+                            origen := pedirLetras value: 'Ciudad de origen'.
+                            origen notNil ifTrue: [destino := pedirLetras value: 'Ciudad de destino'].
 
                            (origen notNil and: [destino notNil]) ifTrue:[| fechaHora |
                                fechaHora := pedirFecha value.
@@ -388,13 +410,13 @@ diccionarioEstado := [
                                 ifTrue: [
                                     tipo = 'Nacional'
                                         ifTrue: [
-                                            provincia := pedirTexto value: 'Provincia de destino'.
+                                            provincia := pedirLetras value: 'Provincia de destino'.
                                             provincia notNil ifTrue: [equipaje := pedirBooleano value: 'Incluye equipaje despachado?'].
                                             (provincia notNil and: [equipaje notNil]) ifTrue: [
                                                 vuelo := VueloNacional crear: numero con: duracion con: origen con: destino
                                                     con: fecha con: hora con: precio con: estado con: provincia con: equipaje]]
                                         ifFalse: [
-                                            pais := pedirTexto value: 'Pais de destino'.
+                                            pais := pedirLetras value: 'Pais de destino'.
                                             pais notNil ifTrue: [tasa := pedirPrecio value: 'Tasa internacional'].
                                             (pais notNil and: [tasa notNil]) ifTrue: [documentacion := pedirBooleano value: 'Requiere documentacion adicional?'].
                                             (pais notNil and: [tasa notNil and: [documentacion notNil]]) ifTrue: [
@@ -438,15 +460,15 @@ diccionarioEstado := [
                                     do: [:campoInternacional | campos add: campoInternacional]].
                             campo := pedirOpcion value: campos value: 'Dato a modificar'.
                             dato := nil.
-                            campo = 'Origen' ifTrue: [dato := pedirTexto value: 'Nueva ciudad de origen'].
-                            campo = 'Destino' ifTrue: [dato := pedirTexto value: 'Nueva ciudad de destino'].
+                            campo = 'Origen' ifTrue: [dato := pedirLetras value: 'Nueva ciudad de origen'].
+                            campo = 'Destino' ifTrue: [dato := pedirLetras value: 'Nueva ciudad de destino'].
                             campo = 'Fecha y hora' ifTrue: [dato := pedirFecha value].
                             campo = 'Duracion' ifTrue: [dato := pedirEntero value: 'Nueva duracion en minutos' value: 1].
                             campo = 'Precio base' ifTrue: [dato := pedirPrecio value: 'Nuevo precio base'].
                             campo = 'Estado' ifTrue: [dato := pedirEstado value].
-                            campo = 'Provincia de destino' ifTrue: [dato := pedirTexto value: 'Nueva provincia de destino'].
+                            campo = 'Provincia de destino' ifTrue: [dato := pedirLetras value: 'Nueva provincia de destino'].
                             campo = 'Equipaje' ifTrue: [dato := pedirBooleano value: 'Incluye equipaje despachado?'].
-                            campo = 'Pais de destino' ifTrue: [dato := pedirTexto value: 'Nuevo pais de destino'].
+                            campo = 'Pais de destino' ifTrue: [dato := pedirLetras value: 'Nuevo pais de destino'].
                             campo = 'Tasa internacional' ifTrue: [dato := pedirPrecio value: 'Nueva tasa internacional'].
                             campo = 'Documentacion' ifTrue: [dato := pedirBooleano value: 'Requiere documentacion adicional?'].
                             modificacionCorrecta := true.
@@ -498,7 +520,7 @@ diccionarioEstado := [
                         value: 'Duracion menor a dos horas'].
                 consulta = 'Destino' ifTrue: [
                     | destino |
-                    destino := pedirTexto value: 'Ciudad de destino a buscar'.
+                    destino := pedirLetras value: 'Ciudad de destino a buscar'.
                     destino notNil ifTrue: [
                         mostrarVuelos value: (aerolinea verTodos select: [:vuelo | vuelo verDestino = destino])
                             value: 'Vuelos a ', destino]].
