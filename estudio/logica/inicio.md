@@ -28,6 +28,6 @@ Empezá por la [teoría desde cero](teoria.md) y seguí con la [receta de reglas
 
 ## 🎯 Para practicar
 
-**Autos → personas y cargos de 2023 → bases con códigos intermedios de 2025.**
+**Autos → Congreso 2025 e Inmobiliaria 2024 → Feria y Hospital 2025.** Los modelos de 2022 y 2023 quedan como apoyo.
 
 Los [modelos revisados](../../parciales/guiaParciales.md) concentran el ejercicio lógico en relacionar hechos, filtrar y calcular. El PDF también incluye listas: están dentro del material, aunque no aparezcan en esos modelos de la misma manera.

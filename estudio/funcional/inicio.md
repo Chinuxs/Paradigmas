@@ -32,4 +32,4 @@ Empezá por [teoría desde cero](teoria.md), seguí con la [receta de resolució
 
 La clase 7, p. 8 y práctica diap. 8, excluye `map`, `filter`, `take` y `takeWhile` del parcial. Algunos modelos piden desarrollar todas las funciones utilizadas. Las guías trabajan con recursión explícita y auxiliares propias; la consigna de tu evaluación determina los recursos permitidos.
 
-**Práctica sugerida:** longitudes por sublista → [reemplazo de 2023](../../parciales/Parcial_2023.png) → [variantes de otros parciales](../../parciales/guiaParciales.md).
+**Práctica sugerida:** longitudes y conteos → Congreso 2025 (sublistas impares) → Feria 2025 (incrementos) → Hospital 2025 (filtrado) e Inmobiliaria 2024 (quitar vocales y aplanar). [Abrir los modelos](../../parciales/guiaParciales.md).

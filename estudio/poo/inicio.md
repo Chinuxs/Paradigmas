@@ -43,4 +43,4 @@ Empezá por la [teoría breve](teoria.md) y continuá con la [receta de resoluci
 | 5 · Herencia | [Integración](../../practica/helpers/clase-05-herencia-helper.md) | [Consignas](../../practica/enunciados/Clase%205%20%20-%20Practica.pptx) |
 | 6 · Integradora | Usar la [receta general](practica.md) | [Empresa y empleados](../../practica/enunciados/Clase%206%20-%20Practica.pptx) |
 
-**Para practicar:** [parcial 2023, ejercicio 1](../../parciales/Parcial_2023.png) → [otros modelos](../../parciales/guiaParciales.md).
+**Para practicar:** Congreso 2025 → Feria 2025 → Inmobiliaria 2024 y Hospital 2025. [Abrir los modelos prioritarios](../../parciales/guiaParciales.md). Los ejemplos de 2023 quedan como apoyo.

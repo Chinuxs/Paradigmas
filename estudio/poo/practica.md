@@ -8,7 +8,7 @@
 
 ## 1. Marcá los datos y las acciones
 
-Ejemplo guía: [parcial 2023, ejercicio 1](../../parciales/Parcial_2023.png).
+Ejemplo de apoyo: [parcial 2023, ejercicio 1](../../parciales/Parcial_2023.png). El foco de práctica actual está en [Congreso, Feria, Hospital e Inmobiliaria de 2024–2025](../../parciales/guiaParciales.md); esta receta permite preparar sus operaciones comunes.
 
 | Parte | Qué identificar |
 | --- | --- |
@@ -109,7 +109,7 @@ Propuesta para la condición de baja `'compras'`:
 | Áreas Ventas, Ventas, Sistemas | Diccionario: Ventas → 2; Sistemas → 1. |
 | Empresa vacía | Los recorridos no procesan empleados. |
 
-**Tu turno:** resolvé el ejercicio 1 de 2023 completo, incluida la carga y las impresiones. Después probá Congreso o Feria en la [guía de parciales](../../parciales/guiaParciales.md).
+**Tu turno:** aplicar la receta al ejercicio 1 de Congreso 2025, incluida la carga y las impresiones; después resolver Feria, Inmobiliaria y Hospital. [Abrir la guía de parciales](../../parciales/guiaParciales.md).
 
 ## 📚 Fuentes
 

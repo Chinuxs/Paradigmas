@@ -76,7 +76,7 @@ largas (xs:xss) n
 
 **Fijate en las ramas:** si se conserva la sublista aparece `xs : ...`; si se descarta, solo continúa la recursión.
 
-## 5. Aplicalo al parcial 2023
+## 5. Ejemplo base: reemplazo del parcial 2023
 
 El [ejercicio 2](../../parciales/Parcial_2023.png) pide reemplazar un número por otro dentro de cada sublista.
 
@@ -136,7 +136,7 @@ Para paridad, en Haskell se escribe ``longitud xs `mod` 2 == 0``. Una longitud d
 - [ ] Longitud justo igual al límite; longitudes pares e impares.
 - [ ] Cada rama devuelve el mismo tipo de resultado.
 
-**Tu turno:** resolver el [conteo de 2022](../../parciales/Parcial_2022.png) sin usar `length`. Después elegir una variante en la [guía de parciales](../../parciales/guiaParciales.md).
+**Tu turno:** usar `longitud` y `veces` para resolver Congreso 2025, que cuenta apariciones solo en sublistas impares. Después seguir con Feria, Hospital e Inmobiliaria en la [guía de parciales](../../parciales/guiaParciales.md). Los modelos 2022–2023 quedan como apoyo previo si hace falta.
 
 ## 📚 Fuentes
 

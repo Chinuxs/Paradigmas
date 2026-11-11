@@ -12,7 +12,7 @@ Objetos que tienen estado y colaboran mediante mensajes.
 
 | 📖 Entender | ✏️ Resolver | 🎯 Practicar |
 | --- | --- | --- |
-| [Teoría resumida](estudio/poo/teoria.md) | [Pasos, ejemplos y trucos](estudio/poo/practica.md) | [Parcial 2023 · ejercicio 1](parciales/Parcial_2023.png) |
+| [Teoría resumida](estudio/poo/teoria.md) | [Pasos, ejemplos y trucos](estudio/poo/practica.md) | [Congreso 2025 · ejercicio 1](parciales/imagenesRecibidas/WhatsApp%20Image%202026-11-05%20at%2019.18.25.jpeg) |
 
 **Temas:** clases e instancias · mensajes · colecciones · herencia · polimorfismo.
 
@@ -26,7 +26,7 @@ Funciones que calculan resultados a partir de sus argumentos.
 
 | 📖 Entender | ✏️ Resolver | 🎯 Practicar |
 | --- | --- | --- |
-| [Teoría desde cero](estudio/funcional/teoria.md) | [Recursión y listas paso a paso](estudio/funcional/practica.md) | [Parcial 2023 · ejercicio 2](parciales/Parcial_2023.png) |
+| [Teoría desde cero](estudio/funcional/teoria.md) | [Recursión y listas paso a paso](estudio/funcional/practica.md) | [Congreso 2025 · ejercicio 2](parciales/imagenesRecibidas/WhatsApp%20Image%202026-11-05%20at%2019.18.25.jpeg) |
 
 **Temas:** tipos · guardas · caso base · recursión · listas · listas de listas.
 
@@ -40,7 +40,7 @@ Hechos y reglas que permiten responder consultas.
 
 | 📖 Entender | ✏️ Resolver | 🎯 Practicar |
 | --- | --- | --- |
-| [Teoría desde cero](estudio/logica/teoria.md) | [Reglas y consultas paso a paso](estudio/logica/practica.md) | [Parcial 2023 · ejercicio 3](parciales/Parcial_2023.png) |
+| [Teoría desde cero](estudio/logica/teoria.md) | [Reglas y consultas paso a paso](estudio/logica/practica.md) | [Congreso 2025 · ejercicio 3](parciales/imagenesRecibidas/WhatsApp%20Image%202026-11-05%20at%2019.18.25.jpeg) |
 
 **Temas:** base de conocimiento · variables · unificación · relaciones · filtros · cálculos.
 
@@ -50,7 +50,9 @@ Hechos y reglas que permiten responder consultas.
 
 **[Elegir un parcial o un ejercicio →](parciales/guiaParciales.md)**
 
-Modelos de 2022 a febrero de 2026, organizados por tema y dificultad sugerida. Incluye ejercicios de clase y distingue los exámenes prácticos de las fotos de teoría.
+🎯 [Qué se repite y cómo vamos a prepararlo](parciales/patronPracticos.md)
+
+**Foco actual: prácticos de 2024 y 2025.** Congreso, Feria, Inmobiliaria y Hospital tienen prioridad; los modelos de otros años quedan como apoyo. La guía también identifica el teórico del 30/10/2025 y los ejercicios de clase.
 
 ## ✈️ Trabajo integrador · Aerolínea
 

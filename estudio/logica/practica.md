@@ -125,7 +125,7 @@ Si una errata deja un dato ambiguo, registrar la corrección que se propone ante
 4. Comprobá las condiciones y el total.
 5. Elegí otra persona que debería quedar fuera y explicá dónde falla.
 
-**Tu turno:** resolver el ejercicio 3 de 2023, primero los incisos sin cuentas y después los de sueldo total. Como segunda etapa, usar una base con códigos en la [guía de parciales](../../parciales/guiaParciales.md).
+**Tu turno:** resolver el ejercicio 3 de Congreso 2025 usando las conexiones de las secciones 4 y 5. Después pasar a Inmobiliaria 2024, Feria y Hospital 2025 en la [guía de parciales](../../parciales/guiaParciales.md). El ejemplo 2023 queda como apoyo para relaciones más sencillas.
 
 ## 📚 Fuentes
 
