@@ -1,5 +1,7 @@
 # Helper 5 — Colecciones, iteradores y diccionarios
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [5-POO-Colecciones.pdf](../material/5-POO-Colecciones.pdf), pp. 3–15. Aplicación: [práctica 4](../../practica/helpers/clase-04-colecciones-farmacia-helper.md).
 
 ## Elegir según las operaciones necesarias, pp. 5–11

@@ -1,5 +1,7 @@
 # Helper práctico 5 — Integración de colecciones y herencia
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [Clase 5  - Practica.pptx](../enunciados/Clase%205%20%20-%20Practica.pptx), diapositivas 4–25. Apoyos: [práctica 4](clase-04-colecciones-farmacia-helper.md), [herencia](../../teoria/apuntes/06-herencia-helper.md) y [UML](../../teoria/apuntes/04-uml-helper.md).
 
 ## Parte 1: completar Farmacia, diapositivas 4–12

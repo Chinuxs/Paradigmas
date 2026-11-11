@@ -1,5 +1,7 @@
 # Helper — Ejemplo completo de herencia: Banco
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [Ejemplo completo de herencia.pdf](../material/Ejemplo%20completo%20de%20herencia.pdf), pp. 1–5. Apoyos: [herencia](06-herencia-helper.md) y [colecciones](05-colecciones-helper.md).
 
 ## Qué pide el ejemplo, p. 1

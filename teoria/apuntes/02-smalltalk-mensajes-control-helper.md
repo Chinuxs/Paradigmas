@@ -1,5 +1,7 @@
 # Helper 2 — Mensajes y estructuras de control
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [2-POO-Mensajes-EstControl.pdf](../material/2-POO-Mensajes-EstControl.pdf), pp. 3–22.
 
 ## Mapa rápido

@@ -1,5 +1,7 @@
 # Helper 4 — UML: clases y secuencias
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [4-POO-UML.pdf](../material/4-POO-UML.pdf), pp. 2–21. Las recetas y controles de este helper son ayudas de estudio; los ejercicios originales están en el PDF.
 
 ## Qué estudiar y qué herramienta pide la cátedra

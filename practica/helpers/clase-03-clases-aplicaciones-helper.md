@@ -1,5 +1,7 @@
 # Helper práctico 3 — Remedio y Robot
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [Clase 3 - Practica - sin resolucion.pptx](../enunciados/Clase%203%20-%20Practica%20-%20sin%20resolucion.pptx), diapositivas 5–21. Apoyo: [teoría 3](../../teoria/apuntes/03-clase-libro-helper.md).
 
 ## Herramientas para observar lo que pasa

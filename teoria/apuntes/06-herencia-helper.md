@@ -1,5 +1,7 @@
 # Helper 6 — Herencia, polimorfismo, self y super
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [6-POO-Herencia.pdf](../material/6-POO-Herencia.pdf), pp. 3–33. Complementos: [práctica 5](../../practica/helpers/clase-05-herencia-helper.md) y [ejemplo de Banco](06-ejemplo-herencia-banco-helper.md).
 
 ## Qué relación expresa la herencia, pp. 3–9

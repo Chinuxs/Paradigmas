@@ -1,5 +1,7 @@
 # Helper práctico 0 — Prepararse para la materia
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [Clase 0 - Practica.pptx](../enunciados/Clase%200%20-%20Practica.pptx), diapositivas 4–11.
 
 Esta presentación es introductoria: no contiene una guía de ejercicios para resolver.

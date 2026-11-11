@@ -1,5 +1,7 @@
 # Helper 3 — Diseño e implementación de clases
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [3- POO-ClaseLibro.pdf](../material/3-%20POO-ClaseLibro.pdf), pp. 3–15.
 
 ## La idea que une la clase

@@ -1,5 +1,7 @@
 # Helper 1 — Introducción a POO
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [1-POO-Introducción.pdf](../material/1-POO-Introducci%C3%B3n.pdf), pp. 3–24. Las explicaciones y ejercicios de repaso de este helper son apoyo de estudio.
 
 ## Qué tenés que poder explicar

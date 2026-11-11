@@ -1,5 +1,7 @@
 # Helper práctico 1 — Pasar del enunciado a objetos
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [Clase 1 - Practica.pptx](../enunciados/Clase%201%20-%20Practica.pptx), diapositivas 5–18. Apoyo: [teoría 1](../../teoria/apuntes/01-poo-introduccion-helper.md).
 
 ## Qué pide el material

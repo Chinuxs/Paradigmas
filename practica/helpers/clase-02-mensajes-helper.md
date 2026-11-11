@@ -1,5 +1,7 @@
 # Helper práctico 2 — Resolver mensajes paso a paso
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [Clase 2 - Practica.pptx](../enunciados/Clase%202%20-%20Practica.pptx), diapositivas 4–18. Apoyo: [teoría 2](../../teoria/apuntes/02-smalltalk-mensajes-control-helper.md).
 
 ## Receta para todos los ejercicios

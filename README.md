@@ -1,105 +1,65 @@
-# Paradigmas de Programación
+# 📚 Paradigmas de Programación
 
-Material de la materia: teoría, práctica y trabajo integrador.
+**UTN · Teoría, práctica y preparación de parciales**
 
-## Trabajar en equipo con IA
+Elegí un tema y seguí este recorrido: **entender → resolver con una guía → practicar por tu cuenta**.
 
-Las instrucciones comunes están en [AGENTS.md](AGENTS.md) y el estado del trabajo en [contexto-ia.md](contexto-ia.md). Se comparten junto al código mediante Git. Consultá la [guía para usar distintos asistentes](docs/uso-de-ia.md) al preparar tu copia local.
+## 🧩 POO · Smalltalk
 
-### Prompt para empezar
+Objetos que tienen estado y colaboran mediante mensajes.
 
-Copiá este mensaje en tu asistente con el repo abierto. Si usás un chat sin acceso a archivos locales, adjuntá `AGENTS.md` y `contexto-ia.md`.
+**[⚡ Resumen de teoría y práctica](estudio/poo/resumen.md) · [Entrar al tema →](estudio/poo/inicio.md)**
 
-> Me sumo al equipo de este proyecto. Leé AGENTS.md y contexto-ia.md, seguí las pautas y resumime qué estamos construyendo, en qué estado está y qué queda pendiente. Consultá los archivos disponibles antes de pedirme información. Quiero trabajar en: [tu tarea, o «ayudame a elegir una tarea pendiente»].
+| 📖 Entender | ✏️ Resolver | 🎯 Practicar |
+| --- | --- | --- |
+| [Teoría resumida](estudio/poo/teoria.md) | [Pasos, ejemplos y trucos](estudio/poo/practica.md) | [Parcial 2023 · ejercicio 1](parciales/Parcial_2023.png) |
 
-## Estructura
+**Temas:** clases e instancias · mensajes · colecciones · herencia · polimorfismo.
 
-```text
-teoria/
-  apuntes/                 Resúmenes y notas de clase
-  material/                Diapositivas, bibliografía y PDFs
-practica/
-  enunciados/              Guías y consignas de ejercicios
-  helpers/                 Recetas, tips y controles por clase práctica
-  resoluciones/            Soluciones organizadas por guía o tema
-trabajo-integrador/
-  enunciado/               Consigna, pautas y criterios de evaluación
-  desarrollo/             Código y archivos de trabajo
-  documentacion/          Informe, diagramas y decisiones del equipo
-  entregables/             Versiones preparadas para entregar
-```
+---
 
-## Cómo organizar los archivos
+## 🔁 Funcional · Haskell
 
-- Usar `camelCase` para nombres nuevos, sin espacios ni tildes: `unidad01Introduccion.md` o `aplicacionAerolinea.st`. Las clases Smalltalk y sus archivos `.cls` llevan inicial mayúscula. Conservar los nombres de los archivos existentes y originales recibidos.
-- En práctica, usar el mismo nombre para la guía y su resolución: `enunciados/guia01.pdf` y `resoluciones/guia01/`.
-- Si hay varias entregas del integrador, crear `entregables/entrega01/`, `entregables/entrega02/`, etc.
-- Mantener el trabajo en curso en `desarrollo/` y preparar en `entregables/` los archivos que pida cada entrega.
-- Agregar carpetas por unidad o paradigma a medida que se necesiten.
+Funciones que calculan resultados a partir de sus argumentos.
 
-Los archivos `.gitkeep` permiten guardar carpetas vacías en Git. Se pueden eliminar cuando esas carpetas tengan contenido.
+**[⚡ Resumen de teoría y práctica](estudio/funcional/resumen.md) · [Entrar al tema →](estudio/funcional/inicio.md)**
 
-## Guías para estudiar y practicar
+| 📖 Entender | ✏️ Resolver | 🎯 Practicar |
+| --- | --- | --- |
+| [Teoría desde cero](estudio/funcional/teoria.md) | [Recursión y listas paso a paso](estudio/funcional/practica.md) | [Parcial 2023 · ejercicio 2](parciales/Parcial_2023.png) |
 
-Cada helper enlaza su archivo fuente e indica páginas o diapositivas. Incluye explicaciones propias y señala erratas del material. Los ejemplos de código todavía no se ejecutaron en Dolphin.
+**Temas:** tipos · guardas · caso base · recursión · listas · listas de listas.
 
-| Material | Helper |
-| --- | --- |
-| Teoría 1: introducción a POO | [Conceptos, modelado y repaso](teoria/apuntes/01-poo-introduccion-helper.md) |
-| Teoría 2: mensajes y control | [Sintaxis, precedencia y estructuras](teoria/apuntes/02-smalltalk-mensajes-control-helper.md) |
-| Teoría 3: clase Libro | [Clases, protocolos y actividad de puntos](teoria/apuntes/03-clase-libro-helper.md) |
-| Teoría 4: UML | [Diagramas de clases, secuencias y herramientas](teoria/apuntes/04-uml-helper.md) |
-| Teoría 4: clase Biblioteca | [Clases compuestas, búsquedas y bajas](teoria/apuntes/04-clase-biblioteca-helper.md) |
-| Teoría 5: colecciones | [Colecciones, iteradores y diccionarios](teoria/apuntes/05-colecciones-helper.md) |
-| Teoría 6: herencia | [Polimorfismo, self y super](teoria/apuntes/06-herencia-helper.md) |
-| Ejemplo completo de herencia | [Banco: integración y correcciones](teoria/apuntes/06-ejemplo-herencia-banco-helper.md) |
-| Práctica 0: presentación | [Preparación y organización](practica/helpers/clase-00-organizacion-helper.md) |
-| Práctica 1: POO | [Receta para modelar](practica/helpers/clase-01-modelado-helper.md) |
-| Práctica 2: mensajes | [Receta de resolución y resultados de control](practica/helpers/clase-02-mensajes-helper.md) |
-| Práctica 3: clases simples | [Remedio y Robot, paso a paso](practica/helpers/clase-03-clases-aplicaciones-helper.md) |
-| Práctica 4: clases compuestas | [Farmacia, iteradores y diccionario](practica/helpers/clase-04-colecciones-farmacia-helper.md) |
-| Práctica 5: colecciones y herencia | [Bajas, trazas y modelo de Facultad](practica/helpers/clase-05-herencia-helper.md) |
+---
 
-Orden sugerido: práctica 0 → teoría 1 + práctica 1 → teoría 2 + práctica 2 → teoría 3 + práctica 3 → UML y Biblioteca → colecciones + práctica 4 → herencia + práctica 5 → ejemplo completo de Banco. Intentar los ejercicios antes de consultar los resultados de control.
+## 🔎 Lógica · Prolog
 
-Los dos PDFs de teoría numerados 4 se conservan con sus nombres originales; tienen helpers separados. Sobre UML, el material revisado no recomienda una herramienta específica: ver [alcance y fuentes de esa revisión](teoria/apuntes/04-uml-helper.md#qué-estudiar-y-qué-herramienta-pide-la-cátedra).
+Hechos y reglas que permiten responder consultas.
 
-## Trabajo integrador grupal
+**[⚡ Resumen de teoría y práctica](estudio/logica/resumen.md) · [Entrar al tema →](estudio/logica/inicio.md)**
 
-Version vigente (26/10/2026): usar los cuatro `.cls` directamente en `trabajo-integrador/desarrollo/` y su `AplicacionAerolinea.st`. Ya usan `Date` y `Time` separados. `Aerolinea` conserva solamente datos y accesores; la lógica de gestion está en el Workspace y `precioFinal` conserva el polimorfismo de los vuelos. La carpeta duplicada `conDateTIME/` fue eliminada. Pruebas actuales y resultados: [pruebasDateTime.md](trabajo-integrador/documentacion/pruebasDateTime.md).
+| 📖 Entender | ✏️ Resolver | 🎯 Practicar |
+| --- | --- | --- |
+| [Teoría desde cero](estudio/logica/teoria.md) | [Reglas y consultas paso a paso](estudio/logica/practica.md) | [Parcial 2023 · ejercicio 3](parciales/Parcial_2023.png) |
 
-- [Hoja de ruta grupal](trabajo-integrador/documentacion/hoja-de-ruta-grupal.md): grupo 17, sus tres integrantes, tutor, fechas, reparto propuesto, matriz de seguimiento y preparación del coloquio.
-- [Mapa de los ocho enunciados](trabajo-integrador/documentacion/mapa-de-enunciados.md): operaciones, reglas, casos límite y dudas por sistema.
-- [Pautas originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Pautas%202026.pdf).
-- [Enunciados originales 2026](trabajo-integrador/enunciado/Trabajo%20Integrador%20-%20Enunciados%202026.pdf).
-- [Clase Aerolinea](trabajo-integrador/desarrollo/Aerolinea.cls): objeto de datos en Dolphin Smalltalk 7; expone sus atributos y la colección de vuelos.
-- [Listado histórico de métodos de Aerolinea](trabajo-integrador/desarrollo/aerolineaMetodos.txt): referencia del diseño anterior; no importar.
-- [Workspace AplicacionAerolinea](trabajo-integrador/desarrollo/AplicacionAerolinea.st): interfaz y lógica de negocio ejecutadas directamente en Dolphin, sin una clase de aplicación.
-- `desarrollo/legado/AplicacionAerolinea.cls` queda como archivo legado y no se importa ni se usa para ejecutar el sistema.
-- [Guía del menú en Dolphin](trabajo-integrador/documentacion/menuDolphinHelper.md): importación, opciones, validaciones, fuentes de cátedra y 46 casos/escenarios verificados.
-- [Validación con diálogos reales](trabajo-integrador/documentacion/validacionMenuDolphin.md): recorrido completo, resultados y capturas de edición, detalle y contadores.
-- [Diagrama de clases](trabajo-integrador/documentacion/diagramaClases.md): atributos, operaciones principales, asociaciones y herencia de la versión integrada.
-- `desarrollo/pruebas/` contiene la prueba actual `WorkspaceDateTimePrueba.cls`. Las baterias de dominio que dependen de la arquitectura anterior se conservan en `desarrollo/legado/pruebas/`; no importarlas para validar la version vigente.
-- [Carga, consultas y bajas de Aerolinea](trabajo-integrador/documentacion/consultasAerolineaHelper.md): carga para varias fechas, recursos de la cátedra, pruebas y criterio provisional de disponibles (Programado y Demorado).
-- [Revisión del aporte de AplicacionAerolinea](trabajo-integrador/documentacion/revisionAplicacionAerolinea.md): compatibilidad del archivo recibido, pruebas aisladas y ajustes pendientes antes de incorporarlo.
-- [Revisión conjunta con Aerolinea_corregida](trabajo-integrador/documentacion/revisionAerolinea.md): compatibilidad de ambos aportes, alcance de la colección y control del cupo diario, rutas sin validaciones y recursos pendientes de adaptar.
+**Temas:** base de conocimiento · variables · unificación · relaciones · filtros · cálculos.
 
-**Confirmado por el usuario:** grupo **17**, enunciado **1 — Aerolínea**, tutor **Gonzalo Baez**; rigen las fechas de las pautas, **21/10/2026 y 23/10/2026**. Integrantes: Gabriel Matias Piccin, César Augusto Romero y Jorge Murga. Quedan pendientes la distribución de esas fechas para el grupo, el horario, canal/formato de entrega, versión de Dolphin y fecha del coloquio.
+---
 
-La práctica 1 remite a los ejercicios 1 y 2 del TP N.º 1 y la práctica 4 remite al TP3. Sus enunciados independientes no están en el material recibido; los helpers no inventan esas consignas.
+## 📝 Espacio de parciales
 
-## Material incorporado
+**[Elegir un parcial o un ejercicio →](parciales/guiaParciales.md)**
 
-El 02/10/2026 se copiaron los 9 archivos desde `E:\UTN\Paradigmas`, conservando los originales y sus nombres:
+Modelos de 2022 a febrero de 2026, organizados por tema y dificultad sugerida. Incluye ejercicios de clase y distingue los exámenes prácticos de las fotos de teoría.
 
-- 3 PDFs de teoría en `teoria/material/`.
-- 4 presentaciones de práctica en `practica/enunciados/`.
-- 2 PDFs del integrador en `trabajo-integrador/enunciado/`.
+## ✈️ Trabajo integrador · Aerolínea
 
-El **03/10/2026** se incorporaron otros **7 archivos** desde la misma carpeta, conservando originales y nombres:
+**Aprobado**, según informó el usuario. Tiene su propio espacio para consultar código, diagrama y documentación.
 
-- 5 PDFs de teoría: `4-POO-UML.pdf`, `4-POO-ClaseBiblioteca.pdf`, `5-POO-Colecciones.pdf`, `6-POO-Herencia.pdf` y `Ejemplo completo de herencia.pdf`.
-- 2 presentaciones de práctica: `Clase 4.pptx` y `Clase 5  - Practica.pptx`.
-- Se agregó un helper por archivo, con referencias a páginas/diapositivas, recetas, controles, preguntas y correcciones. Hay **16 fuentes originales y 14 helpers** en total.
+**[Abrir el integrador →](trabajo-integrador/guiaIntegrador.md)**
 
-Las presentaciones incluyen explicaciones y ejercicios; se conservaron completas. Los helpers son archivos Markdown que se pueden leer y editar desde el repositorio. El código inicial del integrador está en `desarrollo/`; `entregables/` queda reservado para las versiones preparadas para entregar.
+## 🗂️ Material y organización
+
+Las guías de `estudio/` explican lo esencial y enlazan las fuentes de la cátedra. Los originales conservan sus nombres en `teoria/material/`, `practica/enunciados/` y `parciales/`.
+
+[Cómo se organiza el repo](docs/organizacion.md) · [Uso de IA](docs/uso-de-ia.md) · [Contexto compartido](contexto-ia.md) · [Cronograma recibido](docs/image.png)

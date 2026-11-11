@@ -1,5 +1,7 @@
 # Helper práctico 4 — Farmacia, colecciones e iteradores
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [Clase 4.pptx](../enunciados/Clase%204.pptx), diapositivas 5–27. Prerrequisitos: [Remedio](clase-03-clases-aplicaciones-helper.md), [Biblioteca](../../teoria/apuntes/04-clase-biblioteca-helper.md) y [colecciones](../../teoria/apuntes/05-colecciones-helper.md).
 
 ## Qué hay que construir

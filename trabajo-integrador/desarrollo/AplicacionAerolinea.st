@@ -38,6 +38,8 @@ cargarVuelo value: vuelo7.
 cargarVuelo value: vuelo8.
 cargarVuelo value: vuelo9.
 cargarVuelo value: vuelo10.
+
+"Por que estamos haciendo una precarga con cupo de diez diario?"
 aerolinea verTodos size < 10 ifTrue: [
     informar value: 'Precarga parcial: ', aerolinea verTodos size displayString,
         ' de 10 vuelos. Se respeto el cupo diario indicado.'].
@@ -66,6 +68,7 @@ informar := [:unMensaje | MessageBox notify: unMensaje].
 "Basicamente concatena 2 strings: \n y \r, para que se vea bien en el MessageBox."
 salto := String with: Character cr with: Character lf.
 
+"Basicamente trabajo como el metodo trim() de Java, recorta los espacios en blanco al principio y al final de un string."
 recortar := [:unTexto |
     | inicio fin |
     inicio := 1.
@@ -82,7 +85,7 @@ pedirTexto := [:unMensaje |
     terminado := false.
     [terminado not] whileTrue: [
         texto := Prompter prompt: unMensaje.
-        texto isNil
+        texto isNil "------------------------------------>el usuario cancela el diaglogo"
             ifTrue: [terminado := true]
             ifFalse: [
                 texto := recortar value: texto.
@@ -105,7 +108,7 @@ pedirLetras := [:unMensaje |
     terminado := false.
     [terminado not] whileTrue: [
         texto := pedirTexto value: unMensaje.
-        texto isNil
+        texto isNil "------------------------------------>el usuario cancela el diaglogo"
             ifTrue: [terminado := true]
             ifFalse: [
                 (esSoloLetras value: texto)
@@ -116,8 +119,7 @@ pedirLetras := [:unMensaje |
 esEntero := [:unTexto |
     | valido |
     valido := unTexto isEmpty not.
-    1 to: unTexto size do: [:i |
-        ((unTexto at: i) isDigit) ifFalse: [valido := false]].
+    1 to: unTexto size do: [:i |((unTexto at: i) isDigit) ifFalse: [valido := false]].
     valido].
 
 
@@ -127,14 +129,15 @@ pedirEntero := [:unMensaje :unMinimo |
     terminado := false.
     [terminado not] whileTrue: [
         texto := pedirTexto value: unMensaje.
-        texto isNil
+        texto isNil "------------------------------------>el usuario cancela el diaglogo"
             ifTrue: [terminado := true]
             ifFalse: [
                 ((esEntero value: texto) and: [texto asNumber >= unMinimo])
                     ifTrue: [numero := texto asNumber. terminado := true]
                     ifFalse: [informar value: 'Ingrese un numero entero mayor o igual a ', unMinimo displayString, '.']]].
     numero].
-
+    
+"Valida que tenga un formato ####.## de precio antes de convertirlo a Numero"
 esPrecio := [:unTexto |
     | c puntos posPunto valido |
     valido := unTexto isEmpty not.
@@ -146,9 +149,9 @@ esPrecio := [:unTexto |
             ifTrue: [puntos := puntos + 1. posPunto := i]
             ifFalse: [(c isDigit) ifFalse: [valido := false]]].
     valido ifTrue: [
-        (puntos > 1) ifTrue: [valido := false].
-        ((unTexto at: 1) = $.) ifTrue: [valido := false].
-        ((unTexto at: unTexto size) = $.) ifTrue: [valido := false].
+        (puntos > 1) ifTrue: [valido := false]. "-------------->Mas de 2 puntos"
+        ((unTexto at: 1) = $.) ifTrue: [valido := false]."------------------>Empieza con punto"
+        ((unTexto at: unTexto size) = $.) ifTrue: [valido := false]."------------------>Termina con punto"
         ((puntos = 1) & ((unTexto size - posPunto) > 2)) ifTrue: [valido := false]].
     valido].
 
@@ -158,7 +161,7 @@ pedirPrecio := [:unMensaje |
     terminado := false.
     [terminado not] whileTrue: [
         texto := pedirTexto value: unMensaje.
-        texto isNil
+        texto isNil "------------------------------------>el usuario cancela el diaglogo"
             ifTrue: [terminado := true]
             ifFalse: [
                 (esPrecio value: texto)
@@ -166,6 +169,8 @@ pedirPrecio := [:unMensaje |
                     ifFalse: [informar value: 'Ingrese un precio valido. Use punto y hasta 2 decimales, por ejemplo 1500.50']]].
     precio].
 
+
+"----------------------Usan el template de muy multiples opciones para armar submenus de opciones y consultas----------------------"
 pedirEstado := [
     pedirOpcion value: #('Programado' 'Demorado' 'Cancelado' 'Finalizado') value: 'Estado del vuelo'].
 
@@ -176,6 +181,7 @@ pedirBooleano := [:unMensaje |
     opcion = 'Si' ifTrue: [resultado := true].
     opcion = 'No' ifTrue: [resultado := false].
     resultado].
+"----------------------Usan el template de muy multiples opciones para armar submenus de opciones y consultas----------------------"
 
 esBisiesto := [:unAnio |
     "Date calcula los dias del anio aplicando las reglas del calendario.
@@ -185,12 +191,17 @@ esBisiesto := [:unAnio |
 esFecha := [:unTexto |
     | dia mes anio hora minuto maximoDia valido |
     valido := unTexto size = 16.
-    valido ifTrue: [
+    valido ifTrue: [ "Valida formato dd/mm/aaaa hh:mm"
+        "   posición 3: /
+            posición 6: /
+            posición 11: espacio
+            posición 14: :"
         ((unTexto at: 3) = $/) ifFalse: [valido := false].
         ((unTexto at: 6) = $/) ifFalse: [valido := false].
         ((unTexto at: 11) = $ ) ifFalse: [valido := false].
         ((unTexto at: 14) = $:) ifFalse: [valido := false]].
     valido ifTrue: [
+        "Excluye las posiciones que son simbolos validados antes"
         #(1 2 4 5 7 8 9 10 12 13 15 16) do: [:i |
             ('0123456789' includes: (unTexto at: i))
                 ifFalse: [valido := false]]].
@@ -218,7 +229,7 @@ pedirFecha := [
     resultado := nil.
     [terminado not] whileTrue: [
         texto := pedirTexto value: 'Fecha y hora de salida (dd/mm/aaaa hh:mm)'.
-        texto isNil
+        texto isNil "------------------------------------>el usuario cancela el diaglogo"
             ifTrue: [terminado := true]
             ifFalse: [
                 (esFecha value: texto)
@@ -242,12 +253,14 @@ pedirFecha := [
     resultado
 ].
 
+"busca un buelo por su numero, devuelve nil si no lo encuentra"
 buscarVuelo := [:unNumero |
     aerolinea verTodos detect: [:vuelo | vuelo verNumero = unNumero] ifNone: [nil]].
 
 cargarVuelo := [:unVuelo |
     | dia cantidad duplicado cargado |
     duplicado := (buscarVuelo value: unVuelo verNumero) notNil.
+    "este notNil es para que devuelva true si encuentra un vuelo con el mismo numero, y false si no lo encuentra"
     cargado := false.
     duplicado
         ifFalse: [
@@ -262,12 +275,12 @@ cargarVuelo := [:unVuelo |
 modificarFecha := [:unNumero :otraFecha |
     | vuelo dia cantidad valido |
     vuelo := buscarVuelo value: unNumero.
-    valido := vuelo notNil.
+    valido := vuelo notNil."convierte en false si no encuentra el vuelo"
     valido ifTrue: [
         dia := otraFecha at: 1.
         cantidad := (aerolinea verTodos select: [:otroVuelo |
-            (otroVuelo verNumero ~= unNumero) and:
-                [otroVuelo verFecha = dia]]) size.
+            (otroVuelo verNumero ~= unNumero) and: "!= para no contar el mismo vuelo"
+                [otroVuelo verFecha = dia]]) size."basicamente contabiliza los vuelos que ya estan programados para ese dia, excluyendo el vuelo que se quiere modificar"
         (cantidad < aerolinea vercantVuelosMaxDia)
             ifTrue: [
                 vuelo modFecha: dia.
@@ -278,6 +291,7 @@ modificarFecha := [:unNumero :otraFecha |
 textoBooleano := [:unBooleano |
     unBooleano ifTrue: ['Si'] ifFalse: ['No']].
 
+"este bloque recibe un vuelo y devuelve un string con todos sus datos, para mostrarlo en un MessageBox"
 textoVuelo := [:unVuelo |
     | tipo texto |
     tipo := 'Vuelo'.
@@ -300,7 +314,7 @@ textoVuelo := [:unVuelo |
             salto, 'Tasa internacional: ', unVuelo vertasaInter displayString,
             salto, 'Documentacion adicional: ', (textoBooleano value: unVuelo verDocumentacion)].
     texto].
-
+"recorre la coleccion de vuelos y arma un string con todos los datos de cada vuelo, para mostrarlo en un MessageBox"
 mostrarVuelos := [:unosVuelos :unTitulo |
     | texto |
     unosVuelos isEmpty
@@ -340,8 +354,8 @@ vuelosSuperiores := [
 
 mayorDuracion := [
     | mayor |
-    mayor := nil.
-    aerolinea verTodos do: [:vuelo |
+    mayor := nil."guarda el objeto a comparar, no solo la duracion"
+    aerolinea verTodos   : [:vuelo |
         (mayor isNil or: [vuelo verDuracion > mayor verDuracion])
             ifTrue: [mayor := vuelo]].
     mayor].
@@ -361,12 +375,15 @@ diccionarioEstado := [
         diccionario at: estado put: (estados occurrencesOf: estado)].
     diccionario].
 
+"----------------------------------principal del menú-------------------------------------------------------------------INICIO"
 [continuar] whileTrue: [
     | opcion |
     opcion := pedirOpcion value: opciones value: 'Gestion de aerolinea'.
+    "--------------validamos casos de salida disrupta-------------"
     opcion isNil ifTrue: [continuar := false].
     opcion = '0. Salir' ifTrue: [continuar := false].
 
+    "--------------Casos validos-------------"
     opcion = '1. Cargar aerolinea' ifTrue: [
         | nombre anio pais codigo maximo |
         aerolinea notNil
@@ -381,7 +398,7 @@ diccionarioEstado := [
                 (nombre notNil and: [anio notNil and: [pais notNil and: [codigo notNil and: [maximo notNil]]]])
                     ifTrue: [
                         aerolinea := Aerolinea crear: nombre con: anio con: pais con: codigo con: maximo.
-                        precargarVuelos value.
+                        precargarVuelos value."una vez creada la aerolinea, precargamos los vuelos de muestra"
                         informar value: 'Aerolinea cargada.']]].
 
     opcion = '2. Ver datos de la aerolinea' ifTrue: [
@@ -399,7 +416,8 @@ diccionarioEstado := [
         | tipo numero origen destino fecha hora duracion precio estado provincia equipaje pais tasa documentacion vuelo |
         aerolinea isNil
             ifTrue: [informar value: 'Primero debe cargar una aerolinea.']
-            ifFalse: [
+            ifFalse: [ "en cada paso que da va verificando que el campo introducido anteriormente nosea nil
+                        , para no perder los datos ya cargados y los va encadenando"
                 tipo := pedirOpcion value: #('Nacional' 'Internacional') value: 'Tipo de vuelo'.
                 tipo notNil ifTrue: [numero := pedirEntero value: 'Numero unico del vuelo' value: 1].
                 (tipo notNil and: [numero notNil]) ifTrue: [
@@ -423,7 +441,7 @@ diccionarioEstado := [
                             (origen notNil and: [destino notNil and: [fecha notNil and: [hora notNil and: [duracion notNil and: [precio notNil]]]]])
                                 ifTrue: [estado := pedirEstado value].
                             (origen notNil and: [destino notNil and: [fecha notNil and: [hora notNil and: [duracion notNil and: [precio notNil and: [estado notNil]]]]]])
-                                ifTrue: [
+                                ifTrue: ["--se muestran campos distintos segund de que tipo de vuelo se trate" 
                                     tipo = 'Nacional'
                                         ifTrue: [
                                             provincia := pedirLetras value: 'Provincia de destino'.
@@ -467,8 +485,9 @@ diccionarioEstado := [
                         ifTrue: [informar value: 'No existe un vuelo con ese numero.']
                         ifFalse: [
                             campos := OrderedCollection new.
+                            "basicamente carga la collection campos con los campos que se pueden modificar, segun el tipo de vuelo"
                             #('Origen' 'Destino' 'Fecha y hora' 'Duracion' 'Precio base' 'Estado')
-                                do: [:campoComun | campos add: campoComun].
+                                do: [:campoComun | campos add: campoComun]. 
                             (vuelo isKindOf: VueloNacional) ifTrue: [
                                 #('Provincia de destino' 'Equipaje') do: [:campoNacional | campos add: campoNacional]].
                             (vuelo isKindOf: VueloInternacional) ifTrue: [
@@ -532,15 +551,15 @@ diccionarioEstado := [
                     mostrarVuelos value: (aerolinea verTodos select: [:vuelo | vuelo verEstado = 'Programado'])
                         value: 'Vuelos programados'].
                 consulta = 'Duracion menor a dos horas' ifTrue: [
-                    mostrarVuelos value: (aerolinea verTodos select: [:vuelo | vuelo verDuracion < 120])
-                        value: 'Duracion menor a dos horas'].
+                    mostrarVuelos value: (aerolinea verTodos select: [:vuelo | vuelo verDuracion < 120]) 
+                        value: 'Duracion menor a dos horas']. "expresado en minutos 120 = 2 horas"
                 consulta = 'Destino' ifTrue: [
                     | destino |
                     destino := pedirLetras value: 'Ciudad de destino a buscar'.
                     destino notNil ifTrue: [
                         mostrarVuelos value: (aerolinea verTodos select: [:vuelo |
-                            vuelo verDestino asLowercase = destino asLowercase])
-                            value: 'Vuelos a ', destino]].
+                            vuelo verDestino asLowercase = destino asLowercase]) 
+                            value: 'Vuelos a ', destino]]."usamos asLowercase para que no sea sensible a mayusculas y minusculas"
                 consulta = 'Precio final promedio' ifTrue: [
                     informar value: 'Precio final promedio (vuelos disponibles): ',
                         (calcularPromedio value) displayString].
@@ -573,3 +592,4 @@ diccionarioEstado := [
                 cantidad := cancelados size.
                 cancelados do: [:vuelo | aerolinea verTodos remove: vuelo ifAbsent: []].
                 informar value: 'Vuelos cancelados eliminados: ', cantidad displayString]]].
+"----------------------------------principal del menú-------------------------------------------------------------------FIN"

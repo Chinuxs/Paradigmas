@@ -1,5 +1,7 @@
 # Helper 4 — Biblioteca: una clase que administra objetos
 
+🧩 [Espacio de POO](../../estudio/poo/inicio.md) · [Teoría breve](../../estudio/poo/teoria.md) · [Receta de práctica](../../estudio/poo/practica.md)
+
 Fuente: [4-POO-ClaseBiblioteca.pdf](../material/4-POO-ClaseBiblioteca.pdf), pp. 3–13. Prerrequisito: [clase Libro](03-clase-libro-helper.md). Complemento: [colecciones](05-colecciones-helper.md).
 
 ## La idea central
