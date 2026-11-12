@@ -40,6 +40,8 @@ Las guías son explicaciones de estudio. Una propuesta de solución no equivale 
 
 El 02 y 03/10/2026 se incorporó el material inicial de POO e integrador: 16 fuentes y 14 helpers. El 11/11 se sumaron funcional, lógica, prácticas 6–8 y parciales históricos. La portada pasó a organizar el estudio por los tres paradigmas.
 
+El 12/11 se incorporaron otras 26 fotos de `Mas Parciales`, clasificadas en `parciales/indiceMasParciales.md`. Las imágenes repetidas de un mismo enunciado se identifican para no contar exámenes dos veces. El primer archivo ejecutable de funcional está en `practica/resoluciones/funcional/`.
+
 Los dos originales de teoría numerados 4 son distintos: UML y Biblioteca. Los enunciados independientes del TP N.º 1 y TP3 no están entre los archivos recibidos; las presentaciones de práctica remiten a ellos.
 
 La carpeta externa de recepción de esta copia es `E:\UTN\Paradigmas`. Los archivos se incorporan al repo conservando los originales; el repo no se sincroniza automáticamente con esa carpeta.

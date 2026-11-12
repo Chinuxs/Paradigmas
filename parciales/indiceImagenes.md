@@ -8,6 +8,8 @@ Se conservan los nombres originales. Las fechas y comisiones son las que figuran
 
 ## Parciales prácticos
 
+Este índice conserva el primer lote de once imágenes. La ampliación y las prioridades actuales están en [Más parciales](indiceMasParciales.md). Para Hospital 03/12/2025, la nueva foto más clara permite corregir la lectura: el aumento se aplica a terapia intensiva.
+
 | Fecha y comisión | POO | Funcional | Lógica |
 | --- | --- | --- | --- |
 | [29/11/2024, S23](imagenesRecibidas/WhatsApp%20Image%202026-11-05%20at%2019.16.40.jpeg) | Inmobiliaria y operaciones; búsqueda, baja, aumento y diccionario. | Aplanar listas de letras quitando vocales. | Personas, cargos, sueldo y antigüedad. |

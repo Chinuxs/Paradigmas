@@ -44,3 +44,5 @@ Empezá por la [teoría breve](teoria.md) y continuá con la [receta de resoluci
 | 6 · Integradora | Usar la [receta general](practica.md) | [Empresa y empleados](../../practica/enunciados/Clase%206%20-%20Practica.pptx) |
 
 **Para practicar:** Congreso 2025 → Feria 2025 → Inmobiliaria 2024 y Hospital 2025. [Abrir los modelos prioritarios](../../parciales/guiaParciales.md). Los ejemplos de 2023 quedan como apoyo.
+
+**Sumar trazas:** Laboratorio 07/11/2025 y las Clínicas de 2024 sí incluyen `self`/`super`. [Ver la ampliación de modelos](../../parciales/indiceMasParciales.md).

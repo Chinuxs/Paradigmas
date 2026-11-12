@@ -30,6 +30,8 @@ Funciones que calculan resultados a partir de sus argumentos.
 
 **Temas:** tipos · guardas · caso base · recursión · listas · listas de listas.
 
+💻 [Cómo cargar y probar funciones en VS Code](estudio/funcional/entornoVscode.md).
+
 ---
 
 ## 🔎 Lógica · Prolog
@@ -52,7 +54,9 @@ Hechos y reglas que permiten responder consultas.
 
 🎯 [Qué se repite y cómo vamos a prepararlo](parciales/patronPracticos.md)
 
-**Foco actual: prácticos de 2024 y 2025.** Congreso, Feria, Inmobiliaria y Hospital tienen prioridad; los modelos de otros años quedan como apoyo. La guía también identifica el teórico del 30/10/2025 y los ejercicios de clase.
+**Foco actual: prácticos de 2024 y 2025.** El recorrido incluye Congreso, Feria, Laboratorio, Club, Inmobiliaria y Hospital; los modelos de otros años quedan como apoyo. Los teóricos y ejercicios de clase tienen su clasificación propia.
+
+📸 [26 fotos adicionales: fechas y clasificación](parciales/indiceMasParciales.md) · [Patrones de teoría](parciales/patronTeoricos.md). La muestra ampliada reúne **doce modelos de 2024–2025**, incluyendo trazas de herencia, promedios y conteos de pares/impares.
 
 ## ✈️ Trabajo integrador · Aerolínea
 
